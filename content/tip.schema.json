@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/OWNER/mindful_usage/content/tip.schema.json",
+  "title": "Energy-saving tip",
+  "description": "Front matter of one tip file (content/tips/<id>.md). The Markdown body below the front matter holds the longer explanation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "summary",
+    "audience",
+    "regions",
+    "category",
+    "effort",
+    "upfront_cost",
+    "estimated_savings",
+    "responsibility",
+    "needs_landlord_permission",
+    "sources",
+    "verification",
+    "lang",
+    "last_reviewed"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Kebab-case slug; must equal the file name."
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 90
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 280,
+      "description": "One or two sentences shown on the card."
+    },
+    "audience": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "tenant",
+          "homeowner",
+          "landlord",
+          "architect",
+          "building-professional"
+        ]
+      }
+    },
+    "regions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "description": "ISO 3166-2 code, e.g. BE-VLG (Flanders), BE-BRU, BE-WAL, or 'global'."
+      }
+    },
+    "category": {
+      "enum": [
+        "heating",
+        "hot-water",
+        "ventilation-moisture",
+        "electricity",
+        "appliances",
+        "lighting",
+        "renewables",
+        "contracts-billing",
+        "rights-rules",
+        "help-subsidies"
+      ]
+    },
+    "effort": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "description": "low: minutes, no tools; medium: an afternoon or a phone call; high: a project."
+    },
+    "upfront_cost": {
+      "enum": [
+        "none",
+        "low",
+        "medium",
+        "high"
+      ],
+      "description": "none: €0; low: under €50; medium: €50–500; high: over €500."
+    },
+    "estimated_savings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "basis",
+        "confidence"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "percent_heating",
+            "percent_electricity",
+            "percent_appliance",
+            "percent_per_wash",
+            "percent_window_heat_loss",
+            "kwh_per_year",
+            "kwh_per_cycle",
+            "litres_per_shower",
+            "litres_per_use",
+            "eur_per_year",
+            "qualitative"
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "basis": {
+          "type": "string",
+          "description": "What the number assumes and where it comes from."
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      }
+    },
+    "responsibility": {
+      "enum": [
+        "tenant",
+        "landlord",
+        "shared"
+      ],
+      "description": "Who normally acts or pays."
+    },
+    "needs_landlord_permission": {
+      "type": "boolean"
+    },
+    "region_notes": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "publisher",
+          "type",
+          "url",
+          "accessed"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "official",
+              "consumer-organisation",
+              "commercial",
+              "media",
+              "other"
+            ],
+            "description": "official: government, regulator or grid operator; consumer-organisation: e.g. Test-Aankoop; commercial: companies, banks, comparison sites; media: news outlets."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Exact page URL (not a home page)."
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the link and the cited content were last checked."
+          },
+          "locator": {
+            "type": "string",
+            "description": "Where on the page or document the cited content is (section heading, page and tip number)."
+          },
+          "supports": {
+            "type": "string",
+            "description": "Which claim or figure in this tip this source backs."
+          }
+        }
+      },
+      "minItems": 1,
+      "description": "Every tip needs at least one source. Write the tip in your own words; the source is where readers go for the full detail."
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "flags"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "verified",
+            "needs-check",
+            "needs-source"
+          ],
+          "description": "verified: every claim and figure is backed by a cited source; needs-check: a claim is uncertain, recently changed, or only backed by a secondary source; needs-source: a claim still lacks an adequate source."
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Open questions for reviewers."
+        }
+      }
+    },
+    "lang": {
+      "type": "string",
+      "description": "Language of title/summary/body, e.g. en, nl."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}
