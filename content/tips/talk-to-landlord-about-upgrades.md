@@ -32,25 +32,46 @@ sources:
   type: official
   url: https://www.vlaanderen.be/en/moving-housing-and-energy/energy-performance-certificate-epc-for-sale-or-rent-of-a-dwelling
   accessed: '2026-10-07'
+  supports: the landlord must attach a copy of the EPC to the lease
+- title: EPC for a dwelling
+  publisher: Vlaamse overheid (vlaanderen.be)
+  type: official
+  url: https://www.vlaanderen.be/en/epc-for-a-dwelling
+  accessed: '2026-10-07'
+  supports: the EPC contains recommendations to make the home more energy efficient
 - title: Energiehuizen
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/energiehuizen
   accessed: '2026-10-07'
+  locator: section 'Waarvoor kunt u terecht in een energiehuis?'
+  supports: renovation advice, free for most households, a small fee may apply for higher incomes
 - title: 'Woningkwaliteit: minimale vereisten energiezuinige woning'
   publisher: Woningpas, Vlaamse overheid
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/minimale-vereisten
   accessed: '2026-10-07'
+  locator: section 'De energienorm'
+  supports: minimum label requirements for rental homes from 2030
+- title: Besparen op uw energieverbruik
+  publisher: Vlaamse overheid (vlaanderen.be)
+  type: official
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  accessed: '2026-10-07'
+  locator: sections 'Minder verwarmen?', 'Minder ruimtes verwarmen', 'Laat de ketel beter renderen' and 'Isoleer
+    de woning rondomrond'
+  supports: room thermostat and programmable radiator thermostats, insulating hot-water pipes, roof insulation
+    first
 verification:
   status: needs-check
   flags:
   - type: no-citation
-    note: The list of upgrades to ask for first is our own suggestion, not taken from a cited source.
+    note: Which upgrades to ask for first is our own prioritisation; each item itself is backed by the Flemish
+      savings page.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Point to the EPC's own recommendations, the upcoming label requirements, and the subsidies your landlord can use. Simple, cheap items to ask for first: a programmable room thermostat, thermostatic radiator valves, pipe insulation in unheated spaces, and attic insulation. {nocite}
+Point to the improvement recommendations in the EPC (your landlord must attach a copy to the lease), the upcoming minimum label requirements, and the subsidies your landlord can use. Relatively cheap items to ask for first: a programmable room thermostat or radiator thermostats, insulation of hot-water pipes, and roof or attic insulation. {nocite}
 
-Your local Energiehuis can advise both of you for free.
+Your municipality's Energiehuis gives renovation advice, free for most households.

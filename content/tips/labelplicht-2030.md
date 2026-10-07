@@ -33,26 +33,35 @@ sources:
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/minimale-vereisten
   accessed: '2026-10-07'
-  supports: label requirements 2030/2035/2040
-- title: 'Een woning verhuren in Vlaanderen: dit zijn de nieuwe regels'
-  publisher: KBC
-  type: commercial
-  url: https://www.kbc.be/particulieren/nl/thema/myhome/artikels/een-woning-verhuren-in-vlaanderen-dit-zijn-de-nieuwe-regels.html
+  locator: section 'De energienorm'
+  supports: label steps per home type in 2030, 2035 and 2040; a home that fails is unfit and may not be rented
+    out
+- title: Minimaal EPC-label vanaf 2030
+  publisher: Vlaamse overheid (vlaanderen.be)
+  type: official
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/woningkwaliteitsnormen/minimaal-epc-label-vanaf-2030
   accessed: '2026-10-07'
+  supports: same label steps, in force from 1 January 2030, a home that fails can be declared unfit
+- title: Commissie voor Wonen, verslag van de vergadering van 11 februari 2026
+  publisher: Vlaams Parlement
+  type: official
+  url: https://www.vlaamsparlement.be/nl/parlementair-werk/commissies/commissievergaderingen/1994640/verslag/1996603
+  accessed: '2026-10-07'
+  supports: the minister announces a ban on rent indexation for the worst rental homes from 2028
 verification:
   status: needs-check
   flags:
-  - type: secondary-source
-    note: KBC states that from 2028 landlords of label E or F homes may not index the rent; confirm with
-      a primary source before adding this.
   - type: to-verify
-    note: Check whether label thresholds apply per building type exactly as stated, especially for apartments.
+    note: The rent indexation ban from 2028 was announced but not yet law on 2026-10-07; check whether a decree
+      has been adopted and which labels it covers.
   - type: no-citation
     note: Raising it at lease renewal is our own suggestion, not from a cited source.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Homes that fail the label requirement after 1 January 2030 count as unfit and may no longer be rented out. Requirements tighten to label C for terraced homes and apartments from 2035, and for detached and semi-detached homes by 2040.
+From 1 January 2030, a rental home that doesn't reach the required EPC label counts as unfit and may no longer be rented out. Terraced homes and apartments need label D in 2030 and label C from 2035. Detached and semi-detached homes need label E in 2030, label D from 2035 and label C from 2040.
+
+The Flemish government has also announced that, from 2028, landlords of the least energy-efficient rental homes will no longer be allowed to index the rent. When we checked, this was not yet law.
 
 If your home has a poor label, your landlord has a strong reason to renovate in the coming years. A well-timed, constructive conversation (for example at lease renewal) can help. {nocite}

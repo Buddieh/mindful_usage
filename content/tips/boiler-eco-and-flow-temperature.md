@@ -1,8 +1,8 @@
 ---
 id: boiler-eco-and-flow-temperature
 title: Ask about lowering the boiler's flow temperature
-summary: Using the boiler's eco mode for hot water saves around 1%; lowering the return temperature from
-  60 °C to 40 °C can save around 6%.
+summary: Switching a combi boiler's hot water to eco mode saves around 1% of heating costs; lowering the
+  return temperature from 60 °C to 40 °C can save around 6%.
 audience:
 - tenant
 regions:
@@ -19,8 +19,8 @@ estimated_savings:
   kind: percent_heating
   value: 6
   unit: '%'
-  basis: Return temperature 60 °C → 40 °C on a condensing boiler; eco mode on a combi boiler about 1%
-    (Flemish government figures).
+  basis: Lowering flow and return temperature (return 60 °C → 40 °C) about 6%; eco mode on a combi boiler
+    about 1% (Flemish government figures).
   confidence: medium
 responsibility: shared
 needs_landlord_permission: true
@@ -31,20 +31,21 @@ sources:
 - title: Besparen op uw energieverbruik
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
   accessed: '2026-10-07'
   locator: under 'Grootste besparingskansen' > 'Laat de ketel beter renderen'
-  supports: eco mode 1%, return temperature 6%
+  supports: 6% by lowering flow and return temperature, flow about 60 °C or 50 °C in a well-insulated home,
+    ask the installer to set the heating curve, eco mode on a combi boiler about 1%
 verification:
   status: needs-check
   flags:
   - type: no-citation
-    note: Whether a tenant may change boiler settings is not covered by the cited source; we mark it as
-      needing the landlord's agreement to be safe.
+    note: Whether a tenant may change boiler settings is not covered by any official source we found; we
+      mark it as needing the landlord's agreement to be safe, and say the eco setting is usually yours to change.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Condensing boilers are only efficient when the water returning from the radiators is cool enough. Ask the technician at the next service, or your landlord, whether the flow temperature can be reduced (for example to 50–55 °C) while keeping the home comfortable.
+The cooler the water your boiler sends to the radiators and gets back, the less energy it wastes. Ask the technician at the next service, or your landlord, whether the flow temperature can go down to about 60 °C, or 50 °C in a well-insulated home, and whether the heating curve (stooklijn) is set correctly, while keeping the home comfortable.
 
-On a combi boiler, switching on the eco setting for hot water is something you can usually do yourself.
+On a combi boiler, switching on the eco setting for hot water is something you can usually do yourself. {nocite}

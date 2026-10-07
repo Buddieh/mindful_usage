@@ -1,8 +1,8 @@
 ---
 id: know-minimum-quality-rules
 title: Know the minimum energy rules for rental homes
-summary: Every rental home in Flanders must have roof insulation and, since 2023, double glazing in living
-  rooms and the bathroom.
+summary: Every rental home in Flanders must have basic roof insulation and double glazing; single glazing in
+  more than one window can get a house or flat declared unfit.
 audience:
 - tenant
 regions:
@@ -31,24 +31,40 @@ sources:
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/minimale-vereisten
   accessed: '2026-10-07'
-  supports: roof insulation and double glazing requirements
-- title: Is dubbele beglazing wettelijk verplicht?
-  publisher: Bobex
-  type: commercial
-  url: https://www.bobex.be/nl-be/ramen-deuren-en-beglazing/dubbel-glas-verplicht/
+  locator: section 'De dakisolatienorm'
+  supports: roof insulation minimum (R-value 0.75 m²K/W or 3 to 4 cm), and when missing roof insulation counts
+    as a serious defect
+- title: Dubbele beglazing in elke woning
+  publisher: Vlaamse overheid (vlaanderen.be)
+  type: official
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/woningkwaliteitsnormen/dubbele-beglazing-in-elke-woning
   accessed: '2026-10-07'
+  supports: double glazing required in every home since 2020; per window for houses and flats, unfit since 2023
+    with more than one single-glazed window, exemption with a low EPC energy score; living rooms and bathroom
+    for rented rooms
+- title: Besparen op uw energieverbruik
+  publisher: Vlaamse overheid (vlaanderen.be)
+  type: official
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  accessed: '2026-10-07'
+  locator: section 'Isoleer de woning rondomrond', 'Begin met dikke dakisolatie'
+  supports: recommended roof insulation of at least Rd 4.5 m²K/W
+- title: Stappen bij problemen met de woningkwaliteit
+  publisher: Vlaamse overheid (vlaanderen.be)
+  type: official
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/stappen-bij-problemen-met-de-woningkwaliteit
+  accessed: '2026-10-07'
+  supports: tell the landlord in writing first, then report to the municipality, which can send a housing
+    inspector free of charge; keep paying the rent
 verification:
-  status: needs-check
-  flags:
-  - type: no-citation
-    note: Contacting the municipality's housing service is not yet backed by a cited source.
-  - type: to-verify
-    note: Minimum roof insulation R-value is low (0.75 m²K/W); do not imply this equals a well-insulated
-      roof.
+  status: verified
+  flags: []
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Missing roof insulation or single glazing in living spaces counts as a defect under the Flemish housing quality rules. Defects in several rooms can make a home unfit (ongeschikt), in which case it cannot get a conformity certificate (conformiteitsattest) and may not be rented out until fixed.
+Flemish housing quality rules set two energy minimums for every home. The roof needs at least a basic layer of insulation: an R-value of 0.75 m²K/W, about 3 to 4 cm. That is far below what the Flemish government recommends for a well-insulated roof (Rd of at least 4.5 m²K/W), so a home can meet the rule and still lose a lot of heat.
 
-If your home doesn't meet these rules, raise it with your landlord in writing first. You can also contact your municipality's housing service about a quality inspection. {nocite}
+Every home also needs double glazing. In a house or flat, each window with single glazing counts as a defect, and since 2023 more than one can get the home declared unfit (ongeschikt), unless its EPC energy score is already low enough. In a rented room, the rule covers the living room and the bathroom. An unfit home cannot get a conformity certificate (conformiteitsattest) and may not be rented out until it is fixed.
+
+If your home doesn't meet these rules, tell your landlord in writing first, with photos and a list of the defects. If that doesn't solve it, report it to your municipality, which can send a housing inspector free of charge. Keep paying your rent in the meantime.

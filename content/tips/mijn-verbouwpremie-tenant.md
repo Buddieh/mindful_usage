@@ -1,8 +1,8 @@
 ---
 id: mijn-verbouwpremie-tenant
-title: Tenants can sometimes claim Mijn VerbouwPremie
-summary: A tenant who pays for energy works in their rental home can, in principle, apply for Mijn VerbouwPremie
-  for insulation, high-efficiency glazing, heat pumps and heat pump boilers.
+title: Tenants can sometimes claim Mijn VerbouwPremie, now only for a heat pump
+summary: A tenant who pays for energy works in their rental home can, in principle, apply for Mijn VerbouwPremie.
+  Since 1 March 2026 that only covers a heat pump or heat pump boiler.
 audience:
 - tenant
 regions:
@@ -18,7 +18,7 @@ time_needed: weeks
 upfront_cost: 2500-25000
 estimated_savings:
   kind: qualitative
-  basis: Premium amount depends on income category and type of work.
+  basis: Set by type of work; for tenants since 1 March 2026 only a heat pump or heat pump boiler.
   confidence: low
 responsibility: shared
 needs_landlord_permission: true
@@ -30,30 +30,40 @@ pairs_with:
 - talk-to-landlord-about-upgrades
 - energiehuis-advice
 sources:
-- title: Who can apply for Mijn VerbouwPremie
+- title: Wie kan Mijn VerbouwPremie aanvragen?
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/en/moving-housing-and-energy/mijn-verbouwpremie-in-english/who-can-apply-for-mijn-verbouwpremie
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wie-kan-mijn-verbouwpremie-aanvragen
   accessed: '2026-10-07'
-  supports: tenants eligible for energy-efficiency works only
+  locator: target group 'Investeerder in eengezinswoning/appartement' and the FAQ on a partner or housemate who
+    is not the owner
+  supports: someone living in a home they don't own counts as an investor; heat pump and heat pump boiler only,
+    whatever the income
+- title: Mijn VerbouwPremie voor investeerder in een eengezinswoning of appartement
+  publisher: Vlaamse overheid (vlaanderen.be)
+  type: official
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wie-in-aanmerking-komt-voor-mijn-verbouwpremie/mijn-verbouwpremie-voor-investeerder-in-een-eengezinswoning-of-appartement
+  accessed: '2026-10-07'
+  supports: the investor group includes someone who lives in the home but is not the owner, for example a tenant;
+    no premium for windows, roof, walls or floor since 1 March 2026
 - title: Wijzigingen Mijn VerbouwPremie vanaf 2026
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wijzigingen-mijn-verbouwpremie-vanaf-2026
   accessed: '2026-10-07'
-  supports: 1 March 2026 reform
+  locator: sections per target group
+  supports: since 1 March 2026 investors in a house or apartment count as category 1 and only get a premium for
+    a heat pump or heat pump boiler
 verification:
   status: needs-check
   flags:
-  - type: to-verify
-    note: Which income category a tenant falls into after the 1 March 2026 reform is unclear from the
-      sources; verify on the Dutch 'Wie kan Mijn VerbouwPremie aanvragen' page.
-  - type: to-verify
-    note: English page may lag behind the Dutch page.
   - type: no-citation
-    note: That you need the landlord's written agreement is our inference; the cited pages don't say so.
+    note: That you need the landlord's written agreement is our inference; the official pages don't require
+      it.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-This is rare in practice, because these works are major and change the landlord's property, so you need the landlord's written agreement first. {nocite} Since 1 March 2026 the premium was cut back sharply for higher income categories (only heat pumps remain for some groups), so check the simulator on vlaanderen.be before you plan anything.
+Since 1 March 2026, someone who lives in a home they don't own is treated as an investor: income no longer matters, and only a heat pump or heat pump boiler qualifies. Insulation and glazing no longer get a premium for tenants. Use the simulator on vlaanderen.be before you plan anything.
+
+This is rare in practice, because a heat pump is a major work that changes the landlord's property, so you need the landlord's written agreement first. {nocite}
