@@ -29,6 +29,7 @@ tags:
 - comfort
 pairs_with:
 - ventilation-when-renovating
+- airtight-home
 sources:
 - title: Hoogrendementsglas
   publisher: Vlaamse overheid (vlaanderen.be)

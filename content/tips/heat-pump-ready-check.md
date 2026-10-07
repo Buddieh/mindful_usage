@@ -32,6 +32,7 @@ pairs_with:
 - insulate-roof-or-attic-floor
 - high-efficiency-glazing
 - free-renovation-coaching
+- mijn-verbouwpremie-owners
 sources:
 - title: Is uw woning warmtepompklaar?
   publisher: Vlaamse overheid (vlaanderen.be)
