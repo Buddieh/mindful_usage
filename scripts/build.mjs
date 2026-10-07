@@ -75,6 +75,10 @@ const WHO = {
 const TODAY = new Date().toISOString().slice(0, 10);
 const isOverdue = (d) => d.stability === "variable" && d.review_by < TODAY;
 const levelText = (n) => t("chip.level").replace("{n}", n).replace("{name}", label("rung", n));
+// Dates read as "7 Oct 2026" / "7 okt 2026"; the ISO date stays in the markup.
+const LOCALES = { nl: "nl-BE", en: "en-GB" };
+const date = (iso) => `<time datetime="${esc(iso)}">${esc(new Intl.DateTimeFormat(LOCALES[LANG] || LANG,
+  { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(iso)))}</time>`;
 
 // "{nocite}" after a sentence in a tip body marks it as not backed by any cited source.
 const NOCITE = "{nocite}";
@@ -83,17 +87,23 @@ function renderBody(md) {
   return marked.parse(md).split(NOCITE).join(badge);
 }
 
-function chips(d) {
-  const out = [
+// Cards show only what tells tips apart (saving, cost, warnings); tip pages show everything.
+function chips(d, full) {
+  const s = savingsText(d.estimated_savings);
+  const stability = `<span class="chip ${d.stability}" title="${esc(t(`stability.${d.stability}`))}">${esc(label("stability", d.stability))}</span>`;
+  const out = full ? [
     `<span class="chip cat">${esc(label("category", d.category))}</span>`,
     `<span class="chip level">${esc(levelText(d.rung))}</span>`,
     `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
     `<span class="chip">${esc(label("time", d.time_needed))}</span>`,
-    `<span class="chip ${d.stability}" title="${esc(t(`stability.${d.stability}`))}">${esc(label("stability", d.stability))}</span>`,
+    stability,
+  ] : [
+    ...(s ? [`<span class="chip save">${esc(s)}</span>`] : []),
+    `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
+    ...(d.stability === "variable" ? [stability] : []),
   ];
   if (isOverdue(d)) out.push(`<span class="chip warn">${esc(t("chip.overdue"))}</span>`);
-  const s = savingsText(d.estimated_savings);
-  if (s) out.push(`<span class="chip save">${esc(s)}</span>`);
+  if (full && s) out.push(`<span class="chip save">${esc(s)}</span>`);
   if (d.needs_landlord_permission) out.push(`<span class="chip warn">${esc(t("chip.landlord"))}</span>`);
   if (hasNoCitation(d)) out.push(`<span class="chip nocite">${esc(t("chip.nocite"))}</span>`);
   else if (d.verification.status !== "verified") out.push(`<span class="chip review">${esc(t("chip.review"))}</span>`);
@@ -106,9 +116,9 @@ function card(tip) {
   const haystack = [l.title, l.summary, ...(d.tags || []), label("category", d.category)].join(" ").toLowerCase();
   const who = Object.keys(WHO).filter((w) => WHO[w](d)).join(" ");
   return `<li class="card" data-category="${esc(d.category)}" data-rung="${d.rung}" data-cost="${COSTS.indexOf(d.upfront_cost)}" data-who="${who}" data-stability="${d.stability}" data-landlord="${d.needs_landlord_permission}" data-cited="${d.verification.status === "verified"}" data-text="${esc(haystack)}">
-  <a href="tips/${esc(tip.id)}/"><h2>${esc(l.title)}</h2></a>
+  <h3><a href="tips/${esc(tip.id)}/">${esc(l.title)}</a></h3>
   <p>${esc(l.summary)}</p>
-  <div class="chips">${chips(d)}</div>
+  <div class="chips">${chips(d, false)}</div>
 </li>`;
 }
 
@@ -141,6 +151,9 @@ function indexPage(tips) {
   </fieldset>` : ""}
   <label class="search"><span>${esc(t("filter.search"))}</span>
     <input type="search" id="q" placeholder="${esc(t("filter.searchPlaceholder"))}"></label>
+  <details class="more-filters" id="more-filters">
+  <summary>${esc(t("filter.more"))} <span class="badge" id="active" hidden></span></summary>
+  <div class="more-grid">
   <label><span>${esc(t("filter.category"))}</span>
     <select id="category"><option value="">${esc(t("filter.all"))}</option>${options("category", cats)}</select></label>
   <label><span>${esc(t("filter.budget"))}</span>
@@ -149,13 +162,27 @@ function indexPage(tips) {
     <select id="stability"><option value="">${esc(t("filter.all"))}</option>${options("stability", ["constant", "variable"])}</select></label>
   <label class="check"><input type="checkbox" id="nolandlord"> ${esc(t("filter.noLandlord"))}</label>
   <label class="check"><input type="checkbox" id="cited"> ${esc(t("filter.cited"))}</label>
+  </div>
+  </details>
 </form>
-<p class="count" id="count" aria-live="polite">${tips.length} ${esc(t("index.tips"))}</p>
-<ul class="cards" id="cards">
-${tips.map(card).join("\n")}
+<div class="count-row">
+  <p class="count" id="count" aria-live="polite" data-template="${esc(t("index.count"))}">${tips.length} ${esc(t("index.tips"))}</p>
+  <button type="button" class="link-button" id="clear" hidden>${esc(t("filter.clear"))}</button>
+</div>
+<div id="cards">
+${RUNGS.filter((n) => tips.some((x) => x.data.rung === n)).map((n) => `<section class="group" data-rung="${n}">
+<h2>${esc(levelText(n))}</h2>
+<ul class="cards">
+${tips.filter((x) => x.data.rung === n).map(card).join("\n")}
 </ul>
-<p class="empty" id="empty" hidden>${esc(t("index.empty"))}</p>
-<p class="more" id="more" hidden data-one="${esc(t("index.more1"))}" data-many="${esc(t("index.moreN"))}"></p>`;
+</section>`).join("\n")}
+</div>
+<p class="empty" id="empty" hidden>${esc(t("index.empty"))} <button type="button" class="link-button" data-clear>${esc(t("filter.clear"))}</button></p>
+<div class="more" id="more" hidden data-one="${esc(t("index.more1"))}" data-many="${esc(t("index.moreN"))}">
+  <button type="button" class="more-button" id="next-level" data-template="${esc(t("index.showLevel"))}"
+    data-names="${esc(JSON.stringify(Object.fromEntries(RUNGS.map((n) => [n, label("rung", n)]))))}"></button>
+  <p id="more-text"></p>
+</div>`;
   return page({ title: t("site.name"), description: t("index.intro"), rel: "", path: "", body });
 }
 
@@ -164,18 +191,15 @@ function tipPage(tip) {
   const l = localize(tip, LANG);
   const s = d.estimated_savings;
   const savings = savingsText(s);
+  // Level, time and cost are already in the chips at the top, so the table skips them.
   const facts = [
-    [t("field.level"), levelText(d.rung)],
-    [t("field.time"), label("time", d.time_needed)],
-    [t("field.cost"), label("cost", d.upfront_cost)],
-    [t("field.kind"), label("kind", d.kind)],
-    // Variable tips explain themselves in the notice above the table.
-    [t("field.stability"), d.stability === "constant"
-      ? `<strong>${esc(label("stability", d.stability))}</strong> · ${esc(t("stability.constant"))}`
-      : `<strong>${esc(label("stability", d.stability))}</strong>`],
     [t("field.savings"), `${savings ? `<strong>${esc(savings)}</strong> · ` : ""}${esc(l.basis)} <span class="muted">(${esc(t("field.confidence"))}: ${esc(label("confidence", s.confidence))})</span>`],
     [t("field.who"), label("responsibility", d.responsibility)],
     [t("field.landlord"), d.needs_landlord_permission ? t("yes") : t("no")],
+    [t("field.kind"), label("kind", d.kind)],
+    // Variable tips explain themselves in the notice under the chips.
+    ...(d.stability === "constant"
+      ? [[t("field.stability"), `<strong>${esc(label("stability", d.stability))}</strong> · ${esc(t("stability.constant"))}`]] : []),
   ].map(([k, v]) => `<tr><th scope="row">${esc(k)}</th><td>${v.includes("<") ? v : esc(v)}</td></tr>`).join("");
 
   // Open points, uncited ones first, each labelled with its kind.
@@ -193,7 +217,7 @@ function tipPage(tip) {
   const variable = d.stability === "variable"
     ? `<aside class="notice variable"><strong>${esc(t("tip.variableHeading"))}</strong>
        <p>${esc(t("stability.variable"))}</p>
-       <p>${esc(t(isOverdue(d) ? "tip.overdue" : "tip.nextCheck").replace("{d}", d.review_by))}</p></aside>`
+       <p>${esc(t(isOverdue(d) ? "tip.overdue" : "tip.nextCheck")).replace("{d}", date(d.review_by))}</p></aside>`
     : "";
 
   const pairs = (d.pairs_with || []).length
@@ -205,10 +229,9 @@ function tipPage(tip) {
     ? `<aside class="notice"><strong>${esc(t("tip.regionNotes"))}</strong><p>${esc(l.region_notes)}</p></aside>` : "";
 
   const sources = d.sources.map((src, i) => `<li>
-    <a href="${esc(src.url)}" rel="noopener">${esc(src.title)}</a> <span class="muted">· ${esc(src.publisher)} (${esc(label("sourceType", src.type))})</span>
+    <a href="${esc(src.url)}" rel="noopener">${esc(src.title)}</a> <span class="muted">· ${esc(src.publisher)} (${esc(label("sourceType", src.type))}) · ${esc(t("tip.accessedShort"))} ${date(src.accessed)}</span>
     ${l.supports[i] ? `<div class="src-meta">${esc(t("tip.supports"))}: ${esc(l.supports[i])}</div>` : ""}
     ${src.locator ? `<div class="src-meta">${esc(t("tip.locator"))}: ${esc(src.locator)}</div>` : ""}
-    <div class="src-meta">${esc(t("tip.accessed"))} ${esc(src.accessed)}</div>
   </li>`).join("");
 
   const file = l.lang === d.lang ? tip.file : `${LANG}/${tip.file}`;
@@ -220,18 +243,21 @@ function tipPage(tip) {
 <article class="tip">
   <h1 lang="${l.lang}">${esc(l.title)}</h1>
   <p class="lead">${esc(l.summary)}</p>
-  <div class="chips">${chips(d)}</div>
-  ${review}
+  <div class="chips">${chips(d, true)}</div>
   ${variable}
-  <table class="facts"><tbody>${facts}</tbody></table>
   <div class="prose">${renderBody(l.body)}</div>
+  ${review}
   ${regionNotes}
+  <section class="details">
+    <h2>${esc(t("tip.details"))}</h2>
+    <table class="facts"><tbody>${facts}</tbody></table>
+  </section>
   ${pairs}
   <section class="sources">
     <h2>${esc(t("tip.sources"))}</h2>
     <ol>${sources}</ol>
   </section>
-  <p class="muted">${esc(t("tip.lastReviewed"))} ${esc(d.last_reviewed)}</p>
+  <p class="muted">${esc(t("tip.lastReviewed"))} ${date(d.last_reviewed)}</p>
   ${edit}
 </article>`;
   return page({ title: `${l.title} · ${t("site.name")}`, description: l.summary, rel: "../../", path: `tips/${tip.id}/`, body });
