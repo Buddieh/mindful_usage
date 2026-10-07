@@ -1,19 +1,22 @@
 ---
 id: mijn-verbouwpremie-tenant
 lang: nl
-title: Huurders kunnen soms Mijn VerbouwPremie aanvragen
-summary: Een huurder die zelf energiewerken in de huurwoning betaalt, kan in principe Mijn VerbouwPremie
-  aanvragen voor isolatie, hoogrendementsglas, warmtepompen en warmtepompboilers.
-savings_basis: Het bedrag hangt af van de inkomenscategorie en het soort werken.
+title: Huurders kunnen soms Mijn VerbouwPremie aanvragen, nu alleen voor een warmtepomp
+summary: Een huurder die zelf energiewerken in de huurwoning betaalt, kan in principe Mijn VerbouwPremie aanvragen.
+  Sinds 1 maart 2026 kan dat enkel nog voor een warmtepomp of warmtepompboiler.
+savings_basis: Hangt af van het soort werk; voor huurders sinds 1 maart 2026 enkel een warmtepomp of warmtepompboiler.
 flags:
-- Uit de bronnen blijkt niet duidelijk in welke inkomenscategorie een huurder valt na de hervorming van
-  1 maart 2026; nakijken op de pagina 'Wie kan Mijn VerbouwPremie aanvragen'.
-- De Engelse pagina kan achterlopen op de Nederlandse.
-- Dat je het schriftelijk akkoord van je verhuurder nodig hebt, is onze afleiding; de bronnen zeggen dat
-  niet.
+- Dat je het schriftelijk akkoord van je verhuurder nodig hebt, is onze afleiding; de officiële pagina's vragen
+  dat niet.
 supports:
-- huurders komen alleen in aanmerking voor energiebesparende werken
-- hervorming van 1 maart 2026
+- wie in een woning woont die niet van hem of haar is, telt als investeerder; enkel warmtepomp en warmtepompboiler,
+  ongeacht het inkomen
+- de doelgroep investeerder omvat wie in de woning woont maar geen eigenaar is, bijvoorbeeld een huurder; geen
+  premie voor ramen, dak, muren of vloer sinds 1 maart 2026
+- sinds 1 maart 2026 vallen investeerders in een eengezinswoning of appartement in categorie 1 en krijgen ze
+  enkel een premie voor een warmtepomp of warmtepompboiler
 ---
 
-In de praktijk is dat zeldzaam: het gaat om grote werken aan de woning van je verhuurder, dus je hebt eerst zijn of haar schriftelijk akkoord nodig. {nocite} Sinds 1 maart 2026 is de premie sterk ingeperkt voor de hogere inkomenscategorieën (voor sommige groepen blijven alleen warmtepompen over), dus kijk de simulator op vlaanderen.be na voor je iets plant.
+Sinds 1 maart 2026 wordt wie in een woning woont die niet van hem of haar is, behandeld als investeerder: je inkomen speelt geen rol meer, en enkel een warmtepomp of warmtepompboiler komt nog in aanmerking. Isolatie en beglazing krijgen voor huurders geen premie meer. Gebruik de simulator op vlaanderen.be voor je iets plant.
+
+In de praktijk is dat zeldzaam: een warmtepomp is een groot werk aan de woning van je verhuurder, dus je hebt eerst zijn of haar schriftelijk akkoord nodig. {nocite}

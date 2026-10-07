@@ -12,7 +12,7 @@ kind: service
 stage:
 - renovating
 stability: variable
-review_by: '2027-01-31'
+review_by: '2026-11-30'
 rung: 4
 time_needed: weeks
 upfront_cost: none

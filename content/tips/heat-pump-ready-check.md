@@ -13,7 +13,7 @@ stage:
 - living-in
 - renovating
 stability: variable
-review_by: '2027-01-31'
+review_by: '2027-05-31'
 rung: 4
 time_needed: weeks
 upfront_cost: 2500-25000

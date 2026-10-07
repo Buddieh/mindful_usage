@@ -13,7 +13,7 @@ stage:
 - living-in
 - renovating
 stability: variable
-review_by: '2027-01-31'
+review_by: '2027-03-31'
 rung: 1
 time_needed: minutes
 upfront_cost: none

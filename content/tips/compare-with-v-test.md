@@ -13,7 +13,7 @@ kind: service
 stage:
 - living-in
 stability: variable
-review_by: '2027-01-31'
+review_by: '2026-12-31'
 rung: 1
 time_needed: minutes
 upfront_cost: none

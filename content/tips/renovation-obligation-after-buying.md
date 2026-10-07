@@ -12,7 +12,7 @@ kind: explainer
 stage:
 - renovating
 stability: variable
-review_by: '2027-01-31'
+review_by: '2026-12-31'
 rung: 5
 time_needed: weeks
 upfront_cost: over-25000
@@ -37,8 +37,8 @@ sources:
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/kopen-en-verkopen/een-huis-of-appartement-kopen/renovatieverplichting-voor-residentiele-gebouwen
   accessed: '2026-10-07'
   locator: sections 'Voor wie?', 'Bijzondere situaties' and 'Aangekondigde wijzigingen van renovatieverplichting'
-  supports: who it applies to, labels E/F to D, six-year deadline, proof with a new EPC, exemptions, dropped
-    tightening after 2028
+  supports: who it applies to, labels E/F to D, six-year term (approved 12/12/2025, also for running obligations),
+    proof with a new EPC, exemptions, announced dropping of the stricter steps from 2028
 - title: Mijn VerbouwBegeleiding voor eigenaars
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
@@ -50,9 +50,10 @@ verification:
   status: needs-check
   flags:
   - type: to-verify
-    note: The official page still contains older text (a five-year deadline and a long-term path towards label
-      A) next to the announced changes; check again once the page is cleaned up. The English version of the
-      page is out of date.
+    note: The official page says the six-year term was finally approved on 12/12/2025, but we found no published
+      legal text yet, and public consolidations of the Energiebesluit still say five years. Dropping the stricter
+      steps from 2028 is only announced. The page still carries old five-year and label-A text, and the English
+      page contradicts itself; recheck once the decision is published.
 lang: en
 last_reviewed: '2026-10-07'
 ---
@@ -61,4 +62,4 @@ The obligation applies to anyone who acquires a house or apartment by notarial d
 
 You prove it with a new EPC from a recognised energy expert, which is registered automatically. Some transfers are exempt, for example an inheritance (the heir takes over any deadline still running), a protected heritage building, or dividing property after a divorce.
 
-The rules have changed several times: the deadline went from five to six years in December 2025, and stricter steps planned from 2028 are being dropped. Check the official page before you buy. The Energiehuis gives free advice on which works to do first.
+The rules have changed: in December 2025 the Flemish Government approved six years instead of five, also for deadlines already running. It has also announced that the stricter labels planned for purchases from 2028 will be dropped, but that is not yet final law. Check the official page before you buy. The Energiehuis gives free advice on which works to do first.

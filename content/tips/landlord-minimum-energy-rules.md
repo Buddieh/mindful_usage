@@ -40,8 +40,15 @@ sources:
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/minimale-vereisten
   accessed: '2026-10-07'
   locator: sections 'De dakisolatienorm', 'De dubbelglasnorm' and 'De energienorm'
-  supports: roof insulation norm, double glazing in living rooms and bathroom, label steps from 2030 per home type,
-    no conformity certificate and no renting when the norm is not met
+  supports: roof insulation norm, label steps from 2030 per home type, no conformity certificate and no renting
+    when the norm is not met
+- title: Dubbele beglazing in elke woning
+  publisher: Vlaamse overheid (vlaanderen.be)
+  type: official
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/woningkwaliteitsnormen/dubbele-beglazing-in-elke-woning
+  accessed: '2026-10-07'
+  supports: double glazing per window in houses and flats, unfit with more than one single-glazed window since
+    2023, exemption with a low EPC energy score, living room and bathroom for rented rooms
 verification:
   status: verified
   flags: []
@@ -49,7 +56,7 @@ lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Flemish housing quality rules already set two energy minimums. The roof must have at least a basic layer of insulation (an R-value of 0.75 m²K/W, or 3 to 4 cm), and all living rooms and the bathroom must have double glazing.
+Flemish housing quality rules already set two energy minimums. The roof must have at least a basic layer of insulation (an R-value of 0.75 m²K/W, or 3 to 4 cm), and the home must have double glazing. In a house or flat each single-glazed window is a defect, and more than one can get the home declared unfit, unless its EPC energy score is already low enough. For rented rooms the rule covers the living room and the bathroom.
 
 From 1 January 2030 an energy norm adds a minimum EPC label. Detached and semi-detached homes must reach label E in 2030, label D from 2035 and label C from 1 January 2040. Terraced houses and apartments must reach label D from 1 January 2030 and label C from 2035.
 

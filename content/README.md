@@ -59,10 +59,15 @@ The site is published in Dutch and English, with an NL | EN switch on every page
 - Figures that change yearly (tariffs, income limits, premiums) get a flag reminding reviewers to recheck them.
 - Region-specific rules go in `region_notes`, and `regions` must list only regions where the tip holds.
 
-## Planned checks (once the repository exists)
+## Automatic checks
 
 - On every pull request: validate front matter against the schema, which rejects a tip without a source.
-- Monthly: check every source link and open an issue listing broken ones.
+- On the 1st of every month: check every source link and open an issue listing broken ones.
+- On the 2nd of every month: re-open the sources of every variable tip and open an "Upkeep" issue listing pages whose main text changed since last month, pages that could not be read, and tips due for review in the coming month. Page fingerprints (hashes only, no page text) are kept on the `source-snapshots` branch. A changed page can be a cosmetic edit, so re-read it before editing the tip.
+
+## Review dates
+
+Variable tips are spread over the year so that a few come up each month, grouped by topic so related tips are checked together. Topics that change most often come first: premiums and loans, then tariffs and contracts (which often change on 1 January), rental rules, the renovation obligation and EPB, services, solar, heating and other building rules. When you review a tip, set `last_reviewed` to the day you checked and move `review_by` forward, usually by six to twelve months, or sooner when an announced change is coming.
 
 ## Status of the first batch (Flanders, tenants, 2026-10-07)
 
