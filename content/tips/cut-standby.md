@@ -5,11 +5,17 @@ summary: Switching off TVs, computers, chargers and similar devices saves about 
   bill for a family of four.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: electricity
-effort: low
-upfront_cost: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
+upfront_cost: under-100
 estimated_savings:
   kind: percent_electricity
   value: 1

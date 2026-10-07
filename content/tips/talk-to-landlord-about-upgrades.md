@@ -8,7 +8,12 @@ audience:
 regions:
 - BE-VLG
 category: rights-rules
-effort: medium
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 2
+time_needed: hours
 upfront_cost: none
 estimated_savings:
   kind: qualitative
@@ -19,6 +24,8 @@ needs_landlord_permission: true
 tags:
 - landlord-tenant
 - renovation
+pairs_with:
+- mijn-verbouwpremie-tenant
 sources:
 - title: Energy performance certificate (EPC) for sale or rent of a dwelling
   publisher: Vlaamse overheid (vlaanderen.be)

@@ -5,10 +5,17 @@ summary: The VREG V-test is the official, independent Flemish comparison tool fo
   contracts.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: contracts-billing
-effort: low
+kind: service
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: qualitative

@@ -5,10 +5,16 @@ summary: Closing curtains and roller shutters at night cuts heat loss through wi
   and furniture in front of radiators block the heat.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: heating
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: percent_window_heat_loss

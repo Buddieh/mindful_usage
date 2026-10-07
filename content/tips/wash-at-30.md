@@ -4,10 +4,16 @@ title: Wash clothes at 30 °C
 summary: A 30 °C wash uses half the energy of a 60 °C wash and a quarter less than 40 °C.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: appliances
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: percent_per_wash

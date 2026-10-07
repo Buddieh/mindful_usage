@@ -5,10 +5,17 @@ summary: With a digital meter you pay part of your network costs based on your h
   each month, so avoid running oven, washer, dryer and kettle at the same time.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: contracts-billing
-effort: low
+kind: practice
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: eur_per_year

@@ -8,8 +8,14 @@ audience:
 regions:
 - BE-VLG
 category: heating
-effort: medium
-upfront_cost: medium
+kind: practice
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 3
+time_needed: hours
+upfront_cost: 100-2500
 estimated_savings:
   kind: percent_heating
   value: 5

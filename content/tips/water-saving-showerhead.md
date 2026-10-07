@@ -5,11 +5,17 @@ summary: A five-minute shower uses about 35 litres with a water-saving head, ver
   head and up to 125 litres with a rain shower.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: hot-water
-effort: low
-upfront_cost: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 2
+time_needed: minutes
+upfront_cost: under-100
 estimated_savings:
   kind: litres_per_shower
   value: 25

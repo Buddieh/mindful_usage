@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Weekly rebuild, so variable tips past their review_by date show as overdue.
+  schedule:
+    - cron: "0 6 * * 1"
 
 permissions:
   contents: read

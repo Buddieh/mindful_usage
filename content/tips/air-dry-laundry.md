@@ -5,10 +5,16 @@ summary: An efficient (A-label) dryer uses about 0.8 kWh per cycle; older dryers
   uses none.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: appliances
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: kwh_per_cycle

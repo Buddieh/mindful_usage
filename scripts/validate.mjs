@@ -14,6 +14,8 @@ const validateTip = schema("tip.schema.json");
 const validateTranslation = schema("translation.schema.json");
 
 const errors = [];
+const warnings = [];
+const today = new Date().toISOString().slice(0, 10);
 const countNocite = (text) => text.split("{nocite}").length - 1;
 const report = (file, v) => v.errors.forEach((e) => errors.push(`${file}: ${e.instancePath || "(root)"} ${e.message}`));
 const tips = loadTips();
@@ -24,6 +26,11 @@ for (const tip of tips) {
   if (!validateTip(d)) report(tip.file, validateTip);
   if (d.id !== tip.id) errors.push(`${tip.file}: id "${d.id}" must match the file name`);
   if (!tip.body) errors.push(`${tip.file}: body is empty`);
+  for (const id of d.pairs_with || []) {
+    if (!ids.has(id) || id === tip.id) errors.push(`${tip.file}: pairs_with "${id}" is not another tip's id`);
+  }
+  // Variable tips must be checked again by review_by; overdue ones are flagged on the site.
+  if (d.stability === "variable" && d.review_by < today) warnings.push(`${tip.file}: review_by ${d.review_by} has passed; check the tip again`);
 
   // Uncited text must be visible: {nocite} markers need a no-citation flag, and neither can be "verified".
   const markers = countNocite(tip.body);
@@ -55,6 +62,7 @@ for (const lang of translationLangs()) {
   }
 }
 
+if (warnings.length) console.warn(`! ${warnings.length} warning(s):\n` + warnings.map((w) => `  - ${w}`).join("\n"));
 if (errors.length) {
   console.error(`✗ ${errors.length} problem(s):\n` + errors.map((e) => `  - ${e}`).join("\n"));
   process.exit(1);

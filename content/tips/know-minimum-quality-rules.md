@@ -8,7 +8,13 @@ audience:
 regions:
 - BE-VLG
 category: rights-rules
-effort: low
+kind: explainer
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: qualitative

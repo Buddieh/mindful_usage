@@ -5,10 +5,17 @@ summary: With a digital meter you can see your electricity and gas use per day a
   in Mijn Fluvius.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: electricity
-effort: low
+kind: service
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: qualitative

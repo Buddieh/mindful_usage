@@ -35,6 +35,26 @@ input[type=search], select { font: inherit; color: var(--text); background: var(
   border-radius: 8px; padding: 8px 10px; width: 100%; }
 input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 .count { color: var(--muted); font-size: .9rem; margin: 12px 0; }
+.more { color: var(--muted); font-size: .9rem; margin: 16px 0 0; }
+
+/* The effort ladder and "who are you": rows of radio buttons styled as steps. */
+.filters fieldset { grid-column: 1 / -1; border: 0; padding: 0; margin: 0; min-width: 0; }
+.filters legend { font-size: .85rem; color: var(--muted); padding: 0; margin-bottom: 6px; }
+.filters legend .hint { font-size: .8rem; }
+.ladder legend { font-weight: 600; color: var(--text); font-size: .95rem; }
+.steps { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters .step { flex: 1 1 auto; flex-direction: row; gap: 0; font-size: .9rem; color: var(--text); }
+.step input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.step span { display: block; width: 100%; text-align: center; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); cursor: pointer; white-space: nowrap; }
+.step small { color: var(--muted); }
+.step input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.step input:checked + span small { color: inherit; }
+.step input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ladder .step b { margin-right: 2px; }
+.ladder legend .hint { font-weight: 400; color: var(--muted); }
+/* Levels below the chosen one are included too, so they stay lit. */
+.ladder .step:has(~ .step input:checked) span { background: var(--accent-soft); border-color: var(--accent-soft); }
 
 .cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; }
@@ -49,6 +69,9 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 .chip.save { background: var(--accent-soft); border-color: transparent; color: var(--accent); font-weight: 600; }
 .chip.warn { background: var(--warn-soft); border-color: transparent; color: var(--warn); }
 .chip.review { background: var(--review-soft); border-color: transparent; color: var(--review); }
+.chip.level { color: var(--text); font-weight: 600; }
+.chip.constant { border-color: var(--accent); color: var(--accent); }
+.chip.variable { border-color: var(--warn); color: var(--warn); }
 .empty { color: var(--muted); }
 
 .back { margin: 0 0 16px; }
@@ -63,6 +86,8 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 .notice { border-radius: var(--radius); padding: 12px 16px; margin: 16px 0; background: var(--accent-soft); }
 .notice p { margin: 4px 0; }
 .notice.review { background: var(--review-soft); }
+.notice.variable { background: var(--warn-soft); }
+.pairs h2 { font-size: 1.15rem; margin-top: 28px; }
 .notice ul { margin: 6px 0 0; padding-left: 20px; }
 .sources h2 { font-size: 1.15rem; margin-top: 28px; }
 .sources ol { padding-left: 20px; }

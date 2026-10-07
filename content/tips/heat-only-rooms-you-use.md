@@ -5,10 +5,16 @@ summary: Turn radiator valves down in bedrooms and unused rooms and keep doors c
   cool rooms.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: heating
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: qualitative

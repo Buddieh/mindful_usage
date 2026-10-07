@@ -5,10 +5,17 @@ summary: Dynamic contracts follow market prices per quarter hour; they can pay o
   appliances when prices are low, but raise risk if you cannot.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: contracts-billing
-effort: medium
+kind: practice
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 1
+time_needed: hours
 upfront_cost: none
 estimated_savings:
   kind: qualitative

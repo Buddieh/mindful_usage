@@ -12,16 +12,38 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | `title`, `summary` | card title and one or two sentence summary |
 | `audience` | tenant, homeowner, landlord, architect, building-professional |
 | `regions` | ISO 3166-2 codes, e.g. `BE-VLG` for Flanders |
-| `category` | heating, hot-water, ventilation-moisture, electricity, appliances, lighting, renewables, contracts-billing, rights-rules, help-subsidies |
-| `effort` | low / medium / high |
-| `upfront_cost` | none (€0), low (<€50), medium (€50–500), high (>€500) |
+| `category` | heating, hot-water, ventilation-moisture, electricity, appliances, lighting, renewables, contracts-billing, rights-rules, help-subsidies, insulation, windows-doors, indoor-air, smart-home-monitoring, building-rules |
+| `kind` | practice (something to do), explainer (a rule explained, e.g. EPB or EPC), service (a pointer to an existing tool or service) |
+| `stage` | living-in, renovating, building-new |
+| `stability` | constant (good practice that barely changes with laws or prices) or variable (depends on rules, premiums, tariffs or a service that can change) |
+| `review_by` | required for variable tips: the date by which the tip must be checked again |
+| `rung` | the effort level, 1 to 5 (see below) |
+| `time_needed` | minutes, hours, days, weeks |
+| `upfront_cost` | none (€0), under-100, 100-2500, 2500-25000, over-25000 (euro) |
 | `estimated_savings` | `kind`, optional `value` + `unit`, the `basis` behind the number, and `confidence` |
 | `responsibility` | tenant, landlord or shared |
 | `needs_landlord_permission` | true/false |
+| `pairs_with` | ids of tips to do together with this one, or first |
 | `region_notes` | rules that only hold in the listed regions |
 | `sources` | at least one; each has title, publisher, exact page url, accessed date, and optionally `locator` (where on the page) and `supports` (which claim it backs) |
 | `verification` | `status` (verified, needs-check, needs-source) and `flags` with open questions |
 | `lang`, `last_reviewed` | language and date of last review |
+
+## The effort ladder
+
+`rung` places a tip on a five-level ladder. The site shows everything up to the level a reader picks, so raising it adds harder options without hiding the easy ones. Set it by hand: cost and time are shown separately, because some things are easy but expensive and others cheap but hard.
+
+| Level | Name | What it takes |
+|---|---|---|
+| 1 | Habit | A change in routine, minutes, nothing to buy |
+| 2 | Quick fix | An afternoon of DIY, usually under €100 |
+| 3 | Upgrade | One product or one technician visit |
+| 4 | Renovation | One building element with a contractor, often with a premium |
+| 5 | Deep renovation | Several elements at once, an architect, EPB rules apply |
+
+## Constant and variable
+
+Mark a tip `variable` when acting on it depends on something that can change: a law or rental rule, a premium, a tariff, a price, or an existing service. Variable tips need a `review_by` date. The site tells readers to check the source before acting, and flags the tip as overdue once that date passes. A `constant` tip still needs a citation like every other tip.
 
 ## Languages
 
