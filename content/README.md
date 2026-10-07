@@ -67,3 +67,7 @@ The site is published in Dutch and English, with an NL | EN switch on every page
 ## Status of the first batch (Flanders, tenants, 2026-10-07)
 
 30 tips in English and Dutch: 23 verified, 7 need checking (search for `needs-check`). Every source page was opened on 2026-10-07 and the cited content confirmed.
+
+## Second batch (Flanders, owners, 2026-10-07)
+
+11 items for owners and people renovating, at levels 1 to 5: roof and attic floor, cavity walls, glazing, ventilation, a CO2 meter, heat-pump readiness, the Zonnekaart, EPB when renovating, the renovation obligation after buying, the Woningpas, and free renovation coaching. Every source page was opened on 2026-10-07. Cost bands are editorial estimates, like the levels.
