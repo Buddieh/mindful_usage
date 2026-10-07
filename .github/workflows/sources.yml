@@ -1,0 +1,57 @@
+name: Check variable tips
+
+# Monthly upkeep: re-open the sources of every variable tip, flag pages whose text changed since
+# last month, and list tips due for review. Fingerprints are kept on the source-snapshots branch.
+
+on:
+  schedule:
+    - cron: "0 6 2 * *" # 06:00 UTC on the 2nd of every month (the link check runs on the 1st)
+  workflow_dispatch:
+
+permissions:
+  contents: write # push fingerprints to the source-snapshots branch
+  issues: write
+
+concurrency:
+  group: source-check
+
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Get last month's fingerprints
+        run: |
+          if git fetch --depth 1 origin source-snapshots; then
+            git show FETCH_HEAD:sources.json > "$RUNNER_TEMP/sources.json"
+          fi
+      - name: Re-open the sources of variable tips
+        run: node scripts/check-sources.mjs "$RUNNER_TEMP/sources.json" "$RUNNER_TEMP/report.md"
+      - name: Save this month's fingerprints
+        run: |
+          dir="$RUNNER_TEMP/snapshots"
+          git worktree add --detach "$dir"
+          cd "$dir"
+          git checkout --orphan source-snapshots-new
+          git rm -rfq .
+          cp "$RUNNER_TEMP/sources.json" sources.json
+          git add sources.json
+          git -c user.name="github-actions[bot]" -c user.email="41898099+github-actions[bot]@users.noreply.github.com" \
+            commit -qm "Source fingerprints for $(date -u +%F)"
+          git push -f origin HEAD:source-snapshots
+      - name: Open an issue for this month's upkeep
+        id: attention
+        run: |
+          if head -1 "$RUNNER_TEMP/report.md" | grep -q "need attention"; then echo "open=true" >> "$GITHUB_OUTPUT"; fi
+          echo "title=Upkeep for variable tips, $(date -u +'%B %Y')" >> "$GITHUB_OUTPUT"
+      - if: steps.attention.outputs.open == 'true'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: ${{ steps.attention.outputs.title }}
+          content-filepath: ${{ runner.temp }}/report.md
+          labels: upkeep

@@ -13,7 +13,7 @@ stage:
 - renovating
 - building-new
 stability: variable
-review_by: '2027-01-31'
+review_by: '2027-02-28'
 rung: 5
 time_needed: weeks
 upfront_cost: over-25000

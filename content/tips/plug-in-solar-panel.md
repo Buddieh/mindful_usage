@@ -12,7 +12,7 @@ kind: practice
 stage:
 - living-in
 stability: variable
-review_by: '2027-01-31'
+review_by: '2027-04-30'
 rung: 3
 time_needed: hours
 upfront_cost: 100-2500
