@@ -33,7 +33,7 @@ sources:
 - title: Wie kan Mijn VerbouwPremie aanvragen?
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wie-kan-mijn-verbouwpremie-aanvragen
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wie-in-aanmerking-komt-voor-mijn-verbouwpremie
   accessed: '2026-10-07'
   locator: target group 'Investeerder in eengezinswoning/appartement' and the FAQ on a partner or housemate who
     is not the owner

@@ -42,7 +42,7 @@ sources:
 - title: Energiehuizen
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/energiehuizen
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-energiehuis
   accessed: '2026-10-07'
   locator: section 'Waarvoor kunt u terecht in een energiehuis?'
   supports: renovation advice, free for most households, a small fee may apply for higher incomes
