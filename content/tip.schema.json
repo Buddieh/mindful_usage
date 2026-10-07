@@ -187,10 +187,11 @@
     "responsibility": {
       "enum": [
         "tenant",
+        "owner",
         "landlord",
         "shared"
       ],
-      "description": "Who normally acts or pays."
+      "description": "Who normally acts or pays: the tenant, an owner living in the home, the landlord, or tenant and landlord together."
     },
     "needs_landlord_permission": {
       "type": "boolean"
