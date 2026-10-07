@@ -75,3 +75,7 @@ The site is published in Dutch and English, with an NL | EN switch on every page
 ## Third batch (Flanders, owners, 2026-10-07)
 
 10 more items for owners, at levels 1 to 4: a heat-pump boiler, a solar water heater, pipe and pump insulation, radiator valves and a room thermostat, the EPC label explained, floor insulation, outer-wall insulation (outside versus inside), airtightness, Mijn VerbouwPremie for owners and Mijn VerbouwLening. Every source page was opened on 2026-10-07. The premium and loan items name no amounts or rates; they point to the official simulators.
+
+## Fourth batch (Flanders, 2026-10-07)
+
+7 items: renovating in the right order, heat pump types, summer comfort without airco, damp and mould, burning wood cleanly, asbestos before renovating, and home batteries. Damp and wood burning are for tenants too. Sealing an unused chimney was left out because no official source covers it. Every source page was opened on 2026-10-07.
