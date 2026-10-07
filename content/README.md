@@ -83,3 +83,7 @@ The site is published in Dutch and English, with an NL | EN switch on every page
 ## Fifth batch (Flanders, 2026-10-07)
 
 5 items: deciding on new heating before the boiler breaks, heat networks, minimum energy rules for landlords, RESCert-certified installers, and cooking on gas. The cooking item is for tenants too. Draughts at the front door, letterbox and attic hatch were left out because no official Flemish source covers them. Every source page was opened on 2026-10-07.
+
+## Apartments (phase 2, Flanders, 2026-10-07)
+
+6 items for apartment buildings: how the association of co-owners decides on energy works, free renovation coaching for a VME, the EPC for common parts, Mijn VerbouwPremie for apartment buildings, bills with collective heating, and sharing solar power within the building. Items tagged `apartment` appear under "I live in an apartment" in the "Who are you?" filter; three existing items that also apply to apartments got the tag. No official source says when one owner may replace windows or change the facade without the VME, so that is left out. Every source page was opened on 2026-10-07.
