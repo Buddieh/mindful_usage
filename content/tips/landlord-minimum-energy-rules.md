@@ -24,6 +24,7 @@ estimated_savings:
 responsibility: owner
 needs_landlord_permission: false
 tags:
+- apartment
 - landlord
 - epc
 - rental

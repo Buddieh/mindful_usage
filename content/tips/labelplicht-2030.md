@@ -23,6 +23,7 @@ estimated_savings:
 responsibility: landlord
 needs_landlord_permission: false
 tags:
+- apartment
 - epc
 - landlord-tenant
 - renovation

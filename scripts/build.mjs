@@ -70,6 +70,7 @@ const WHO = {
   rent: (d) => d.audience.includes("tenant"),
   own: (d) => d.audience.includes("homeowner") || d.audience.includes("landlord"),
   build: (d) => d.stage.includes("renovating") || d.stage.includes("building-new"),
+  flat: (d) => d.tags.includes("apartment"),
 };
 const TODAY = new Date().toISOString().slice(0, 10);
 const isOverdue = (d) => d.stability === "variable" && d.review_by < TODAY;
