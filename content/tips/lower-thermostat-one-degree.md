@@ -35,6 +35,6 @@ lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Set the living area to 18–19 °C during the day instead of 20–21 °C. Most people adapt to one degree less within a few days, especially with a jumper or a throw on the sofa.
+Set the living area to 18–19 °C during the day instead of 20–21 °C. A jumper or a throw on the sofa makes the difference easier to bear.
 
-If your heating has no room thermostat, ask your landlord whether one can be added; it is one of the cheapest upgrades with a fast payback.
+If your heating has no room thermostat, ask your landlord whether one can be added.

@@ -13,6 +13,6 @@ supports:
 - twee keer per dag verluchten; in de winter kort verluchten
 ---
 
-Koude, slecht verluchte kamers (onder ongeveer 10 °C) zijn gevoelig voor condensatie en schimmel, wat op het einde van een huurcontract ook tot discussies over schade kan leiden. Houd verluchtingsroosters open en gebruik de dampkap en de badkamerventilator bij koken en douchen.
+Koude, slecht verluchte kamers (onder ongeveer 10 °C) zijn gevoelig voor condensatie en schimmel. Houd verluchtingsroosters open en gebruik de dampkap en de badkamerventilator bij koken en douchen.
 
 Heeft de woning geen ventilatiesysteem, zet de ramen dan twee keer per dag wijd open. Draai in de winter de verwarming lager terwijl je verlucht en houd het kort (niet langer dan ongeveer 15 minuten), zodat de muren niet afkoelen.

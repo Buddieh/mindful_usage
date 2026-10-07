@@ -31,8 +31,7 @@ sources:
   supports: 0.8 kWh vs 2–4 kWh per cycle; ~160 cycles/year
 verification:
   status: verified
-  flags:
-  - Indoor drying adds humidity; pair with the ventilation tip.
+  flags: []
 lang: en
 last_reviewed: '2026-10-07'
 ---

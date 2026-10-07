@@ -38,8 +38,9 @@ sources:
 verification:
   status: verified
   flags:
-  - Per-kW prices come from a commercial site (Callmepower); check against current Fluvius/VREG tariff
-    sheets each year.
+  - type: secondary-source
+    note: Per-kW prices come from a commercial site (Callmepower); check against current Fluvius/VREG
+      tariff sheets each year.
 lang: en
 last_reviewed: '2026-10-07'
 ---

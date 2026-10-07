@@ -33,7 +33,7 @@ The site is published in Dutch and English, with an NL | EN switch on every page
 - Write the essence in your own words. Don't copy text or tables of figures from the source; readers who want the detail follow the link.
 - Link to the exact page, not a home page.
 - Prefer primary sources (vlaanderen.be, VREG, Fluvius, VEKA, FOD Economie). Set `type` on each source (official, consumer-organisation, commercial, media, other) so readers can see what kind of source it is.
-- Advice that is our own reasoning rather than the source's gets a flag and `status: needs-check`.
+- Anything not backed by a cited source (our own advice or reasoning) gets `{nocite}` right after the sentence, in every language, plus a `no-citation` flag explaining it. The site shows those sentences with a "No citation" label, and the build refuses to mark such a tip as verified.
 - Figures that change yearly (tariffs, income limits, premiums) get a flag reminding reviewers to recheck them.
 - Region-specific rules go in `region_notes`, and `regions` must list only regions where the tip holds.
 

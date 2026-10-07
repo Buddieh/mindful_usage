@@ -59,6 +59,15 @@ ${body}
 `;
 }
 
+const hasNoCitation = (d) => d.verification.flags.some((f) => f.type === "no-citation");
+
+// "{nocite}" after a sentence in a tip body marks it as not backed by any cited source.
+const NOCITE = "{nocite}";
+function renderBody(md) {
+  const badge = `<span class="nocite-tag" title="${esc(t("nocite.title"))}">${esc(t("nocite.inline"))}</span>`;
+  return marked.parse(md).split(NOCITE).join(badge);
+}
+
 function chips(d) {
   const out = [
     `<span class="chip cat">${esc(label("category", d.category))}</span>`,
@@ -68,7 +77,8 @@ function chips(d) {
   const s = savingsText(d.estimated_savings);
   if (s) out.push(`<span class="chip save">${esc(s)}</span>`);
   if (d.needs_landlord_permission) out.push(`<span class="chip warn">${esc(t("chip.landlord"))}</span>`);
-  if (d.verification.status !== "verified") out.push(`<span class="chip review">${esc(t("chip.review"))}</span>`);
+  if (hasNoCitation(d)) out.push(`<span class="chip nocite">${esc(t("chip.nocite"))}</span>`);
+  else if (d.verification.status !== "verified") out.push(`<span class="chip review">${esc(t("chip.review"))}</span>`);
   return out.join("");
 }
 
@@ -76,7 +86,7 @@ function card(tip) {
   const d = tip.data;
   const l = localize(tip, LANG);
   const haystack = [l.title, l.summary, ...(d.tags || []), label("category", d.category)].join(" ").toLowerCase();
-  return `<li class="card" data-category="${esc(d.category)}" data-effort="${esc(d.effort)}" data-cost="${esc(d.upfront_cost)}" data-landlord="${d.needs_landlord_permission}" data-text="${esc(haystack)}">
+  return `<li class="card" data-category="${esc(d.category)}" data-effort="${esc(d.effort)}" data-cost="${esc(d.upfront_cost)}" data-landlord="${d.needs_landlord_permission}" data-cited="${d.verification.status === "verified"}" data-text="${esc(haystack)}">
   <a href="tips/${esc(tip.id)}/"><h2>${esc(l.title)}</h2></a>
   <p>${esc(l.summary)}</p>
   <div class="chips">${chips(d)}</div>
@@ -105,6 +115,7 @@ function indexPage(tips) {
   <label><span>${esc(t("field.cost"))}</span>
     <select id="cost"><option value="">${esc(t("filter.all"))}</option>${options("cost", ["none", "low", "medium", "high"])}</select></label>
   <label class="check"><input type="checkbox" id="nolandlord"> ${esc(t("filter.noLandlord"))}</label>
+  <label class="check"><input type="checkbox" id="cited"> ${esc(t("filter.cited"))}</label>
 </form>
 <p class="count" id="count" aria-live="polite">${tips.length} ${esc(t("index.tips"))}</p>
 <ul class="cards" id="cards">
@@ -127,9 +138,15 @@ function tipPage(tip) {
     [t("field.landlord"), d.needs_landlord_permission ? t("yes") : t("no")],
   ].map(([k, v]) => `<tr><th scope="row">${esc(k)}</th><td>${v.includes("<") ? v : esc(v)}</td></tr>`).join("");
 
+  // Open points, uncited ones first, each labelled with its kind.
+  const order = { "no-citation": 0, "secondary-source": 1, "to-verify": 2 };
+  const points = d.verification.flags.map((f, i) => ({ type: f.type, note: l.flags[i] }))
+    .sort((a, b) => order[a.type] - order[b.type]);
+  const uncited = hasNoCitation(d);
   const review = d.verification.status !== "verified"
-    ? `<aside class="notice review"><strong>${esc(t("tip.reviewHeading"))}</strong><p>${esc(t("tip.reviewText"))}</p>
-       <ul>${l.flags.map((f) => `<li>${esc(f)}</li>`).join("")}</ul></aside>`
+    ? `<aside class="notice ${uncited ? "nocite" : "review"}"><strong>${esc(t(uncited ? "tip.nociteHeading" : "tip.reviewHeading"))}</strong>
+       <p>${esc(t(uncited ? "tip.nociteText" : "tip.reviewText"))}</p>
+       <ul class="points">${points.map((p) => `<li><span class="flag ${p.type}">${esc(label("flag", p.type))}</span> ${esc(p.note)}</li>`).join("")}</ul></aside>`
     : "";
 
   const regionNotes = l.region_notes
@@ -154,7 +171,7 @@ function tipPage(tip) {
   <div class="chips">${chips(d)}</div>
   ${review}
   <table class="facts"><tbody>${facts}</tbody></table>
-  <div class="prose">${marked.parse(l.body)}</div>
+  <div class="prose">${renderBody(l.body)}</div>
   ${regionNotes}
   <section class="sources">
     <h2>${esc(t("tip.sources"))}</h2>

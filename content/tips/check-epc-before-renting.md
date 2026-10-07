@@ -39,4 +39,4 @@ lang: en
 last_reviewed: '2026-10-07'
 ---
 
-The EPC (energieprestatiecertificaat) shows how energy-efficient the home is and lists recommended improvements. A label E or F home will cost far more to heat than a B or C home of the same size. EPCs issued before 2019 are no longer valid. Landlords without an EPC risk a fine of €500 to €5,000 from VEKA.
+The EPC (energieprestatiecertificaat) shows how energy-efficient the home is and lists recommended improvements. EPCs issued before 2019 are no longer valid. Landlords without an EPC risk a fine of €500 to €5,000 from VEKA.

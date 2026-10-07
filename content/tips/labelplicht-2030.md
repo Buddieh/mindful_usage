@@ -35,13 +35,17 @@ sources:
 verification:
   status: needs-check
   flags:
-  - KBC states that from 2028 landlords of label E or F homes may not index the rent; confirm with a primary
-    source before adding this.
-  - Check whether label thresholds apply per building type exactly as stated, especially for apartments.
+  - type: secondary-source
+    note: KBC states that from 2028 landlords of label E or F homes may not index the rent; confirm with
+      a primary source before adding this.
+  - type: to-verify
+    note: Check whether label thresholds apply per building type exactly as stated, especially for apartments.
+  - type: no-citation
+    note: Raising it at lease renewal is our own suggestion, not from a cited source.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
 Homes that fail the label requirement after 1 January 2030 count as unfit and may no longer be rented out. Requirements tighten to label C for terraced homes and apartments from 2035, and for detached and semi-detached homes by 2040.
 
-If your home has a poor label, your landlord has a strong reason to renovate in the coming years. A well-timed, constructive conversation (for example at lease renewal) can help.
+If your home has a poor label, your landlord has a strong reason to renovate in the coming years. A well-timed, constructive conversation (for example at lease renewal) can help. {nocite}

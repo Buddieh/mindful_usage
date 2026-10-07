@@ -33,8 +33,9 @@ sources:
 verification:
   status: verified
   flags:
-  - The 1% figure is an average; individual homes with large gaps can save more. Consider adding a second
-    source.
+  - type: to-verify
+    note: The 1% figure is an average; individual homes with large gaps can save more. Consider adding
+      a second source.
 lang: en
 last_reviewed: '2026-10-07'
 ---

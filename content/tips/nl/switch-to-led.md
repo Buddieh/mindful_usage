@@ -9,4 +9,4 @@ supports:
 - 35 kWh per lamp per jaar
 ---
 
-Begin met de lampen die het langst branden (woonkamer, keuken, gang). Je ledlampen mag je meenemen als je verhuist; ze gaan jaren mee.
+Begin met de lampen die het langst branden (woonkamer, keuken, gang). Je ledlampen zijn van jou, dus neem ze mee als je verhuist.

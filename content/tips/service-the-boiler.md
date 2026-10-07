@@ -40,9 +40,12 @@ sources:
 verification:
   status: needs-check
   flags:
-  - Responsibility and frequency come from a commercial site (Callmepower); confirm against the Vlaams
-    Woninghuurdecreet and the Vlaams Reglement Energie (VLAREL/Energiebesluit) before publishing.
-  - The source is internally inconsistent about whether oil boilers below 20 kW must be serviced yearly.
+  - type: secondary-source
+    note: Responsibility and frequency come from a commercial site (Callmepower); confirm against the
+      Vlaams Woninghuurdecreet and the Vlaams Reglement Energie (VLAREL/Energiebesluit) before publishing.
+  - type: to-verify
+    note: The source is internally inconsistent about whether oil boilers below 20 kW must be serviced
+      yearly.
 lang: en
 last_reviewed: '2026-10-07'
 ---

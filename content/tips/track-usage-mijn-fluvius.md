@@ -30,7 +30,8 @@ sources:
 verification:
   status: verified
   flags:
-  - Check whether the user port must still be activated via Mijn Fluvius before a dongle works.
+  - type: to-verify
+    note: Check whether the user port must still be activated via Mijn Fluvius before a dongle works.
 lang: en
 last_reviewed: '2026-10-07'
 ---

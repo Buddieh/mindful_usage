@@ -10,4 +10,4 @@ supports:
 - EPC's van vóór 2019 niet meer geldig
 ---
 
-Het EPC (energieprestatiecertificaat) toont hoe energiezuinig de woning is en welke verbeteringen aanbevolen zijn. Een woning met label E of F kost veel meer om te verwarmen dan een even grote woning met label B of C. EPC's van vóór 2019 zijn niet meer geldig. Een verhuurder zonder EPC riskeert een boete van €500 tot €5.000 van het VEKA.
+Het EPC (energieprestatiecertificaat) toont hoe energiezuinig de woning is en welke verbeteringen aanbevolen zijn. EPC's van vóór 2019 zijn niet meer geldig. Een verhuurder zonder EPC riskeert een boete van €500 tot €5.000 van het VEKA.

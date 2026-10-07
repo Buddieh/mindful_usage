@@ -36,11 +36,15 @@ sources:
 verification:
   status: needs-check
   flags:
-  - Which income category a tenant falls into after the 1 March 2026 reform is unclear from the sources;
-    verify on the Dutch 'Wie kan Mijn VerbouwPremie aanvragen' page.
-  - English page may lag behind the Dutch page.
+  - type: to-verify
+    note: Which income category a tenant falls into after the 1 March 2026 reform is unclear from the
+      sources; verify on the Dutch 'Wie kan Mijn VerbouwPremie aanvragen' page.
+  - type: to-verify
+    note: English page may lag behind the Dutch page.
+  - type: no-citation
+    note: That you need the landlord's written agreement is our inference; the cited pages don't say so.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-This is rare in practice, because these works are major and change the landlord's property, so you need the landlord's written agreement first. Since 1 March 2026 the premium was cut back sharply for higher income categories (only heat pumps remain for some groups), so check the simulator on vlaanderen.be before you plan anything.
+This is rare in practice, because these works are major and change the landlord's property, so you need the landlord's written agreement first. {nocite} Since 1 March 2026 the premium was cut back sharply for higher income categories (only heat pumps remain for some groups), so check the simulator on vlaanderen.be before you plan anything.

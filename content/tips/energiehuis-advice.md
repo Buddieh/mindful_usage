@@ -28,7 +28,8 @@ sources:
 verification:
   status: needs-check
   flags:
-  - Source does not explicitly confirm tenants are eligible for all services; confirm with an Energiehuis.
+  - type: to-verify
+    note: Source does not explicitly confirm tenants are eligible for all services; confirm with an Energiehuis.
 lang: en
 last_reviewed: '2026-10-07'
 ---

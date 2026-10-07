@@ -29,14 +29,17 @@ sources:
   accessed: '2026-10-07'
   supports: date, 800 W limit, registration, safety, permit rules
 verification:
-  status: verified
+  status: needs-check
   flags:
-  - '''Ask your landlord'' is our recommendation; the source does not address landlord permission.'
-  - Add a source with realistic yearly yield for a Flemish balcony panel.
+  - type: no-citation
+    note: Asking your landlord and checking your insurance is our own advice; the source does not cover
+      landlord permission.
+  - type: to-verify
+    note: Add a source with realistic yearly yield for a Flemish balcony panel.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
 Rules from the Flemish government: keep the inverter below 800 W, use an inverter on the Synergrid approved list, plug directly into a wall socket (no extension cord or power strip) on a circuit without other heavy appliances, and mount the panel securely. With a digital meter and under 800 W you don't need to register; Fluvius detects it. With an analogue meter, register with Fluvius within 30 days. No permit is needed for balconies or façades, except on protected heritage.
 
-Ask your landlord before fixing anything to the façade or balcony, and check your home insurance. The panel is yours and moves with you.
+Ask your landlord before fixing anything to the façade or balcony, and check your home insurance. {nocite} The panel is yours and moves with you.

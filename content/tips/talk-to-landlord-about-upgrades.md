@@ -38,11 +38,12 @@ sources:
 verification:
   status: needs-check
   flags:
-  - Advice-only tip; consider adding a template letter in Dutch.
+  - type: no-citation
+    note: The list of upgrades to ask for first is our own suggestion, not taken from a cited source.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Point to the EPC's own recommendations, the upcoming label requirements, and the subsidies your landlord can use. Simple, cheap items to ask for first: a programmable room thermostat, thermostatic radiator valves, pipe insulation in unheated spaces, and attic insulation.
+Point to the EPC's own recommendations, the upcoming label requirements, and the subsidies your landlord can use. Simple, cheap items to ask for first: a programmable room thermostat, thermostatic radiator valves, pipe insulation in unheated spaces, and attic insulation. {nocite}
 
 Your local Energiehuis can advise both of you for free.

@@ -37,11 +37,12 @@ sources:
 verification:
   status: verified
   flags:
-  - Brussels source; the advice is not region-specific.
+  - type: to-verify
+    note: Brussels source; the advice is not region-specific.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Cold, poorly ventilated rooms (below about 10 °C) are prone to condensation and mould, which can also lead to disputes about damage at the end of a lease. Keep ventilation grilles open and use the extractor fan when cooking and showering.
+Cold, poorly ventilated rooms (below about 10 °C) are prone to condensation and mould. Keep ventilation grilles open and use the extractor fan when cooking and showering.
 
 If the home has no ventilation system, open the windows wide twice a day. In winter, turn the heating down while you air the room and keep it short (no more than about 15 minutes), so the walls don't cool down.

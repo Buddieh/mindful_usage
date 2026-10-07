@@ -221,14 +221,32 @@
             "needs-check",
             "needs-source"
           ],
-          "description": "verified: every claim and figure is backed by a cited source; needs-check: a claim is uncertain, recently changed, or only backed by a secondary source; needs-source: a claim still lacks an adequate source."
+          "description": "verified: every claim is backed by a cited source; needs-check: at least one open point. A tip with any {nocite} marker or no-citation flag can't be 'verified'."
         },
         "flags": {
           "type": "array",
+          "description": "Open points for readers and reviewers. Shown on the tip page while status is not 'verified'.",
           "items": {
-            "type": "string"
-          },
-          "description": "Open questions for reviewers."
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "note"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "no-citation",
+                  "secondary-source",
+                  "to-verify"
+                ],
+                "description": "no-citation: part of the tip is not backed by any cited source (mark those sentences with {nocite} in the body); secondary-source: backed only by a commercial or media source; to-verify: something to double-check (dates, yearly figures, eligibility)."
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },

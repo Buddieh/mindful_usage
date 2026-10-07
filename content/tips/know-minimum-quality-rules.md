@@ -34,13 +34,15 @@ sources:
 verification:
   status: needs-check
   flags:
-  - Verify the tenant's route to request an inspection (gemeente / Wonen in Vlaanderen) and add a primary
-    source.
-  - Minimum roof insulation R-value is low (0.75 m²K/W); do not imply this equals a well-insulated roof.
+  - type: no-citation
+    note: Contacting the municipality's housing service is not yet backed by a cited source.
+  - type: to-verify
+    note: Minimum roof insulation R-value is low (0.75 m²K/W); do not imply this equals a well-insulated
+      roof.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
 Missing roof insulation or single glazing in living spaces counts as a defect under the Flemish housing quality rules. Defects in several rooms can make a home unfit (ongeschikt), in which case it cannot get a conformity certificate (conformiteitsattest) and may not be rented out until fixed.
 
-If your home doesn't meet these rules, raise it with your landlord in writing first. You can also contact your municipality's housing service about a quality inspection.
+If your home doesn't meet these rules, raise it with your landlord in writing first. You can also contact your municipality's housing service about a quality inspection. {nocite}

@@ -31,14 +31,15 @@ sources:
   locator: under 'Grootste besparingskansen' > 'Laat de ketel beter renderen'
   supports: eco mode 1%, return temperature 6%
 verification:
-  status: verified
+  status: needs-check
   flags:
-  - Whether a tenant may change boiler settings depends on the lease; we mark this as needing landlord
-    agreement to be safe.
+  - type: no-citation
+    note: Whether a tenant may change boiler settings is not covered by the cited source; we mark it as
+      needing the landlord's agreement to be safe.
 lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Condensing boilers are only efficient when the water returning from the radiators is cool enough. Many are set far too hot. Ask the technician at the next service, or your landlord, whether the flow temperature can be reduced (for example to 50–55 °C) while keeping the home comfortable.
+Condensing boilers are only efficient when the water returning from the radiators is cool enough. Ask the technician at the next service, or your landlord, whether the flow temperature can be reduced (for example to 50–55 °C) while keeping the home comfortable.
 
 On a combi boiler, switching on the eco setting for hot water is something you can usually do yourself.

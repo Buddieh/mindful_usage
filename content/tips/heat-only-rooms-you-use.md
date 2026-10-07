@@ -37,7 +37,8 @@ sources:
 verification:
   status: verified
   flags:
-  - Valve settings differ slightly by brand; the values are approximate.
+  - type: to-verify
+    note: Valve settings differ slightly by brand; the values are approximate.
 lang: en
 last_reviewed: '2026-10-07'
 ---

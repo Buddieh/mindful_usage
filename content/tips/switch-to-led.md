@@ -36,4 +36,4 @@ lang: en
 last_reviewed: '2026-10-07'
 ---
 
-Start with the lamps that burn longest (living room, kitchen, hallway). Take your LEDs with you when you move if you want; they last many years.
+Start with the lamps that burn longest (living room, kitchen, hallway). Your LEDs are yours, so take them with you when you move.

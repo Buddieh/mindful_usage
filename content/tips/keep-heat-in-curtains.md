@@ -33,7 +33,8 @@ sources:
 verification:
   status: verified
   flags:
-  - Brussels source; the advice is not region-specific.
+  - type: to-verify
+    note: Brussels source; the advice is not region-specific.
 lang: en
 last_reviewed: '2026-10-07'
 ---

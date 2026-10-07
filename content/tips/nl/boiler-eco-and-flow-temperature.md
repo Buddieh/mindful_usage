@@ -7,12 +7,12 @@ summary: De eco-stand voor warm water bespaart ongeveer 1%; de retourtemperatuur
 savings_basis: Retourtemperatuur 60 °C → 40 °C bij een condensatieketel; eco-stand op een combiketel ongeveer
   1% (cijfers Vlaamse overheid).
 flags:
-- Of een huurder de ketelinstellingen mag wijzigen, hangt af van het huurcontract; voor de zekerheid vermelden
+- Of een huurder de ketelinstellingen mag wijzigen, staat niet in de bron; voor de zekerheid vermelden
   we dat de verhuurder akkoord moet gaan.
 supports:
 - eco-stand 1%, retourtemperatuur 6%
 ---
 
-Een condensatieketel werkt pas echt zuinig als het water dat terugkomt van de radiatoren koel genoeg is. Veel ketels staan veel te warm ingesteld. Vraag bij het volgende onderhoud aan de technieker, of aan je verhuurder, of de aanvoertemperatuur omlaag kan (bijvoorbeeld naar 50–55 °C) zonder dat het huis te koud wordt.
+Een condensatieketel werkt pas echt zuinig als het water dat terugkomt van de radiatoren koel genoeg is. Vraag bij het volgende onderhoud aan de technieker, of aan je verhuurder, of de aanvoertemperatuur omlaag kan (bijvoorbeeld naar 50–55 °C) zonder dat het huis te koud wordt.
 
 Bij een combiketel kan je de eco-stand voor warm water meestal zelf inschakelen.

@@ -15,6 +15,7 @@
   var effort = document.getElementById("effort");
   var cost = document.getElementById("cost");
   var nolandlord = document.getElementById("nolandlord");
+  var cited = document.getElementById("cited");
   var count = document.getElementById("count");
   var empty = document.getElementById("empty");
   var unit = count.textContent.replace(/^\d+\s*/, "");
@@ -28,6 +29,7 @@
         (!effort.value || c.dataset.effort === effort.value) &&
         (!cost.value || c.dataset.cost === cost.value) &&
         (!nolandlord.checked || c.dataset.landlord === "false") &&
+        (!cited.checked || c.dataset.cited === "true") &&
         words.every(function (w) { return c.dataset.text.indexOf(w) !== -1; });
       c.hidden = !ok;
       if (ok) shown++;
@@ -36,7 +38,7 @@
     empty.hidden = shown !== 0;
   }
 
-  [q, category, effort, cost, nolandlord].forEach(function (el) {
+  [q, category, effort, cost, nolandlord, cited].forEach(function (el) {
     el.addEventListener("input", apply);
     el.addEventListener("change", apply);
   });

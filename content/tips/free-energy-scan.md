@@ -30,7 +30,8 @@ sources:
 verification:
   status: verified
   flags:
-  - Income limits are indexed yearly; recheck each January.
+  - type: to-verify
+    note: Income limits are indexed yearly; recheck each January.
 lang: en
 last_reviewed: '2026-10-07'
 ---

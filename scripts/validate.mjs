@@ -14,6 +14,7 @@ const validateTip = schema("tip.schema.json");
 const validateTranslation = schema("translation.schema.json");
 
 const errors = [];
+const countNocite = (text) => text.split("{nocite}").length - 1;
 const report = (file, v) => v.errors.forEach((e) => errors.push(`${file}: ${e.instancePath || "(root)"} ${e.message}`));
 const tips = loadTips();
 const ids = new Set(tips.map((t) => t.id));
@@ -23,6 +24,12 @@ for (const tip of tips) {
   if (!validateTip(d)) report(tip.file, validateTip);
   if (d.id !== tip.id) errors.push(`${tip.file}: id "${d.id}" must match the file name`);
   if (!tip.body) errors.push(`${tip.file}: body is empty`);
+
+  // Uncited text must be visible: {nocite} markers need a no-citation flag, and neither can be "verified".
+  const markers = countNocite(tip.body);
+  const noCitationFlag = d.verification.flags.some((f) => f.type === "no-citation");
+  if (markers && !noCitationFlag) errors.push(`${tip.file}: has {nocite} markers but no "no-citation" flag explaining them`);
+  if ((markers || noCitationFlag) && d.verification.status === "verified") errors.push(`${tip.file}: has uncited content, so status can't be "verified"`);
 
   // Every site language needs the tip's text, either in the main file or a translation.
   for (const lang of LANGUAGES) {
@@ -34,6 +41,7 @@ for (const tip of tips) {
     if (t.id !== tip.id) errors.push(`${tr.file}: id must be "${tip.id}"`);
     if (t.lang !== lang) errors.push(`${tr.file}: lang must be "${lang}"`);
     if (!tr.body) errors.push(`${tr.file}: body is empty`);
+    if (countNocite(tr.body) !== markers) errors.push(`${tr.file}: needs the same number of {nocite} markers as the main file (${markers})`);
     if (d.region_notes && !t.region_notes) errors.push(`${tr.file}: region_notes missing`);
     if ((t.flags || []).length !== d.verification.flags.length) errors.push(`${tr.file}: flags must match the main file (${d.verification.flags.length})`);
     if (t.supports && t.supports.length !== d.sources.length) errors.push(`${tr.file}: supports must have one entry per source (${d.sources.length})`);
