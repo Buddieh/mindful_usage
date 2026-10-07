@@ -79,3 +79,7 @@ The site is published in Dutch and English, with an NL | EN switch on every page
 ## Fourth batch (Flanders, 2026-10-07)
 
 7 items: renovating in the right order, heat pump types, summer comfort without airco, damp and mould, burning wood cleanly, asbestos before renovating, and home batteries. Damp and wood burning are for tenants too. Sealing an unused chimney was left out because no official source covers it. Every source page was opened on 2026-10-07.
+
+## Fifth batch (Flanders, 2026-10-07)
+
+5 items: deciding on new heating before the boiler breaks, heat networks, minimum energy rules for landlords, RESCert-certified installers, and cooking on gas. The cooking item is for tenants too. Draughts at the front door, letterbox and attic hatch were left out because no official Flemish source covers them. Every source page was opened on 2026-10-07.
