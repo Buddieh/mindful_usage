@@ -8,8 +8,14 @@ audience:
 regions:
 - BE-VLG
 category: help-subsidies
-effort: high
-upfront_cost: high
+kind: service
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 4
+time_needed: weeks
+upfront_cost: 2500-25000
 estimated_savings:
   kind: qualitative
   basis: Premium amount depends on income category and type of work.
@@ -20,6 +26,9 @@ tags:
 - subsidy
 - renovation
 - landlord-tenant
+pairs_with:
+- talk-to-landlord-about-upgrades
+- energiehuis-advice
 sources:
 - title: Who can apply for Mijn VerbouwPremie
   publisher: Vlaamse overheid (vlaanderen.be)

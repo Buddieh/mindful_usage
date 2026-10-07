@@ -8,7 +8,13 @@ audience:
 regions:
 - BE-VLG
 category: help-subsidies
-effort: low
+kind: service
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 1
+time_needed: hours
 upfront_cost: none
 estimated_savings:
   kind: qualitative

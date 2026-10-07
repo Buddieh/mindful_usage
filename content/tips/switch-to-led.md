@@ -5,11 +5,17 @@ summary: Each old bulb replaced by an LED saves about 35 kWh a year, close to 1%
   bill.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: lighting
-effort: low
-upfront_cost: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 2
+time_needed: minutes
+upfront_cost: under-100
 estimated_savings:
   kind: kwh_per_year
   value: 35

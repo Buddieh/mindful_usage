@@ -7,7 +7,12 @@ audience:
 regions:
 - BE-VLG
 category: heating
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: percent_heating

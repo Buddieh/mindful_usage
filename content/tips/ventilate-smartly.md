@@ -5,10 +5,16 @@ summary: Keep ventilation grilles open and air rooms in short bursts with the he
   avoid both mould and wasted heat.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: ventilation-moisture
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: qualitative
@@ -19,6 +25,8 @@ needs_landlord_permission: false
 tags:
 - mould
 - comfort
+pairs_with:
+- draught-strips
 sources:
 - title: Besparen op uw energieverbruik
   publisher: Vlaamse overheid (vlaanderen.be)

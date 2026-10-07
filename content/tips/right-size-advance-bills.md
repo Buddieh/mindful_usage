@@ -5,10 +5,16 @@ summary: Advance payments (voorschotfacturen) are estimates; you can ask your su
   your real consumption, or switch to a monthly settlement if you have a digital meter.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: contracts-billing
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: qualitative

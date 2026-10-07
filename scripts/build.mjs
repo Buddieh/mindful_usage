@@ -61,6 +61,20 @@ ${body}
 
 const hasNoCitation = (d) => d.verification.flags.some((f) => f.type === "no-citation");
 
+// Cost bands from cheapest to dearest; the budget filter shows everything up to the chosen band.
+const COSTS = ["none", "under-100", "100-2500", "2500-25000", "over-25000"];
+const RUNGS = [1, 2, 3, 4, 5];
+const DEFAULT_RUNG = 2;
+// "Who are you?" options and the tips each one shows.
+const WHO = {
+  rent: (d) => d.audience.includes("tenant"),
+  own: (d) => d.audience.includes("homeowner") || d.audience.includes("landlord"),
+  build: (d) => d.stage.includes("renovating") || d.stage.includes("building-new"),
+};
+const TODAY = new Date().toISOString().slice(0, 10);
+const isOverdue = (d) => d.stability === "variable" && d.review_by < TODAY;
+const levelText = (n) => t("chip.level").replace("{n}", n).replace("{name}", label("rung", n));
+
 // "{nocite}" after a sentence in a tip body marks it as not backed by any cited source.
 const NOCITE = "{nocite}";
 function renderBody(md) {
@@ -71,9 +85,12 @@ function renderBody(md) {
 function chips(d) {
   const out = [
     `<span class="chip cat">${esc(label("category", d.category))}</span>`,
-    `<span class="chip">${esc(t("field.effort"))}: ${esc(label("effort", d.effort))}</span>`,
+    `<span class="chip level">${esc(levelText(d.rung))}</span>`,
     `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
+    `<span class="chip">${esc(label("time", d.time_needed))}</span>`,
+    `<span class="chip ${d.stability}" title="${esc(t(`stability.${d.stability}`))}">${esc(label("stability", d.stability))}</span>`,
   ];
+  if (isOverdue(d)) out.push(`<span class="chip warn">${esc(t("chip.overdue"))}</span>`);
   const s = savingsText(d.estimated_savings);
   if (s) out.push(`<span class="chip save">${esc(s)}</span>`);
   if (d.needs_landlord_permission) out.push(`<span class="chip warn">${esc(t("chip.landlord"))}</span>`);
@@ -86,7 +103,8 @@ function card(tip) {
   const d = tip.data;
   const l = localize(tip, LANG);
   const haystack = [l.title, l.summary, ...(d.tags || []), label("category", d.category)].join(" ").toLowerCase();
-  return `<li class="card" data-category="${esc(d.category)}" data-effort="${esc(d.effort)}" data-cost="${esc(d.upfront_cost)}" data-landlord="${d.needs_landlord_permission}" data-cited="${d.verification.status === "verified"}" data-text="${esc(haystack)}">
+  const who = Object.keys(WHO).filter((w) => WHO[w](d)).join(" ");
+  return `<li class="card" data-category="${esc(d.category)}" data-rung="${d.rung}" data-cost="${COSTS.indexOf(d.upfront_cost)}" data-who="${who}" data-stability="${d.stability}" data-landlord="${d.needs_landlord_permission}" data-cited="${d.verification.status === "verified"}" data-text="${esc(haystack)}">
   <a href="tips/${esc(tip.id)}/"><h2>${esc(l.title)}</h2></a>
   <p>${esc(l.summary)}</p>
   <div class="chips">${chips(d)}</div>
@@ -100,20 +118,34 @@ function options(group, values) {
 function indexPage(tips) {
   const cats = [...new Set(tips.map((x) => x.data.category))].sort((a, b) =>
     label("category", a).localeCompare(label("category", b)));
+  // Only offer "who are you" choices that have at least one tip yet.
+  const whoOptions = Object.keys(WHO).filter((w) => tips.some((x) => WHO[w](x.data)));
   const body = `
 <section class="intro">
   <h1>${esc(t("index.heading"))}</h1>
   <p>${esc(t("index.intro"))}</p>
 </section>
 <form class="filters" role="search" onsubmit="return false">
+  <fieldset class="ladder" id="ladder">
+    <legend>${esc(t("filter.level"))} <span class="hint">${esc(t("filter.levelHint"))}</span></legend>
+    <div class="steps">${RUNGS.map((n) => `<label class="step">
+      <input type="radio" name="rung" value="${n}"${n === DEFAULT_RUNG ? " checked" : ""}>
+      <span><b>${n}</b> ${esc(label("rung", n))} <small>(${tips.filter((x) => x.data.rung === n).length})</small></span></label>`).join("")}</div>
+  </fieldset>
+  ${whoOptions.length > 1 ? `<fieldset class="who" id="who">
+    <legend>${esc(t("filter.who"))}</legend>
+    <div class="steps">${["all", ...whoOptions].map((w) => `<label class="step">
+      <input type="radio" name="who" value="${w === "all" ? "" : w}"${w === "all" ? " checked" : ""}>
+      <span>${esc(t(`who.${w}`))}</span></label>`).join("")}</div>
+  </fieldset>` : ""}
   <label class="search"><span>${esc(t("filter.search"))}</span>
     <input type="search" id="q" placeholder="${esc(t("filter.searchPlaceholder"))}"></label>
   <label><span>${esc(t("filter.category"))}</span>
     <select id="category"><option value="">${esc(t("filter.all"))}</option>${options("category", cats)}</select></label>
-  <label><span>${esc(t("field.effort"))}</span>
-    <select id="effort"><option value="">${esc(t("filter.all"))}</option>${options("effort", ["low", "medium", "high"])}</select></label>
-  <label><span>${esc(t("field.cost"))}</span>
-    <select id="cost"><option value="">${esc(t("filter.all"))}</option>${options("cost", ["none", "low", "medium", "high"])}</select></label>
+  <label><span>${esc(t("filter.budget"))}</span>
+    <select id="cost"><option value="">${esc(t("filter.all"))}</option>${COSTS.slice(0, -1).map((c, i) => `<option value="${i}">${esc(label("budget", c))}</option>`).join("")}</select></label>
+  <label><span>${esc(t("filter.stability"))}</span>
+    <select id="stability"><option value="">${esc(t("filter.all"))}</option>${options("stability", ["constant", "variable"])}</select></label>
   <label class="check"><input type="checkbox" id="nolandlord"> ${esc(t("filter.noLandlord"))}</label>
   <label class="check"><input type="checkbox" id="cited"> ${esc(t("filter.cited"))}</label>
 </form>
@@ -121,7 +153,8 @@ function indexPage(tips) {
 <ul class="cards" id="cards">
 ${tips.map(card).join("\n")}
 </ul>
-<p class="empty" id="empty" hidden>${esc(t("index.empty"))}</p>`;
+<p class="empty" id="empty" hidden>${esc(t("index.empty"))}</p>
+<p class="more" id="more" hidden data-one="${esc(t("index.more1"))}" data-many="${esc(t("index.moreN"))}"></p>`;
   return page({ title: t("site.name"), description: t("index.intro"), rel: "", path: "", body });
 }
 
@@ -131,8 +164,14 @@ function tipPage(tip) {
   const s = d.estimated_savings;
   const savings = savingsText(s);
   const facts = [
-    [t("field.effort"), label("effort", d.effort)],
+    [t("field.level"), levelText(d.rung)],
+    [t("field.time"), label("time", d.time_needed)],
     [t("field.cost"), label("cost", d.upfront_cost)],
+    [t("field.kind"), label("kind", d.kind)],
+    // Variable tips explain themselves in the notice above the table.
+    [t("field.stability"), d.stability === "constant"
+      ? `<strong>${esc(label("stability", d.stability))}</strong> · ${esc(t("stability.constant"))}`
+      : `<strong>${esc(label("stability", d.stability))}</strong>`],
     [t("field.savings"), `${savings ? `<strong>${esc(savings)}</strong> · ` : ""}${esc(l.basis)} <span class="muted">(${esc(t("field.confidence"))}: ${esc(label("confidence", s.confidence))})</span>`],
     [t("field.who"), label("responsibility", d.responsibility)],
     [t("field.landlord"), d.needs_landlord_permission ? t("yes") : t("no")],
@@ -147,6 +186,18 @@ function tipPage(tip) {
     ? `<aside class="notice ${uncited ? "nocite" : "review"}"><strong>${esc(t(uncited ? "tip.nociteHeading" : "tip.reviewHeading"))}</strong>
        <p>${esc(t(uncited ? "tip.nociteText" : "tip.reviewText"))}</p>
        <ul class="points">${points.map((p) => `<li><span class="flag ${p.type}">${esc(label("flag", p.type))}</span> ${esc(p.note)}</li>`).join("")}</ul></aside>`
+    : "";
+
+  // Variable tips depend on rules or prices that change: say so, with the next check date.
+  const variable = d.stability === "variable"
+    ? `<aside class="notice variable"><strong>${esc(t("tip.variableHeading"))}</strong>
+       <p>${esc(t("stability.variable"))}</p>
+       <p>${esc(t(isOverdue(d) ? "tip.overdue" : "tip.nextCheck").replace("{d}", d.review_by))}</p></aside>`
+    : "";
+
+  const pairs = (d.pairs_with || []).length
+    ? `<section class="pairs"><h2>${esc(t("tip.pairs"))}</h2><ul>${d.pairs_with.map((id) =>
+        `<li><a href="../${esc(id)}/">${esc(localize(byId.get(id), LANG).title)}</a></li>`).join("")}</ul></section>`
     : "";
 
   const regionNotes = l.region_notes
@@ -170,9 +221,11 @@ function tipPage(tip) {
   <p class="lead">${esc(l.summary)}</p>
   <div class="chips">${chips(d)}</div>
   ${review}
+  ${variable}
   <table class="facts"><tbody>${facts}</tbody></table>
   <div class="prose">${renderBody(l.body)}</div>
   ${regionNotes}
+  ${pairs}
   <section class="sources">
     <h2>${esc(t("tip.sources"))}</h2>
     <ol>${sources}</ol>
@@ -208,12 +261,12 @@ function rootRedirect() {
 `;
 }
 
-// Easiest wins first: effort, then cost, then title.
-const rank = { none: 0, low: 1, medium: 2, high: 3 };
+// Easiest wins first: ladder rung, then cost, then title.
 const tips = loadTips().sort((a, b) =>
-  rank[a.data.effort] - rank[b.data.effort] ||
-  rank[a.data.upfront_cost] - rank[b.data.upfront_cost] ||
+  a.data.rung - b.data.rung ||
+  COSTS.indexOf(a.data.upfront_cost) - COSTS.indexOf(b.data.upfront_cost) ||
   a.id.localeCompare(b.id));
+const byId = new Map(tips.map((x) => [x.id, x]));
 
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(DIST, { recursive: true });

@@ -4,10 +4,16 @@ title: Program a day and night schedule
 summary: A good day/night schedule (18–19 °C by day, 16 °C or less at night) saves about 10% on heating.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: heating
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: percent_heating

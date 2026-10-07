@@ -5,10 +5,16 @@ summary: A full bath takes about 120 litres of hot water; a five-minute shower w
   35 litres.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: hot-water
-effort: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 1
+time_needed: minutes
 upfront_cost: none
 estimated_savings:
   kind: litres_per_use

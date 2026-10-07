@@ -8,8 +8,14 @@ audience:
 regions:
 - BE-VLG
 category: renewables
-effort: medium
-upfront_cost: medium
+kind: practice
+stage:
+- living-in
+stability: variable
+review_by: '2027-01-31'
+rung: 3
+time_needed: hours
+upfront_cost: 100-2500
 estimated_savings:
   kind: qualitative
   basis: Yield depends on orientation, shading and how much you use during daylight; no reliable average

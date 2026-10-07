@@ -12,7 +12,11 @@
     "audience",
     "regions",
     "category",
-    "effort",
+    "kind",
+    "stage",
+    "stability",
+    "rung",
+    "time_needed",
     "upfront_cost",
     "estimated_savings",
     "responsibility",
@@ -71,25 +75,71 @@
         "renewables",
         "contracts-billing",
         "rights-rules",
-        "help-subsidies"
+        "help-subsidies",
+        "insulation",
+        "windows-doors",
+        "indoor-air",
+        "smart-home-monitoring",
+        "building-rules"
       ]
     },
-    "effort": {
+    "kind": {
       "enum": [
-        "low",
-        "medium",
-        "high"
+        "practice",
+        "explainer",
+        "service"
       ],
-      "description": "low: minutes, no tools; medium: an afternoon or a phone call; high: a project."
+      "description": "practice: something to do; explainer: a rule or concept explained (EPB, EPC, rental rules); service: a pointer to an existing tool or service, such as Mijn VerbouwPremie or the Energiehuis."
+    },
+    "stage": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "living-in",
+          "renovating",
+          "building-new"
+        ]
+      },
+      "description": "Where the reader is with their home."
+    },
+    "stability": {
+      "enum": [
+        "constant",
+        "variable"
+      ],
+      "description": "constant: good practice that barely changes with new laws, prices or services. variable: depends on rules, premiums, tariffs, prices or a service that can change; needs review_by, and readers are told to check the source before acting."
+    },
+    "review_by": {
+      "type": "string",
+      "format": "date",
+      "description": "Required when stability is variable: the date by which the tip must be checked again. The build warns once it has passed, and the site says the tip is overdue for a check."
+    },
+    "rung": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "The effort ladder. 1 habit: a change in routine, nothing to buy; 2 quick fix: an afternoon of DIY; 3 upgrade: one product or one technician visit; 4 renovation: one building element with a contractor; 5 deep renovation: several elements, an architect, EPB rules apply. Set by hand: cost and time are shown separately."
+    },
+    "time_needed": {
+      "enum": [
+        "minutes",
+        "hours",
+        "days",
+        "weeks"
+      ],
+      "description": "Rough time to do it: minutes; hours (an afternoon); days; weeks or months."
     },
     "upfront_cost": {
       "enum": [
         "none",
-        "low",
-        "medium",
-        "high"
+        "under-100",
+        "100-2500",
+        "2500-25000",
+        "over-25000"
       ],
-      "description": "none: €0; low: under €50; medium: €50–500; high: over €500."
+      "description": "Upfront cost in euro: none (€0), under €100, €100–2,500, €2,500–25,000, over €25,000."
     },
     "estimated_savings": {
       "type": "object",
@@ -155,6 +205,15 @@
       },
       "uniqueItems": true
     },
+    "pairs_with": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "description": "Ids of tips to do together with this one, or first; for example ventilation when sealing draughts."
+    },
     "sources": {
       "type": "array",
       "items": {
@@ -180,9 +239,10 @@
               "consumer-organisation",
               "commercial",
               "media",
-              "other"
+              "other",
+              "research"
             ],
-            "description": "official: government, regulator or grid operator; consumer-organisation: e.g. Test-Aankoop; commercial: companies, banks, comparison sites; media: news outlets."
+            "description": "official: government, regulator or grid operator; consumer-organisation: e.g. Test-Aankoop; commercial: companies, banks, comparison sites; media: news outlets. research: a study, report or paper; cite it inside the tip it supports."
           },
           "url": {
             "type": "string",
@@ -258,5 +318,20 @@
       "type": "string",
       "format": "date"
     }
+  },
+  "if": {
+    "properties": {
+      "stability": {
+        "const": "variable"
+      }
+    },
+    "required": [
+      "stability"
+    ]
+  },
+  "then": {
+    "required": [
+      "review_by"
+    ]
   }
 }

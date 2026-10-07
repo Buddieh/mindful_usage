@@ -5,11 +5,17 @@ summary: Draught strips or new seals on windows and doors save on average about 
   make rooms noticeably more comfortable.
 audience:
 - tenant
+- homeowner
 regions:
 - BE-VLG
 category: heating
-effort: low
-upfront_cost: low
+kind: practice
+stage:
+- living-in
+stability: constant
+rung: 2
+time_needed: hours
+upfront_cost: under-100
 estimated_savings:
   kind: percent_heating
   value: 1
@@ -22,6 +28,8 @@ tags:
 - diy
 - removable
 - comfort
+pairs_with:
+- ventilate-smartly
 sources:
 - title: Besparen op uw energieverbruik
   publisher: Vlaamse overheid (vlaanderen.be)
