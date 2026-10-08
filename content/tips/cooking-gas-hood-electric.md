@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: About indoor air and health; the sources don't quantify energy savings.
   confidence: low
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: false
 tags:

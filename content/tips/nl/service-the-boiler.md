@@ -5,6 +5,7 @@ title: Laat de ketel onderhouden (meestal jouw taak als huurder)
 summary: In Vlaanderen is de huurder normaal verantwoordelijk voor het periodiek onderhoud van de ketel;
   een goed onderhouden gasketel bespaart ongeveer 5% op verwarming.
 savings_basis: Onderhouden tegenover niet-onderhouden gasketel (cijfer Vlaamse overheid).
+impact_basis: Een onderhouden gasketel bespaart ongeveer 5% op verwarming, zo'n 750 kWh per jaar in een gemiddeld Vlaams huis (15.000 kWh voor verwarming).
 region_notes: 'Vlaams Woninghuurdecreet: kleine herstellingen zijn voor de huurder, en het periodiek reinigen
   van de ketel staat uitdrukkelijk op de officiële lijst van kleine herstellingen; grote herstellingen en vervanging
   zijn voor de verhuurder.'

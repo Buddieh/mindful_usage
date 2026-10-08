@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: About safety and legal duties rather than energy savings.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

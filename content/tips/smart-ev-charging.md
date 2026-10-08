@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; slower, spread-out charging keeps the capacity peak down, and solar charging uses your own power.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

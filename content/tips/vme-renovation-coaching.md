@@ -22,6 +22,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; independent advice helps the co-owners choose the works that pay off most.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

@@ -20,6 +20,9 @@ estimated_savings:
   unit: '%'
   basis: Per 1 °C lower room temperature (Flemish government figure).
   confidence: high
+impact:
+  band: large
+  basis: Each degree lower saves about 7% of heating. An average Flemish house uses about 15,000 kWh a year for heating, so one degree saves about 1,050 kWh.
 responsibility: tenant
 needs_landlord_permission: false
 tags:

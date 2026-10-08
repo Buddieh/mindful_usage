@@ -21,6 +21,8 @@ estimated_savings:
   basis: A 2018 review of the evidence found that smart thermostats do not save energy compared with standard ones;
     savings come from how you set the heating.
   confidence: medium
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: false
 tags:

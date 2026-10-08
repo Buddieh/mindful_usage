@@ -22,6 +22,8 @@ estimated_savings:
   basis: The premium amount depends on your target group, income category and the works; the official simulator
     gives an estimate.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

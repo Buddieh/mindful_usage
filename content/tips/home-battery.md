@@ -22,6 +22,8 @@ estimated_savings:
   basis: The Flemish government says self-consumption can rise from an average of 28% to about 68%; whether it pays
     off depends on costs and benefits for your situation.
   confidence: medium
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

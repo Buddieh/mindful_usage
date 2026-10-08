@@ -4,6 +4,7 @@ lang: nl
 title: Was op 30 °C
 summary: Wassen op 30 °C verbruikt half zoveel energie als op 60 °C en een kwart minder dan op 40 °C.
 savings_basis: Was op 30 °C tegenover 60 °C (cijfer Vlaamse overheid).
+impact_basis: Het aantal wasbeurten halveren bespaart ongeveer 1% elektriciteit, dus wassen is samen maar enkele procenten ervan. Op 30 °C in plaats van 60 °C wassen halveert het verbruik per beurt, wat enkele tientallen kWh per jaar bespaart.
 supports:
 - 30 °C verbruikt de helft van 60 °C; 200→100 wasbeurten ≈ 1%
 ---

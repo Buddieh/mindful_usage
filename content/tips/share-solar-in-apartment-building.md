@@ -22,6 +22,8 @@ estimated_savings:
   kind: qualitative
   basis: Shared power saves only on the energy part of the price; network tariffs and levies are still paid.
   confidence: medium
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: false
 tags:

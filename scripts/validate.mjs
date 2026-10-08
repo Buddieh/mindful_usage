@@ -32,6 +32,13 @@ for (const tip of tips) {
   // Variable tips must be checked again by review_by; overdue ones are flagged on the site.
   if (d.stability === "variable" && d.review_by < today) warnings.push(`${tip.file}: review_by ${d.review_by} has passed; check the tip again`);
 
+  // A payback time must come from one of the tip's sources, and depends on prices, so the tip is variable.
+  if (d.payback) {
+    if (d.payback.source >= d.sources.length) errors.push(`${tip.file}: payback.source ${d.payback.source} is not a source index (0 to ${d.sources.length - 1})`);
+    if (d.payback.min_years > d.payback.max_years) errors.push(`${tip.file}: payback.min_years is above max_years`);
+    if (d.stability !== "variable") errors.push(`${tip.file}: has a payback time, so stability must be "variable"`);
+  }
+
   // Uncited text must be visible: {nocite} markers need a no-citation flag, and neither can be "verified".
   const markers = countNocite(tip.body);
   const noCitationFlag = d.verification.flags.some((f) => f.type === "no-citation");
@@ -49,6 +56,7 @@ for (const tip of tips) {
     if (t.lang !== lang) errors.push(`${tr.file}: lang must be "${lang}"`);
     if (!tr.body) errors.push(`${tr.file}: body is empty`);
     if (countNocite(tr.body) !== markers) errors.push(`${tr.file}: needs the same number of {nocite} markers as the main file (${markers})`);
+    if (Boolean(d.impact.basis) !== Boolean(t.impact_basis)) errors.push(`${tr.file}: impact_basis ${d.impact.basis ? "missing" : "is set but the main file has no impact.basis"}`);
     if (d.region_notes && !t.region_notes) errors.push(`${tr.file}: region_notes missing`);
     if ((t.flags || []).length !== d.verification.flags.length) errors.push(`${tr.file}: flags must match the main file (${d.verification.flags.length})`);
     if (t.supports && t.supports.length !== d.sources.length) errors.push(`${tr.file}: supports must have one entry per source (${d.sources.length})`);

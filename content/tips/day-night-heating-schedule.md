@@ -21,6 +21,9 @@ estimated_savings:
   unit: '%'
   basis: Day/night programme versus constant temperature (Flemish government figure).
   confidence: high
+impact:
+  band: large
+  basis: A day and night schedule saves about 10% of heating, which is about 1,500 kWh a year in an average Flemish house (15,000 kWh for heating).
 responsibility: tenant
 needs_landlord_permission: false
 tags:

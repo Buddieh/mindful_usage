@@ -11,8 +11,9 @@ Open the tip on the website and click "Suggest an improvement to this tip". GitH
 1. Copy an existing file in `content/tips/` and rename it to a new kebab-case id, for example `content/tips/close-fridge-door.md`. Set `id` to the same name.
 2. Fill in the fields (see `content/README.md`) and write the explanation in your own words.
 3. Add at least one source: the exact page URL, its publisher and type, the date you checked it, and what it backs (`supports`). Don't copy text or tables from the source.
-4. Add the Dutch version in `content/tips/nl/` with the same file name. If you can't write Dutch, open the pull request anyway and say so; someone else can translate.
-5. If something is uncertain, set `verification.status: needs-check` and explain why in `flags`.
+4. Set `impact.band` from a figure in your sources (see "Impact bands" in `content/README.md`). If the sources give no size, use `unrated`; don't estimate one yourself.
+5. Add the Dutch version in `content/tips/nl/` with the same file name. If you can't write Dutch, open the pull request anyway and say so; someone else can translate.
+6. If something is uncertain, set `verification.status: needs-check` and explain why in `flags`.
 
 Run `npm run validate` before you open the pull request. The same check runs automatically on every pull request.
 

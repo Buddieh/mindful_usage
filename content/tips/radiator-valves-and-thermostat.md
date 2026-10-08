@@ -12,7 +12,8 @@ kind: practice
 stage:
 - living-in
 - renovating
-stability: constant
+stability: variable
+review_by: '2027-05-31'
 rung: 3
 time_needed: hours
 upfront_cost: 100-2500
@@ -21,6 +22,11 @@ estimated_savings:
   basis: The Flemish government says thermostatic valves usually earn back their extra cost in less than two
     years.
   confidence: medium
+impact:
+  band: unrated
+payback:
+  max_years: 2
+  source: 0
 responsibility: owner
 needs_landlord_permission: false
 tags:

@@ -96,6 +96,13 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 .chip.level { color: var(--text); font-weight: 600; }
 .chip.constant { border-color: var(--accent); color: var(--accent); }
 .chip.variable { border-color: var(--warn); color: var(--warn); }
+/* Impact: a filled badge for big wins, then weaker styles from large to small. */
+.chip.bigwin { background: var(--accent); border-color: transparent; color: var(--surface); font-weight: 700; }
+.chip.impact.large { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.chip.impact.medium { border-color: var(--accent); color: var(--accent); }
+.impact-intro { font-size: .95rem; }
+.prose table { border-collapse: collapse; width: 100%; margin: 0 0 1em; font-size: .95rem; }
+.prose th, .prose td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
 .empty { color: var(--muted); }
 
 .back { margin: 0 0 16px; }

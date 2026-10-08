@@ -22,6 +22,9 @@ estimated_savings:
   basis: Lowering flow and return temperature (return 60 °C → 40 °C) about 6%; eco mode on a combi boiler
     about 1% (Flemish government figures).
   confidence: medium
+impact:
+  band: medium
+  basis: A lower return temperature saves about 6% of heating, which is about 900 kWh a year in an average Flemish house (15,000 kWh for heating).
 responsibility: shared
 needs_landlord_permission: true
 tags:

@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: A legal minimum rather than a quantified saving.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

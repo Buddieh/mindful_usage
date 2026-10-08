@@ -4,6 +4,7 @@ lang: nl
 title: Plaats radiatorfolie achter radiatoren tegen buitenmuren
 summary: Ongeveer 3 m² radiatorfolie tegen niet-geïsoleerde buitenmuren bespaart zo'n 2% op verwarming.
 savings_basis: Gemiddelde voor radiatoren tegen niet-geïsoleerde buitenmuren (cijfer Vlaamse overheid).
+impact_basis: Radiatorfolie op ongeïsoleerde buitenmuren bespaart ongeveer 2% op verwarming, zo'n 300 kWh per jaar in een gemiddeld Vlaams huis (15.000 kWh voor verwarming).
 supports:
 - 2% besparing met 3 m² folie
 ---

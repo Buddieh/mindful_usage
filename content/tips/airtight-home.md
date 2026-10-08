@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified on the source pages; air leaks cause draughts and heat loss.
   confidence: low
+impact:
+  band: unrated
 responsibility: owner
 needs_landlord_permission: false
 tags:

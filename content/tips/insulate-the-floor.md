@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified on the source page; the gain depends on the floor and the space beneath it.
   confidence: low
+impact:
+  band: unrated
 responsibility: owner
 needs_landlord_permission: false
 tags:

@@ -4,6 +4,7 @@ lang: nl
 title: Zet de thermostaat een graad lager
 summary: Elke graad lager op de kamerthermostaat vermindert je verwarmingsverbruik met ongeveer 7%.
 savings_basis: Per graad lagere kamertemperatuur (cijfer Vlaamse overheid).
+impact_basis: Elke graad lager bespaart ongeveer 7% op verwarming. Een gemiddeld Vlaams huis verbruikt zo'n 15.000 kWh per jaar voor verwarming, dus één graad bespaart ongeveer 1.050 kWh.
 supports:
 - 7% per graad
 ---

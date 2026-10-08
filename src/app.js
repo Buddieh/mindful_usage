@@ -16,6 +16,7 @@
   var category = document.getElementById("category");
   var cost = document.getElementById("cost");
   var stability = document.getElementById("stability");
+  var impact = document.getElementById("impact");
   var nolandlord = document.getElementById("nolandlord");
   var cited = document.getElementById("cited");
   var moreFilters = document.getElementById("more-filters");
@@ -45,6 +46,7 @@
     ["q", function () { return q.value.trim(); }, function (v) { q.value = v; }, "", true],
     ["topic", function () { return category.value; }, function (v) { category.value = v; }, "", false],
     ["budget", function () { return cost.value; }, function (v) { cost.value = v; }, "", false],
+    ["impact", function () { return impact.value; }, function (v) { impact.value = v; }, "", false],
     ["kind", function () { return stability.value; }, function (v) { stability.value = v; }, "", false],
     ["nolandlord", function () { return nolandlord.checked ? "1" : ""; }, function (v) { nolandlord.checked = v === "1"; }, "", false],
     ["cited", function () { return cited.checked ? "1" : ""; }, function (v) { cited.checked = v === "1"; }, "", false],
@@ -85,6 +87,7 @@
         (!category.value || c.dataset.category === category.value) &&
         (!cost.value || Number(c.dataset.cost) <= Number(cost.value)) &&
         (!stability.value || c.dataset.stability === stability.value) &&
+        (!impact.value || (impact.value === "big" ? c.dataset.big === "true" : Number(c.dataset.impact) >= Number(impact.value))) &&
         (!who || (" " + c.dataset.who + " ").indexOf(" " + who + " ") !== -1) &&
         (!nolandlord.checked || c.dataset.landlord === "false") &&
         (!cited.checked || c.dataset.cited === "true") &&

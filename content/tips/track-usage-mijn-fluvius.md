@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Insight tool; savings come from acting on what you see.
   confidence: low
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

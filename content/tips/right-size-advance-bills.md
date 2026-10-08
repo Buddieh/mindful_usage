@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Cash-flow tip; does not reduce consumption.
   confidence: low
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

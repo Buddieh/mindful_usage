@@ -6,6 +6,7 @@ summary: Hoogrendementsglas isoleert twee tot drie keer beter dan gewoon dubbel 
   bespaart zo'n 23 m³ gas per jaar.
 savings_basis: Ongeveer 23 m³ aardgas of 25 liter stookolie per jaar voor elke m² enkel glas die je vervangt,
   volgens de Vlaamse overheid.
+impact_basis: Elke m² enkel glas die je vervangt bespaart ongeveer 23 m³ gas per jaar, minstens zo'n 200 kWh. Vanaf 5 m² enkel glas is dat meer dan 1.000 kWh per jaar.
 supports:
 - U-waarden, vergelijking met dubbel en enkel glas, besparing per m², je glas controleren
 - nieuwe ramen in droge ruimtes hebben luchttoevoer nodig; slechte ventilatie geeft condensatie en schimmel

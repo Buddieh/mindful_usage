@@ -6,6 +6,7 @@ summary: Een zonneboiler dekt het rendabelst ongeveer de helft van het warmwater
   de kosten om water te verwarmen.
 savings_basis: Volgens de Vlaamse overheid daalt de jaarlijkse kost om water te verwarmen tot ongeveer de helft;
   50 tot 60% van het warmwaterverbruik dekken is het meest rendabel.
+impact_basis: Hij halveert ongeveer de jaarlijkse kosten om water te verwarmen. Een gemiddeld Vlaams huis verbruikt zo'n 2.000 kWh gas per jaar voor warm water, dus de besparing is ongeveer 1.000 kWh.
 supports:
 - werking, werkt ook bij bewolking, altijd een naverwarming, 50 tot 60% dekking, oriëntatie en helling, vatinhoud
   per m², kost van water verwarmen gehalveerd

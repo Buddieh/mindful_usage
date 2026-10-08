@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Advice service.
   confidence: low
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

@@ -22,6 +22,8 @@ estimated_savings:
   unit: L
   basis: Bath 120 L vs 5-minute shower with saving head 35 L (Flemish government figure).
   confidence: high
+impact:
+  band: unrated
 responsibility: tenant
 needs_landlord_permission: false
 tags:

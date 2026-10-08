@@ -21,6 +21,8 @@ estimated_savings:
   basis: Ventilation costs some heat; the benefit is healthy air and no damp. Demand control or heat recovery
     limits the heat lost.
   confidence: medium
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

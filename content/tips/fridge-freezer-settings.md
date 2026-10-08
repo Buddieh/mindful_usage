@@ -21,6 +21,8 @@ estimated_savings:
   unit: '%'
   basis: Extra freezer consumption from 2 mm of ice (Flemish government figure).
   confidence: high
+impact:
+  band: unrated
 responsibility: tenant
 needs_landlord_permission: false
 tags:

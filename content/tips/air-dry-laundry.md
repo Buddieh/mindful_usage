@@ -23,6 +23,9 @@ estimated_savings:
   basis: Typical old dryer 2–4 kWh per cycle (Flemish government figure); households average about 160
     cycles a year.
   confidence: medium
+impact:
+  band: medium
+  basis: An older dryer uses 2 to 4 kWh per cycle. At about 160 cycles a year, drying on a line instead saves about 320 to 640 kWh.
 responsibility: tenant
 needs_landlord_permission: false
 tags:

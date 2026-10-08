@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Helps you estimate future energy bills before committing to a home.
   confidence: medium
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Legal minimum; enforcement can push landlords to improve the home.
   confidence: medium
+impact:
+  band: indirect
 responsibility: landlord
 needs_landlord_permission: false
 tags:

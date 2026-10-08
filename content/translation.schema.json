@@ -11,6 +11,7 @@
     "title": { "type": "string", "maxLength": 90 },
     "summary": { "type": "string", "maxLength": 280 },
     "savings_basis": { "type": "string", "description": "Translation of estimated_savings.basis." },
+    "impact_basis": { "type": "string", "description": "Translation of impact.basis. Required when the main tip has one." },
     "region_notes": { "type": "string", "description": "Translation of region_notes. Required when the main tip has region_notes." },
     "flags": { "type": "array", "items": { "type": "string" }, "description": "Translation of verification.flags, same order and length." },
     "supports": { "type": "array", "items": { "type": "string" }, "description": "Translation of each source's 'supports', in the same order as sources. Use \"\" where a source has none." }

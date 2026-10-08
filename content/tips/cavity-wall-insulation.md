@@ -21,6 +21,12 @@ estimated_savings:
   kind: qualitative
   basis: The Flemish government says the investment is usually earned back in 3 to 5 years.
   confidence: medium
+impact:
+  band: unrated
+payback:
+  min_years: 3
+  max_years: 5
+  source: 0
 responsibility: owner
 needs_landlord_permission: false
 tags:

@@ -6,6 +6,7 @@ summary: Dakisolatie is meestal de eerste en meest doeltreffende isolatiestap; b
   de zoldervloer isoleren goedkoper en eenvoudiger.
 savings_basis: Fluvius schat dat tot 30% van het warmteverlies van een woning via een niet-geïsoleerd dak
   kan gaan.
+impact_basis: Tot 30% van het warmteverlies van een woning kan via een ongeïsoleerd dak gaan, tot zo'n 4.500 kWh per jaar in een gemiddeld Vlaams huis (15.000 kWh voor verwarming).
 supports:
 - de drie lagen van een hellend dak; isoleer de zoldervloer als de zolder onverwarmd is
 - tot 30% warmteverlies via het dak

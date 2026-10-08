@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified by the sources; the gain depends on your solar panels, appliances and tariff.
   confidence: low
+impact:
+  band: unrated
 responsibility: owner
 needs_landlord_permission: false
 tags:

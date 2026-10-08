@@ -22,6 +22,9 @@ estimated_savings:
   basis: Up to 120 kWh of electricity per heating season by running an older circulation pump on its lowest
     setting, if all radiators still get warm.
   confidence: medium
+impact:
+  band: small
+  basis: Running an old circulation pump on its lowest setting saves up to 120 kWh of electricity per heating season.
 responsibility: owner
 needs_landlord_permission: false
 tags:

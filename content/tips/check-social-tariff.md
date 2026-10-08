@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Social tariff is typically much lower than market prices; amount varies per quarter.
   confidence: medium
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

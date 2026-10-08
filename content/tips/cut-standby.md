@@ -22,6 +22,9 @@ estimated_savings:
   unit: '%'
   basis: Family of four (Flemish government figure).
   confidence: medium
+impact:
+  band: small
+  basis: Switching off standby saves about 1% of electricity for a family of four. At about 1,000 kWh per resident, that is about 40 kWh a year.
 responsibility: tenant
 needs_landlord_permission: false
 tags:

@@ -20,6 +20,9 @@ estimated_savings:
   basis: Not quantified; the Flemish government calls poorly insulated outer walls the second-largest cause
     of heat loss in a home.
   confidence: medium
+impact:
+  band: large
+  basis: The Flemish government names poorly insulated outer walls the second-largest cause of heat loss in a home.
 responsibility: owner
 needs_landlord_permission: false
 tags:

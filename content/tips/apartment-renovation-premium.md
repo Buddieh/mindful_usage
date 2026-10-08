@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: The premium depends on the works and the applicant; the official page and simulator give the details.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

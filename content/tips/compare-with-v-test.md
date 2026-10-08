@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Depends on your current contract; often the single largest saving without changing behaviour.
   confidence: low
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

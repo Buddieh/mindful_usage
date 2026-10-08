@@ -23,6 +23,8 @@ estimated_savings:
   basis: Not quantified; the official comparison rates a heat pump best for climate and future-readiness and most
     expensive to install.
   confidence: low
+impact:
+  band: unrated
 responsibility: owner
 needs_landlord_permission: false
 tags:

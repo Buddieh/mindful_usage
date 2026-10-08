@@ -21,6 +21,8 @@ estimated_savings:
   basis: Not quantified; savings depend on insulation level and low-temperature heating, which the source calls
     necessary for good efficiency.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

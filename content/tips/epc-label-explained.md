@@ -22,6 +22,8 @@ estimated_savings:
   kind: qualitative
   basis: Not a saving in itself; the EPC shows where your home stands and is needed to sell or rent it.
   confidence: high
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

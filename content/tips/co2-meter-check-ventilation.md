@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Mainly healthier air; in cold weather the meter also helps you avoid airing longer than needed.
   confidence: low
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

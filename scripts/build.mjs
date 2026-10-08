@@ -1,6 +1,6 @@
 // Builds the static site into dist/: an index with search and filters,
 // one page per tip, and tips.json for anyone who wants the raw data.
-import { mkdirSync, writeFileSync, copyFileSync, rmSync } from "node:fs";
+import { mkdirSync, writeFileSync, copyFileSync, rmSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { marked } from "marked";
 import { loadTips, localize, ROOT } from "./tips.mjs";
@@ -72,6 +72,11 @@ const WHO = {
   build: (d) => d.stage.includes("renovating") || d.stage.includes("building-new"),
   flat: (d) => d.tags.includes("apartment"),
 };
+// Impact bands from largest to smallest; "unrated" and "indirect" rank last.
+const IMPACT = { large: 3, medium: 2, small: 1, unrated: 0, indirect: 0 };
+const impactRank = (d) => IMPACT[d.impact.band];
+// A big win saves a lot of energy for free or under €100.
+const isBigWin = (d) => d.impact.band === "large" && COSTS.indexOf(d.upfront_cost) <= 1;
 const TODAY = new Date().toISOString().slice(0, 10);
 const isOverdue = (d) => d.stability === "variable" && d.review_by < TODAY;
 const levelText = (n) => t("chip.level").replace("{n}", n).replace("{name}", label("rung", n));
@@ -90,14 +95,21 @@ function renderBody(md) {
 // Cards show only what tells tips apart (saving, cost, warnings); tip pages show everything.
 function chips(d, full) {
   const s = savingsText(d.estimated_savings);
+  const impact = [
+    ...(isBigWin(d) ? [`<span class="chip bigwin" title="${esc(t("impact.bigWinTitle"))}">${esc(t("impact.bigWin"))}</span>`] : []),
+    // On cards a big win already says "large", so only tip pages show both.
+    ...(impactRank(d) && (full || !isBigWin(d)) ? [`<span class="chip impact ${d.impact.band}">${esc(label("impactChip", d.impact.band))}</span>`] : []),
+  ];
   const stability = `<span class="chip ${d.stability}" title="${esc(t(`stability.${d.stability}`))}">${esc(label("stability", d.stability))}</span>`;
   const out = full ? [
+    ...impact,
     `<span class="chip cat">${esc(label("category", d.category))}</span>`,
     `<span class="chip level">${esc(levelText(d.rung))}</span>`,
     `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
     `<span class="chip">${esc(label("time", d.time_needed))}</span>`,
     stability,
   ] : [
+    ...impact,
     ...(s ? [`<span class="chip save">${esc(s)}</span>`] : []),
     `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
     ...(d.stability === "variable" ? [stability] : []),
@@ -115,7 +127,7 @@ function card(tip) {
   const l = localize(tip, LANG);
   const haystack = [l.title, l.summary, ...(d.tags || []), label("category", d.category)].join(" ").toLowerCase();
   const who = Object.keys(WHO).filter((w) => WHO[w](d)).join(" ");
-  return `<li class="card" data-category="${esc(d.category)}" data-rung="${d.rung}" data-cost="${COSTS.indexOf(d.upfront_cost)}" data-who="${who}" data-stability="${d.stability}" data-landlord="${d.needs_landlord_permission}" data-cited="${d.verification.status === "verified"}" data-text="${esc(haystack)}">
+  return `<li class="card" data-category="${esc(d.category)}" data-rung="${d.rung}" data-cost="${COSTS.indexOf(d.upfront_cost)}" data-impact="${impactRank(d)}" data-big="${isBigWin(d)}" data-who="${who}" data-stability="${d.stability}" data-landlord="${d.needs_landlord_permission}" data-cited="${d.verification.status === "verified"}" data-text="${esc(haystack)}">
   <h3><a href="tips/${esc(tip.id)}/">${esc(l.title)}</a></h3>
   <p>${esc(l.summary)}</p>
   <div class="chips">${chips(d, false)}</div>
@@ -135,6 +147,7 @@ function indexPage(tips) {
 <section class="intro">
   <h1>${esc(t("index.heading"))}</h1>
   <p>${esc(t("index.intro"))}</p>
+  <p class="impact-intro">${esc(t("index.impactIntro"))} <a href="impact/">${esc(t("impact.how"))}</a></p>
 </section>
 <form class="filters" role="search" onsubmit="return false">
   <fieldset class="ladder" id="ladder">
@@ -158,6 +171,8 @@ function indexPage(tips) {
     <select id="category"><option value="">${esc(t("filter.all"))}</option>${options("category", cats)}</select></label>
   <label><span>${esc(t("filter.budget"))}</span>
     <select id="cost"><option value="">${esc(t("filter.all"))}</option>${COSTS.slice(0, -1).map((c, i) => `<option value="${i}">${esc(label("budget", c))}</option>`).join("")}</select></label>
+  <label><span>${esc(t("filter.impact"))}</span>
+    <select id="impact"><option value="">${esc(t("filter.all"))}</option>${["big", "3", "2"].map((v) => `<option value="${v}">${esc(t(`filter.impact.${v}`))}</option>`).join("")}</select></label>
   <label><span>${esc(t("filter.stability"))}</span>
     <select id="stability"><option value="">${esc(t("filter.all"))}</option>${options("stability", ["constant", "variable"])}</select></label>
   <label class="check"><input type="checkbox" id="nolandlord"> ${esc(t("filter.noLandlord"))}</label>
@@ -192,7 +207,15 @@ function tipPage(tip) {
   const s = d.estimated_savings;
   const savings = savingsText(s);
   // Level, time and cost are already in the chips at the top, so the table skips them.
+  const impactText = impactRank(d)
+    ? `<strong>${esc(label("impact", d.impact.band))}</strong> · ${esc(l.impact_basis)}`
+    : `<strong>${esc(label("impact", d.impact.band))}</strong> · ${esc(t(`impact.${d.impact.band}Text`))}`;
+  const pb = d.payback;
+  const paybackText = pb && `<strong>${esc(t(pb.min_years != null ? "payback.range" : "payback.max")
+    .replace("{min}", pb.min_years).replace("{max}", pb.max_years))}</strong> · ${esc(t("payback.according"))} <a href="${esc(d.sources[pb.source].url)}" rel="noopener">${esc(d.sources[pb.source].publisher)}</a>. ${esc(t("payback.note"))}`;
   const facts = [
+    [t("field.impact"), `${impactText} <a href="../../impact/">${esc(t("impact.how"))}</a>`],
+    ...(pb ? [[t("field.payback"), paybackText]] : []),
     [t("field.savings"), `${savings ? `<strong>${esc(savings)}</strong> · ` : ""}${esc(l.basis)} <span class="muted">(${esc(t("field.confidence"))}: ${esc(label("confidence", s.confidence))})</span>`],
     [t("field.who"), label("responsibility", d.responsibility)],
     [t("field.landlord"), d.needs_landlord_permission ? t("yes") : t("no")],
@@ -263,6 +286,15 @@ function tipPage(tip) {
   return page({ title: `${l.title} · ${t("site.name")}`, description: l.summary, rel: "../../", path: `tips/${tip.id}/`, body });
 }
 
+// How the impact bands are set, from content/pages/impact.<lang>.md.
+function impactPage() {
+  const html = marked.parse(readFileSync(join(ROOT, "content", "pages", `impact.${LANG}.md`), "utf8"));
+  const body = `
+<p class="back"><a href="../">← ${esc(t("tip.back"))}</a></p>
+<article class="tip prose">${html}</article>`;
+  return page({ title: `${t("impact.how")} · ${t("site.name")}`, description: t("index.impactIntro"), rel: "../", path: "impact/", body });
+}
+
 // The site root sends readers to their saved or browser language.
 function rootRedirect() {
   return `<!doctype html>
@@ -288,9 +320,10 @@ function rootRedirect() {
 `;
 }
 
-// Easiest wins first: ladder rung, then cost, then title.
+// Easiest wins first: ladder rung, then the largest impact, then cost, then title.
 const tips = loadTips().sort((a, b) =>
   a.data.rung - b.data.rung ||
+  impactRank(b.data) - impactRank(a.data) ||
   COSTS.indexOf(a.data.upfront_cost) - COSTS.indexOf(b.data.upfront_cost) ||
   a.id.localeCompare(b.id));
 const byId = new Map(tips.map((x) => [x.id, x]));
@@ -306,6 +339,8 @@ for (const lang of LANGUAGES) {
     mkdirSync(join(out, "tips", tip.id), { recursive: true });
     writeFileSync(join(out, "tips", tip.id, "index.html"), tipPage(tip));
   }
+  mkdirSync(join(out, "impact"), { recursive: true });
+  writeFileSync(join(out, "impact", "index.html"), impactPage());
 }
 writeFileSync(join(DIST, "index.html"), rootRedirect());
 writeFileSync(join(DIST, "tips.json"), JSON.stringify(tips.map((x) => ({

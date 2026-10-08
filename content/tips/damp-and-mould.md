@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: About health rather than energy; the sources don't quantify savings.
   confidence: low
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: false
 tags:

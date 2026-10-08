@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; the right order avoids buying a heating system sized for a leaky house.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

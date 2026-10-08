@@ -6,6 +6,7 @@ summary: De eco-stand voor warm water op een combiketel bespaart ongeveer 1% van
   retourtemperatuur verlagen van 60 °C naar 40 °C kan ongeveer 6% besparen.
 savings_basis: Aanvoer- en retourtemperatuur verlagen (retour 60 °C → 40 °C) ongeveer 6%; eco-stand op een
   combiketel ongeveer 1% (cijfers Vlaamse overheid).
+impact_basis: Een lagere retourtemperatuur bespaart ongeveer 6% op verwarming, zo'n 900 kWh per jaar in een gemiddeld Vlaams huis (15.000 kWh voor verwarming).
 flags:
 - Of een huurder de ketelinstellingen mag wijzigen, staat in geen enkele officiële bron die we vonden; voor
   de zekerheid vermelden we dat de verhuurder akkoord moet gaan, en dat je de eco-stand meestal zelf mag aanpassen.

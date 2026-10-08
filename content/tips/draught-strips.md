@@ -22,6 +22,9 @@ estimated_savings:
   unit: '%'
   basis: Average figure from the Flemish government; comfort gain is usually larger than the bill effect.
   confidence: medium
+impact:
+  band: small
+  basis: Draught strips save on average about 1% of heating, which is about 150 kWh a year in an average Flemish house (15,000 kWh for heating).
 responsibility: tenant
 needs_landlord_permission: false
 tags:

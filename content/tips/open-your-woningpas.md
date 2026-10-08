@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; it shows where your home stands and which renovation steps come first.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

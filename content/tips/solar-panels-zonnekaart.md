@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: The Zonnekaart estimates yield and payback time for your own roof.
   confidence: medium
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

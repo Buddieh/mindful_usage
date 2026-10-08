@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: About air quality and health; VMM says an open fireplace has a very low efficiency.
   confidence: medium
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: false
 tags:
