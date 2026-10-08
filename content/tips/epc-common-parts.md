@@ -22,6 +22,8 @@ estimated_savings:
   kind: qualitative
   basis: Not a saving in itself; the certificate shows where the common parts lose energy.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

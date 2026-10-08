@@ -6,6 +6,7 @@ summary: Tochtstrips of nieuwe dichtingen aan ramen en deuren besparen gemiddeld
   en maken kamers merkbaar comfortabeler.
 savings_basis: Gemiddeld cijfer van de Vlaamse overheid; de winst aan comfort is meestal groter dan het
   effect op de factuur.
+impact_basis: Tochtstrips besparen gemiddeld ongeveer 1% op verwarming, zo'n 150 kWh per jaar in een gemiddeld Vlaams huis (15.000 kWh voor verwarming).
 flags:
 - Het cijfer van 1% is een gemiddelde; woningen met grote kieren kunnen meer besparen. Overweeg een tweede
   bron toe te voegen.

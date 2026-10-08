@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; the rules set minimum insulation, ventilation and energy levels for the works.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; the Flemish government warns that airco can raise the electricity bill sharply in summer.
   confidence: low
+impact:
+  band: unrated
 responsibility: owner
 needs_landlord_permission: false
 tags:

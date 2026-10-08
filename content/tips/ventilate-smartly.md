@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified in the sources; benefit is mainly avoiding mould and wasted heat.
   confidence: low
+impact:
+  band: unrated
 responsibility: tenant
 needs_landlord_permission: false
 tags:

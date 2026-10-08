@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; monthly information lets you see and adjust your own use.
   confidence: low
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: false
 tags:

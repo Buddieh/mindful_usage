@@ -21,6 +21,8 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | `time_needed` | minutes, hours, days, weeks |
 | `upfront_cost` | none (€0), under-100, 100-2500, 2500-25000, over-25000 (euro) |
 | `estimated_savings` | `kind`, optional `value` + `unit`, the `basis` behind the number, and `confidence` |
+| `impact` | `band` (large, medium, small, unrated, indirect) and, for the first three, the `basis`: which cited figure gives the band (see below) |
+| `payback` | only when a cited source states a payback time: `min_years` (optional), `max_years`, and `source`, the index of that source in `sources` (from 0) |
 | `responsibility` | tenant, landlord or shared |
 | `needs_landlord_permission` | true/false |
 | `pairs_with` | ids of tips to do together with this one, or first |
@@ -40,6 +42,22 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | 3 | Upgrade | One product or one technician visit |
 | 4 | Renovation | One building element with a contractor, often with a premium |
 | 5 | Deep renovation | Several elements at once, an architect, EPB rules apply |
+
+## Impact bands
+
+`impact.band` says roughly how much energy an item saves in a year in an average Flemish house, so readers can see which steps matter most. The reference house uses about 15,000 kWh of gas for heating, 2,000 kWh for hot water and 1,000 kWh of electricity per resident, as given on vlaanderen.be. The reader-facing explanation, with its sources, is in [`pages/impact.en.md`](pages/impact.en.md) and [`pages/impact.nl.md`](pages/impact.nl.md).
+
+| Band | Saving in the reference house |
+|---|---|
+| `large` | about 1,000 kWh a year or more, or a cited source names it among the largest causes of heat loss |
+| `medium` | about 250 to 1,000 kWh a year |
+| `small` | under about 250 kWh a year |
+| `unrated` | the item saves energy, but its sources give no size; don't estimate one yourself |
+| `indirect` | saves no energy by itself: a rule, service, contract, or health or safety item |
+
+For `large`, `medium` and `small`, write `impact.basis`: the cited figure and the short sum that turns it into kWh, for example "7% of 15,000 kWh is about 1,050 kWh". The Dutch file needs the same text as `impact_basis`. Compare energy, never euros: prices change too fast. The site gives a "Big win" badge to items with a large impact that cost nothing or under €100, and sorts items within each level by impact.
+
+Add `payback` only when a cited source states the payback time, and point `source` at that source. Payback depends on prices, so the validator requires `stability: variable` for such items.
 
 ## Constant and subject to change
 

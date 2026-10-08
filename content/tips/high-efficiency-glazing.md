@@ -21,6 +21,9 @@ estimated_savings:
   basis: About 23 m³ of natural gas or 25 litres of heating oil a year for each m² of single glazing replaced,
     according to the Flemish government.
   confidence: medium
+impact:
+  band: large
+  basis: Replacing 1 m² of single glazing saves about 23 m³ of gas a year, at least about 200 kWh. Replacing 5 m² or more of single glazing passes 1,000 kWh a year.
 responsibility: owner
 needs_landlord_permission: false
 tags:

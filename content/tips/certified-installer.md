@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; certification aims to raise the yield, safety and lifespan of installations.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

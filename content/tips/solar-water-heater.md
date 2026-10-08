@@ -21,6 +21,9 @@ estimated_savings:
   basis: The Flemish government says the yearly cost of heating water drops to about half; covering 50 to
     60% of hot-water use is the most cost-effective.
   confidence: medium
+impact:
+  band: large
+  basis: It roughly halves the yearly cost of heating water. An average Flemish house uses about 2,000 kWh of gas a year for hot water, so the saving is about 1,000 kWh.
 responsibility: owner
 needs_landlord_permission: false
 tags:

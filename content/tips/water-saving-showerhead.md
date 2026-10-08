@@ -22,6 +22,8 @@ estimated_savings:
   unit: L
   basis: '5-minute shower: 60 L standard head vs 35 L water-saving head (Flemish government figure).'
   confidence: high
+impact:
+  band: unrated
 responsibility: tenant
 needs_landlord_permission: false
 tags:

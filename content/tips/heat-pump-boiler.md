@@ -21,6 +21,8 @@ estimated_savings:
   basis: Three to four times more efficient than an electric boiler, according to the Flemish government;
     about 70% of the energy comes from the air.
   confidence: medium
+impact:
+  band: unrated
 responsibility: owner
 needs_landlord_permission: false
 tags:

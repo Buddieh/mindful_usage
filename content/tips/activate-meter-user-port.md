@@ -22,6 +22,8 @@ estimated_savings:
   basis: The port saves nothing by itself; Fluvius says connecting it to smart applications can help you save energy
     and money.
   confidence: low
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: false
 tags:

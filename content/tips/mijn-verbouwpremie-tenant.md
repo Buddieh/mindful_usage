@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Set by type of work; for tenants since 1 March 2026 only a heat pump or heat pump boiler.
   confidence: low
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: true
 tags:

@@ -21,6 +21,8 @@ estimated_savings:
   basis: Yield depends on orientation, shading and how much you use during daylight; no official Flemish
     average exists, but you can estimate production for your own balcony with the EU's free PVGIS tool.
   confidence: low
+impact:
+  band: unrated
 responsibility: shared
 needs_landlord_permission: true
 tags:

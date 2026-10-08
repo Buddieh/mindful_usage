@@ -21,6 +21,8 @@ estimated_savings:
   basis: Not quantified per room in the sources; each degree lower saves roughly 6–7% (see the thermostat
     tip).
   confidence: low
+impact:
+  band: unrated
 responsibility: tenant
 needs_landlord_permission: false
 tags:

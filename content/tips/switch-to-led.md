@@ -22,6 +22,9 @@ estimated_savings:
   unit: kWh
   basis: Per lamp, 40 W bulb replaced by 5 W LED (Flemish government figure).
   confidence: high
+impact:
+  band: small
+  basis: Each old bulb replaced by an LED saves about 35 kWh a year, so you need to replace about seven before the saving reaches the medium band.
 responsibility: tenant
 needs_landlord_permission: false
 tags:

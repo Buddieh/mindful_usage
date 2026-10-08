@@ -41,9 +41,9 @@ export function loadTips() {
 export function localize(tip, lang) {
   const d = tip.data;
   const tr = d.lang === lang ? null : tip.translations[lang];
-  if (!tr) return { lang: d.lang, title: d.title, summary: d.summary, basis: d.estimated_savings.basis,
+  if (!tr) return { lang: d.lang, title: d.title, summary: d.summary, basis: d.estimated_savings.basis, impact_basis: d.impact.basis,
     region_notes: d.region_notes, flags: d.verification.flags.map((f) => f.note), supports: d.sources.map((s) => s.supports || ""), body: tip.body };
   const t = tr.data;
-  return { lang, title: t.title, summary: t.summary, basis: t.savings_basis, region_notes: t.region_notes,
+  return { lang, title: t.title, summary: t.summary, basis: t.savings_basis, impact_basis: t.impact_basis, region_notes: t.region_notes,
     flags: t.flags || [], supports: t.supports || d.sources.map(() => ""), body: tr.body };
 }

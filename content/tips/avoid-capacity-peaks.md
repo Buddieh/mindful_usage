@@ -22,6 +22,8 @@ estimated_savings:
   basis: In 2026 the average charge was about €53 per kW per year excluding VAT, and it differs per network
     operator; every household pays for at least 2.5 kW. Savings depend on how far your peak drops.
   confidence: medium
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 region_notes: Flanders only. Brussels and Wallonia do not use this tariff.

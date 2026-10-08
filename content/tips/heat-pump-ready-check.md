@@ -22,6 +22,8 @@ estimated_savings:
   basis: A heat pump takes most of the heat it delivers from the environment; how much it saves depends on
     insulation, heat emitters and energy prices.
   confidence: low
+impact:
+  band: unrated
 responsibility: owner
 needs_landlord_permission: false
 tags:

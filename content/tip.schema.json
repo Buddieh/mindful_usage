@@ -24,7 +24,8 @@
     "sources",
     "verification",
     "lang",
-    "last_reviewed"
+    "last_reviewed",
+    "impact"
   ],
   "properties": {
     "id": {
@@ -181,6 +182,71 @@
             "medium",
             "low"
           ]
+        }
+      }
+    },
+    "impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "band"
+      ],
+      "description": "How much energy the item saves in a typical Flemish house in a year. See content/README.md, 'Impact bands'.",
+      "properties": {
+        "band": {
+          "enum": [
+            "large",
+            "medium",
+            "small",
+            "unrated",
+            "indirect"
+          ],
+          "description": "large: about 1,000 kWh a year or more; medium: about 250-1,000 kWh; small: under about 250 kWh; unrated: the sources give no size; indirect: saves no energy by itself (a rule, service, money or health item)."
+        },
+        "basis": {
+          "type": "string",
+          "description": "Required for large, medium and small: the cited figure and how it gives the band."
+        }
+      },
+      "if": {
+        "properties": {
+          "band": {
+            "enum": [
+              "large",
+              "medium",
+              "small"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "band",
+          "basis"
+        ]
+      }
+    },
+    "payback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_years",
+        "source"
+      ],
+      "description": "Only when a cited source states a payback time. Requires stability: variable, because payback depends on prices.",
+      "properties": {
+        "min_years": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_years": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "source": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Index (from 0) of the source in sources that states the payback time."
         }
       }
     },

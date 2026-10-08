@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: About security and privacy rather than energy.
   confidence: low
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: false
 tags:

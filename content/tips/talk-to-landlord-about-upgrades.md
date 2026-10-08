@@ -19,6 +19,8 @@ estimated_savings:
   kind: qualitative
   basis: Depends on the upgrade; insulation and glazing are the biggest levers.
   confidence: low
+impact:
+  band: indirect
 responsibility: shared
 needs_landlord_permission: true
 tags:

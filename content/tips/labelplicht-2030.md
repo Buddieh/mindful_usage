@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Context for conversations with your landlord.
   confidence: medium
+impact:
+  band: indirect
 responsibility: landlord
 needs_landlord_permission: false
 tags:

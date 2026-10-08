@@ -21,6 +21,8 @@ estimated_savings:
   basis: A 2016 measurement study found Wi-Fi smart plugs drawing 2.6 to 4.1 W in standby; a plain energy-saving plug
     draws about 0.1 to 0.3 W.
   confidence: low
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

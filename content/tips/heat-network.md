@@ -22,6 +22,8 @@ estimated_savings:
   basis: Not quantified; the Flemish government lists no own boiler, no yearly boiler maintenance and less fossil fuel
     as advantages.
   confidence: low
+impact:
+  band: unrated
 responsibility: owner
 needs_landlord_permission: false
 tags:

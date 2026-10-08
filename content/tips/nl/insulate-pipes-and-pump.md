@@ -6,6 +6,7 @@ summary: Geïsoleerde leidingen op zolder, in de garage of de kruipruimte verlie
   circulatiepomp op de laagste stand bespaart tot 120 kWh per seizoen.
 savings_basis: Tot 120 kWh elektriciteit per stookseizoen door een oudere circulatiepomp op de laagste stand
   te zetten, als alle radiatoren nog warm worden.
+impact_basis: Een oude circulatiepomp op de laagste stand laten draaien bespaart tot 120 kWh elektriciteit per stookseizoen.
 supports:
 - leidingen isoleren in onverwarmde ruimtes; oude pompen tot ongeveer 450 kWh per jaar; laagste stand bespaart
   tot 120 kWh; moderne pompen schakelen uit zonder warmtevraag

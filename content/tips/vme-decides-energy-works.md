@@ -22,6 +22,8 @@ estimated_savings:
   kind: qualitative
   basis: Not a saving in itself; it is how energy works on a shared building get decided.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

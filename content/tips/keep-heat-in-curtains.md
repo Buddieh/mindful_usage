@@ -23,6 +23,8 @@ estimated_savings:
   basis: Lower end of 30–50% less heat loss through windows at night, highest with single glazing in cold
     weather (Leefmilieu Brussel).
   confidence: medium
+impact:
+  band: unrated
 responsibility: tenant
 needs_landlord_permission: false
 tags:

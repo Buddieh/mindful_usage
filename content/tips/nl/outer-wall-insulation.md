@@ -6,6 +6,7 @@ summary: Buitenmuren zijn de tweede grootste bron van warmteverlies; isoleren aa
   weg, binnenisolatie houdt echte risico's op vocht, schimmel en vorstschade in.
 savings_basis: Niet becijferd; volgens de Vlaamse overheid zijn slecht geïsoleerde buitenmuren de tweede grootste
   oorzaak van warmteverlies in een woning.
+impact_basis: De Vlaamse overheid noemt slecht geïsoleerde buitenmuren de tweede grootste oorzaak van warmteverlies in een woning.
 supports:
 - tweede grootste warmteverlies, spouwisolatie alleen meestal niet genoeg voor 2050, binnenisolatie minder aanbevolen,
   eerst vocht oplossen, dikte voor 2050

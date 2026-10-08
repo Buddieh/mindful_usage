@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: A loan saves no energy itself; it makes works that do save energy affordable now. Borrowing has a cost.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:

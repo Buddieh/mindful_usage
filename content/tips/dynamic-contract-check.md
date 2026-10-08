@@ -21,6 +21,8 @@ estimated_savings:
   kind: qualitative
   basis: Highly dependent on usage pattern and market prices.
   confidence: low
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

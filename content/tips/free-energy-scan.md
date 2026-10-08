@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Personalised; the kit alone covers several tips in this collection.
   confidence: medium
+impact:
+  band: indirect
 responsibility: tenant
 needs_landlord_permission: false
 tags:

@@ -20,6 +20,8 @@ estimated_savings:
   kind: qualitative
   basis: Not quantified; the saving depends on the home and the works chosen to reach label D.
   confidence: low
+impact:
+  band: indirect
 responsibility: owner
 needs_landlord_permission: false
 tags:
