@@ -77,6 +77,29 @@ const IMPACT = { large: 3, medium: 2, small: 1, unrated: 0, indirect: 0 };
 const impactRank = (d) => IMPACT[d.impact.band];
 // A big win saves a lot of energy for free or under €100.
 const isBigWin = (d) => d.impact.band === "large" && COSTS.indexOf(d.upfront_cost) <= 1;
+// kg of CO2 per kWh of natural gas (VEKA-VMM standard factor) and per forest tree per year
+// (Klimaathelpdesk, from the Dutch forest inventory); both are cited on the impact page.
+const GAS_CO2 = 0.202;
+const TREE_CO2 = 11;
+// Gas savings only: Belgian electricity has no fixed CO2 factor.
+function co2(d) {
+  const { energy, kwh, up_to, per } = d.impact;
+  if (energy !== "gas" || !kwh) return null;
+  const kg = kwh * GAS_CO2;
+  const trees = kg / TREE_CO2;
+  return {
+    kg: kg >= 100 ? Math.round(kg / 10) * 10 : Math.round(kg / 5) * 5,
+    trees: trees >= 10 ? Math.round(trees / 5) * 5 : Math.max(1, Math.round(trees)),
+    upTo: Boolean(up_to), per,
+  };
+}
+function co2Text(c, key) {
+  const n = new Intl.NumberFormat(LOCALES[LANG] || LANG);
+  return t(`co2.${key}${c.upTo ? "UpTo" : ""}${c.per ? "Per" : ""}`)
+    .replace("{kg}", n.format(c.kg)).replace("{trees}", n.format(c.trees))
+    .replace("{per}", c.per ? label("per", c.per) : "")
+    .replace("{tree}", t(c.trees === 1 ? "co2.tree" : "co2.trees"));
+}
 const TODAY = new Date().toISOString().slice(0, 10);
 const isOverdue = (d) => d.stability === "variable" && d.review_by < TODAY;
 const levelText = (n) => t("chip.level").replace("{n}", n).replace("{name}", label("rung", n));
@@ -101,8 +124,11 @@ function chips(d, full) {
     ...(impactRank(d) && (full || !isBigWin(d)) ? [`<span class="chip impact ${d.impact.band}">${esc(label("impactChip", d.impact.band))}</span>`] : []),
   ];
   const stability = `<span class="chip ${d.stability}" title="${esc(t(`stability.${d.stability}`))}">${esc(label("stability", d.stability))}</span>`;
+  const c = co2(d);
+  const carbon = c ? [`<span class="chip co2">${esc(co2Text(c, "chip"))}</span>`] : [];
   const out = full ? [
     ...impact,
+    ...carbon,
     `<span class="chip cat">${esc(label("category", d.category))}</span>`,
     `<span class="chip level">${esc(levelText(d.rung))}</span>`,
     `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
@@ -110,6 +136,7 @@ function chips(d, full) {
     stability,
   ] : [
     ...impact,
+    ...carbon,
     ...(s ? [`<span class="chip save">${esc(s)}</span>`] : []),
     `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
     ...(d.stability === "variable" ? [stability] : []),
@@ -215,6 +242,8 @@ function tipPage(tip) {
     .replace("{min}", pb.min_years).replace("{max}", pb.max_years))}</strong> · ${esc(t("payback.according"))} <a href="${esc(d.sources[pb.source].url)}" rel="noopener">${esc(d.sources[pb.source].publisher)}</a>. ${esc(t("payback.note"))}`;
   const facts = [
     [t("field.impact"), `${impactText} <a href="../../impact/">${esc(t("impact.how"))}</a>`],
+    ...(co2(d) ? [[t("field.co2"), `<strong>${esc(co2Text(co2(d), "long"))}</strong> <a href="../../impact/#co2">${esc(t("co2.how"))}</a>`]]
+      : d.impact.energy === "electricity" ? [[t("field.co2"), `${esc(t("co2.electricity"))} <a href="../../impact/#co2">${esc(t("co2.how"))}</a>`]] : []),
     ...(pb ? [[t("field.payback"), paybackText]] : []),
     [t("field.savings"), `${savings ? `<strong>${esc(savings)}</strong> · ` : ""}${esc(l.basis)} <span class="muted">(${esc(t("field.confidence"))}: ${esc(label("confidence", s.confidence))})</span>`],
     [t("field.who"), label("responsibility", d.responsibility)],

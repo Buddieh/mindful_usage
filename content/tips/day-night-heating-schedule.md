@@ -24,6 +24,8 @@ estimated_savings:
 impact:
   band: large
   basis: A day and night schedule saves about 10% of heating, which is about 1,500 kWh a year in an average Flemish house (15,000 kWh for heating).
+  energy: gas
+  kwh: 1500
 responsibility: tenant
 needs_landlord_permission: false
 tags:

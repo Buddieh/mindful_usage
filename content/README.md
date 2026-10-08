@@ -21,7 +21,7 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | `time_needed` | minutes, hours, days, weeks |
 | `upfront_cost` | none (€0), under-100, 100-2500, 2500-25000, over-25000 (euro) |
 | `estimated_savings` | `kind`, optional `value` + `unit`, the `basis` behind the number, and `confidence` |
-| `impact` | `band` (large, medium, small, unrated, indirect) and, for the first three, the `basis`: which cited figure gives the band (see below) |
+| `impact` | `band` (large, medium, small, unrated, indirect) and, for the first three, the `basis` (which cited figure gives the band), `energy` and optionally `kwh`, `up_to`, `per` (see below) |
 | `payback` | only when a cited source states a payback time: `min_years` (optional), `max_years`, and `source`, the index of that source in `sources` (from 0) |
 | `responsibility` | tenant, landlord or shared |
 | `needs_landlord_permission` | true/false |
@@ -54,6 +54,8 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | `small` | under about 250 kWh a year |
 | `unrated` | the item saves energy, but its sources give no size; don't estimate one yourself |
 | `indirect` | saves no energy by itself: a rule, service, contract, or health or safety item |
+
+For `large`, `medium` and `small`, also set `impact.energy` (`gas` or `electricity`, as in the reference house, which heats with gas) and, when the basis gives one, the yearly saving as `impact.kwh`. Add `up_to: true` when that figure is a maximum, and `per: m2` or `per: lamp` when it counts one square metre of glazing or one lamp. The validator checks that a whole-home `kwh` fits its band. For gas savings with a `kwh`, the site shows the CO₂ avoided (0.202 kg per kWh, the VEKA-VMM standard factor) and the number of forest trees that take up as much in a year (11 kg each, from Klimaathelpdesk). Electricity gets no CO₂ figure, because there is no fixed factor for it.
 
 For `large`, `medium` and `small`, write `impact.basis`: the cited figure and the short sum that turns it into kWh, for example "7% of 15,000 kWh is about 1,050 kWh". The Dutch file needs the same text as `impact_basis`. Compare energy, never euros: prices change too fast. The site gives a "Big win" badge to items with a large impact that cost nothing or under €100, and sorts items within each level by impact.
 

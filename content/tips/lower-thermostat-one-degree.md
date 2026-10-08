@@ -23,6 +23,8 @@ estimated_savings:
 impact:
   band: large
   basis: Each degree lower saves about 7% of heating. An average Flemish house uses about 15,000 kWh a year for heating, so one degree saves about 1,050 kWh.
+  energy: gas
+  kwh: 1050
 responsibility: tenant
 needs_landlord_permission: false
 tags:

@@ -25,6 +25,8 @@ estimated_savings:
 impact:
   band: medium
   basis: A serviced gas boiler saves about 5% of heating, which is about 750 kWh a year in an average Flemish house (15,000 kWh for heating).
+  energy: gas
+  kwh: 750
 responsibility: tenant
 needs_landlord_permission: false
 region_notes: 'Vlaams Woninghuurdecreet: small repairs (kleine herstellingen) are the tenant''s, and periodic

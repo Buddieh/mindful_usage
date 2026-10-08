@@ -20,6 +20,14 @@ Als een bron een besparing in kubieke meter gas geeft, rekenen we 1 m³ als mins
 
 Bij elke ingeschatte tip staat welk cijfer uit zijn bronnen de klasse bepaalt. Een **Grote winst** heeft een grote impact en kost niets of minder dan €100.
 
+<h2 id="co2">CO₂ en bomen</h2>
+
+Bij besparingen op gas tonen we ook de CO₂ die je vermijdt. Aardgas verbranden stoot ongeveer 0,202 kg CO₂ per kWh uit, de standaardfactor van het Vlaams Energie- en Klimaatagentschap en de Vlaamse Milieumaatschappij ([VEKA en VMM](https://assets.vlaanderen.be/image/upload/v1667817909/2022-01-11_VEKA-VMM_nota_COW_emissiefactoren_en_soortelijk_gewicht_phgn1g.pdf)). Het gemiddelde huis verwarmt met gas, dus we gebruiken die factor voor tips over verwarming en warm water.
+
+Voor elektriciteit berekenen we geen CO₂. Dezelfde agentschappen geven er geen standaardfactor voor, omdat de CO₂ per kWh stroom in de tijd verandert ([VEKA en VMM](https://assets.vlaanderen.be/image/upload/v1667817909/2022-01-11_VEKA-VMM_nota_COW_emissiefactoren_en_soortelijk_gewicht_phgn1g.pdf)).
+
+Om het getal tastbaar te maken, vergelijken we het met bomen. Een gemiddelde boom in een Nederlands bos neemt zo'n 11 kg CO₂ per jaar op, volgens de Nederlandse bosinventarisatie ([Klimaathelpdesk, Wageningen University & Research](https://www.klimaathelpdesk.org/answers/hoe-lang-slaat-een-boom-co2-op/)). We gebruiken dat als het dichtstbijzijnde gepubliceerde gemiddelde voor Vlaanderen. Een vrijstaande boom neemt tussen 10 en 40 kg per jaar op, afhankelijk van leeftijd en dikte ([Staatsbosbeheer](https://www.staatsbosbeheer.nl/wat-we-doen/co2-opslaan/bos-en-co2)), dus zie het aantal bomen als een ruw beeld, geen meting. CO₂ vermijden is ook niet hetzelfde als bomen planten: een boom houdt koolstof maar vast zolang hij en zijn hout blijven bestaan ([Klimaathelpdesk](https://www.klimaathelpdesk.org/answers/hoe-lang-slaat-een-boom-co2-op/)).
+
 ## Waarom energie en geen euro's
 
 Prijzen veranderen te snel om bedragen in euro juist te houden. De schatting van de Vlaamse energieregulator voor de jaarfactuur van een nieuw contract ging van zo'n €2.240 in september 2021 naar zo'n €9.210 een jaar later ([VRT NWS](https://www.vrt.be/vrtnws/nl/2022/09/15/gemiddelde-jaarfactuur-voor-energie/)). Een kWh elektriciteit kost meestal meer dan een kWh gas, dus een tip over elektriciteit kan zwaarder doorwegen op je factuur dan zijn klasse doet vermoeden.

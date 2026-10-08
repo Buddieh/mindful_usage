@@ -32,6 +32,13 @@ for (const tip of tips) {
   // Variable tips must be checked again by review_by; overdue ones are flagged on the site.
   if (d.stability === "variable" && d.review_by < today) warnings.push(`${tip.file}: review_by ${d.review_by} has passed; check the tip again`);
 
+  // A yearly kWh figure for the whole home must fall inside its impact band.
+  const { kwh, per } = d.impact;
+  if (kwh && !per) {
+    const band = kwh >= 1000 ? "large" : kwh >= 250 ? "medium" : "small";
+    if (band !== d.impact.band) errors.push(`${tip.file}: impact.kwh ${kwh} belongs in band "${band}", not "${d.impact.band}"`);
+  }
+
   // A payback time must come from one of the tip's sources, and depends on prices, so the tip is variable.
   if (d.payback) {
     if (d.payback.source >= d.sources.length) errors.push(`${tip.file}: payback.source ${d.payback.source} is not a source index (0 to ${d.sources.length - 1})`);

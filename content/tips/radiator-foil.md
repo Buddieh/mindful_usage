@@ -23,6 +23,8 @@ estimated_savings:
 impact:
   band: medium
   basis: Radiator foil on uninsulated outer walls saves about 2% of heating, which is about 300 kWh a year in an average Flemish house (15,000 kWh for heating).
+  energy: gas
+  kwh: 300
 responsibility: tenant
 needs_landlord_permission: false
 tags:

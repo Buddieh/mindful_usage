@@ -25,6 +25,8 @@ estimated_savings:
 impact:
   band: medium
   basis: A lower return temperature saves about 6% of heating, which is about 900 kWh a year in an average Flemish house (15,000 kWh for heating).
+  energy: gas
+  kwh: 900
 responsibility: shared
 needs_landlord_permission: true
 tags:

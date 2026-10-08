@@ -23,6 +23,9 @@ estimated_savings:
 impact:
   band: large
   basis: Up to 30% of a home's heat loss can go through an uninsulated roof, which is up to about 4,500 kWh a year in an average Flemish house (15,000 kWh for heating).
+  energy: gas
+  kwh: 4500
+  up_to: true
 responsibility: owner
 needs_landlord_permission: false
 tags:
