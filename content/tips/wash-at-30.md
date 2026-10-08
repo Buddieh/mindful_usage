@@ -24,6 +24,7 @@ estimated_savings:
 impact:
   band: small
   basis: Halving the number of washes saves about 1% of electricity, so washing as a whole is only a few percent of it. Washing at 30 °C instead of 60 °C halves the energy per wash, which saves tens of kWh a year.
+  energy: electricity
 responsibility: tenant
 needs_landlord_permission: false
 tags:

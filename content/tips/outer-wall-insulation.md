@@ -23,6 +23,7 @@ estimated_savings:
 impact:
   band: large
   basis: The Flemish government names poorly insulated outer walls the second-largest cause of heat loss in a home.
+  energy: gas
 responsibility: owner
 needs_landlord_permission: false
 tags:

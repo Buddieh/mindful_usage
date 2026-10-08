@@ -25,6 +25,9 @@ estimated_savings:
 impact:
   band: small
   basis: Each old bulb replaced by an LED saves about 35 kWh a year, so you need to replace about seven before the saving reaches the medium band.
+  energy: electricity
+  kwh: 35
+  per: lamp
 responsibility: tenant
 needs_landlord_permission: false
 tags:

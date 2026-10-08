@@ -25,6 +25,9 @@ estimated_savings:
 impact:
   band: small
   basis: Running an old circulation pump on its lowest setting saves up to 120 kWh of electricity per heating season.
+  energy: electricity
+  kwh: 120
+  up_to: true
 responsibility: owner
 needs_landlord_permission: false
 tags:

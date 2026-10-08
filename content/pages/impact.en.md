@@ -20,6 +20,14 @@ Where a source gives a saving in cubic metres of gas, we count 1 m³ as at least
 
 Each rated item says which figure from its sources gives its band. A **Big win** has a large impact and costs nothing or less than €100.
 
+<h2 id="co2">CO₂ and trees</h2>
+
+For savings on gas, we also show the CO₂ you avoid. Burning natural gas releases about 0.202 kg of CO₂ per kWh, the standard factor of the Flemish Energy and Climate Agency and the Flanders Environment Agency ([VEKA and VMM](https://assets.vlaanderen.be/image/upload/v1667817909/2022-01-11_VEKA-VMM_nota_COW_emissiefactoren_en_soortelijk_gewicht_phgn1g.pdf)). The average house heats with gas, so we use this factor for heating and hot-water items.
+
+We don't calculate CO₂ for electricity. The same agencies give no standard factor for it, because the CO₂ per kWh of electricity changes over time ([VEKA and VMM](https://assets.vlaanderen.be/image/upload/v1667817909/2022-01-11_VEKA-VMM_nota_COW_emissiefactoren_en_soortelijk_gewicht_phgn1g.pdf)).
+
+To make the number easier to picture, we compare it with trees. An average tree in a Dutch forest takes up about 11 kg of CO₂ a year, based on the Dutch national forest inventory ([Klimaathelpdesk, Wageningen University & Research](https://www.klimaathelpdesk.org/answers/hoe-lang-slaat-een-boom-co2-op/)). We use this as the nearest published average for Flanders. A free-standing tree can take up between 10 and 40 kg a year depending on its age and size ([Staatsbosbeheer](https://www.staatsbosbeheer.nl/wat-we-doen/co2-opslaan/bos-en-co2)), so treat the tree count as a rough picture, not a measurement. Avoiding CO₂ is also not the same as planting trees: a tree stores carbon only for as long as it and its wood last ([Klimaathelpdesk](https://www.klimaathelpdesk.org/answers/hoe-lang-slaat-een-boom-co2-op/)).
+
 ## Why energy and not euros
 
 Prices change too fast for euro amounts to stay correct. The Flemish energy regulator's estimate of a yearly bill for a new contract went from about €2,240 in September 2021 to about €9,210 a year later ([VRT NWS](https://www.vrt.be/vrtnws/nl/2022/09/15/gemiddelde-jaarfactuur-voor-energie/)). A kWh of electricity usually costs more than a kWh of gas, so an electricity item can weigh more on your bill than its band suggests.

@@ -206,6 +206,29 @@
         "basis": {
           "type": "string",
           "description": "Required for large, medium and small: the cited figure and how it gives the band."
+        },
+        "energy": {
+          "enum": [
+            "gas",
+            "electricity"
+          ],
+          "description": "Which energy the saving is in, in the reference house (heated with natural gas). Required for large, medium and small."
+        },
+        "kwh": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "The yearly saving in kWh from impact.basis, if it gives one. The site turns gas savings into kg of CO2 and tree equivalents."
+        },
+        "up_to": {
+          "type": "boolean",
+          "description": "true when kwh is an upper limit (\"up to\")."
+        },
+        "per": {
+          "enum": [
+            "m2",
+            "lamp"
+          ],
+          "description": "When kwh is per square metre of glazing or per lamp rather than per home."
         }
       },
       "if": {
@@ -222,7 +245,8 @@
       "then": {
         "required": [
           "band",
-          "basis"
+          "basis",
+          "energy"
         ]
       }
     },

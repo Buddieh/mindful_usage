@@ -24,6 +24,8 @@ estimated_savings:
 impact:
   band: large
   basis: It roughly halves the yearly cost of heating water. An average Flemish house uses about 2,000 kWh of gas a year for hot water, so the saving is about 1,000 kWh.
+  energy: gas
+  kwh: 1000
 responsibility: owner
 needs_landlord_permission: false
 tags:
