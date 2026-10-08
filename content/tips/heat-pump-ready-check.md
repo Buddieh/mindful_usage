@@ -37,7 +37,7 @@ sources:
 - title: Is uw woning warmtepompklaar?
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/nieuwe-verwarmingsinstallatie-kiezen/naar-woningverwarming-met-warmtepomp-of-warmtenet/is-uw-woning-warmtepompklaar
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/nieuwe-verwarmingsinstallatie-kiezen/verwarming-met-warmtepomp-of-warmtenet/is-uw-woning-warmtepompklaar
   accessed: '2026-10-07'
   locator: section 'Doel van de tool'
   supports: the tool gives an indication; efficiency depends on insulation and emitter temperature; full assessment

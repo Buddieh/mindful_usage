@@ -33,20 +33,20 @@ sources:
 - title: 'Zonnekaart: is uw dak geschikt voor zonneboiler of zonnepanelen?'
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/zonnekaart
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnekaart-is-uw-dak-geschikt-voor-zonneboiler-of-zonnepanelen
   accessed: '2026-10-07'
   supports: roof scores, estimates of yield, cost and payback, limits of the map, ask a certified installer
 - title: Retroactieve investeringspremie na afschaffing van de terugdraaiende teller
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/compensatie-voor-eigenaars-van-zonnepanelen-na-afschaffing-van-terugdraaiende-teller
+  url: https://www.vlaanderen.be/retroactieve-investeringspremie-voor-eigenaars-van-zonnepanelen-na-afschaffing-van-terugdraaiende-teller
   accessed: '2026-10-07'
   locator: sections 'Voorwaarden' and 'Veelgestelde vragen'
   supports: end of the turning-back meter in 2021, digital meter required since 2025, capacity tariff since 2023
 - title: 'Ik heb vóór 2021 zonnepanelen laten plaatsen: hoe zit het met de digitale meter?'
   publisher: Fluvius
   type: official
-  url: https://www.fluvius.be/nl/meters-en-meterstanden/digitale-meter/zonnepanelen/geplaatst-voor-2021
+  url: https://www.fluvius.be/nl/meters-en-meterstanden/zonnepanelen/geplaatst-voor-2021
   accessed: '2026-10-07'
   locator: section 'Je digitale meter werd geplaatst vanaf 1 april 2026'
   supports: digital meter legally required; since 1 April 2026 a surplus on the old turning-back meter is no longer

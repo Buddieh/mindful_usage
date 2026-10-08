@@ -62,7 +62,7 @@ sources:
 - title: EPB-eisen bij bouwaanvraag of melding vanaf 2025 (EPB-pedia)
   publisher: Vlaams Energie- en Klimaatagentschap (EPB-pedia)
   type: official
-  url: https://www.vlaanderen.be/epb-pedia/epb-eisentabellen-per-aanvraagjaar/epb-eisen-bij-bouwaanvraag-melding-vanaf-2025
+  url: https://www.vlaanderen.be/epb-pedia/epb-plichtig-toepassing-en-eisen/epb-eisentabellen-per-aanvraagjaar/epb-eisen-bij-bouwaanvraag-melding-vanaf-2025
   accessed: '2026-10-07'
   locator: column 'Wonen'
   supports: requirements for ordinary and major energy renovation

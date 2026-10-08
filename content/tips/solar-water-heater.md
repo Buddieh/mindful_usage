@@ -39,7 +39,7 @@ sources:
 - title: 'Zonnekaart: is uw dak geschikt voor zonneboiler of zonnepanelen?'
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/zonnekaart
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnekaart-is-uw-dak-geschikt-voor-zonneboiler-of-zonnepanelen
   accessed: '2026-10-07'
   supports: the Zonnekaart scores roofs for a solar water heater too
 verification:

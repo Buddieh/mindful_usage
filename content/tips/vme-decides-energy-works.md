@@ -50,7 +50,7 @@ sources:
 - title: Renovatieverplichting voor residentiële gebouwen
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/een-woning-kopen/renovatieverplichting-voor-residentiele-gebouwen-vanaf-2023
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/kopen-en-verkopen/een-huis-of-appartement-kopen/renovatieverplichting-voor-residentiele-gebouwen
   accessed: '2026-10-07'
   locator: FAQ on buying one apartment
   supports: legally required works can be decided by simple majority; a co-owner can go to the justice of the peace

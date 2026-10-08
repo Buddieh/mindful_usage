@@ -36,7 +36,7 @@ sources:
 - title: Mijn VerbouwBegeleiding voor een Vereniging van Mede-Eigenaars (VME)
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-verbouwbegeleiding/mijn-verbouwbegeleiding-voor-een-vereniging-van-mede-eigenaars-vme
+  url: https://www.vlaanderen.be/mijn-verbouwbegeleiding-voor-een-vereniging-van-mede-eigenaars-vme
   accessed: '2026-10-07'
   locator: sections 'Voorwaarden', 'Procedure' and 'Contact'
   supports: free independent advice for a VME on investments in common parts, help with quotes and loans, organised

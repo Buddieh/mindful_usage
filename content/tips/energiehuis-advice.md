@@ -29,7 +29,7 @@ sources:
 - title: Energiehuizen
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
-  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/energiehuizen
+  url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-energiehuis
   accessed: '2026-10-07'
   locator: sections 'Waarvoor kunt u terecht in een energiehuis?' and 'Neem contact op met het Energiehuis voor
     uw gemeente'

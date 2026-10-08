@@ -50,6 +50,8 @@ async function fingerprint(url) {
         signal: AbortSignal.timeout(30000),
         headers: { "user-agent": "mindful_usage source check (+https://github.com/Buddieh/mindful_usage)" },
       });
+      // Some sites refuse automated requests; retrying won't help, and the page is likely fine.
+      if ([401, 403, 429].includes(res.status)) return { blocked: `HTTP ${res.status}` };
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const type = res.headers.get("content-type") || "";
       const body = Buffer.from(await res.arrayBuffer());
@@ -61,7 +63,11 @@ async function fingerprint(url) {
       await new Promise((r) => setTimeout(r, 2000 * (attempt + 1)));
     }
   }
-  return { error: lastError?.message || String(lastError) };
+  // Node's fetch hides the reason behind "fetch failed"; certificate problems are a server setup issue
+  // (browsers often work around them), so they go with the pages that can't be checked automatically.
+  const code = lastError?.cause?.code;
+  if (code && /CERT|SIGNATURE|SSL|TLS/.test(code)) return { blocked: `certificate problem: ${code}` };
+  return { error: [lastError?.message || String(lastError), code].filter(Boolean).join(": ") };
 }
 
 const previous = existsSync(snapshotFile) ? JSON.parse(readFileSync(snapshotFile, "utf8")) : { pages: {} };
@@ -69,10 +75,16 @@ const firstRun = Object.keys(previous.pages).length === 0;
 const pages = {};
 const changed = [];
 const failed = [];
+const blocked = [];
 
 for (const [url, ids] of citedBy) {
   const result = await fingerprint(url);
   const before = previous.pages[url];
+  if (result.blocked) {
+    blocked.push({ url, ids, error: result.blocked });
+    if (before) pages[url] = before;
+    continue;
+  }
   if (result.error) {
     failed.push({ url, ids, error: result.error });
     if (before) pages[url] = before; // keep the last good fingerprint
@@ -90,7 +102,7 @@ const due = variable
 
 const link = (id) => `[${id}](${REPO}/${id}.md)`;
 const lines = [];
-const attention = changed.length + failed.length + due.length > 0;
+const attention = changed.length + failed.length + blocked.length + due.length > 0;
 lines.push(attention ? "Variable tips need attention." : "Nothing to do this month.", "");
 lines.push(
   `Checked ${citedBy.size} source pages cited by ${variable.length} variable tips on ${today}.` +
@@ -105,6 +117,11 @@ if (changed.length) {
 if (failed.length) {
   lines.push("## Source pages that could not be read", "", "The page may have moved or be down for a moment. Find the new address or another official source.", "");
   for (const f of failed) lines.push(`- [ ] ${f.url} (${f.error}): ${f.ids.map(link).join(", ")}`);
+  lines.push("");
+}
+if (blocked.length) {
+  lines.push("## Source pages that refuse automatic checks", "", "These sites refuse automated requests or have a certificate problem that browsers work around, so this check can't tell whether they changed. Open them in a browser and compare with the tips.", "");
+  for (const b of blocked) lines.push(`- [ ] ${b.url} (${b.error}): ${b.ids.map(link).join(", ")}`);
   lines.push("");
 }
 if (due.length) {
