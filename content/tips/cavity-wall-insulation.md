@@ -12,7 +12,8 @@ kind: practice
 stage:
 - living-in
 - renovating
-stability: constant
+stability: variable
+review_by: '2027-02-28'
 rung: 4
 time_needed: days
 upfront_cost: 2500-25000

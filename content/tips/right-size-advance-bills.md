@@ -12,7 +12,8 @@ category: contracts-billing
 kind: practice
 stage:
 - living-in
-stability: constant
+stability: variable
+review_by: '2026-12-31'
 rung: 1
 time_needed: minutes
 upfront_cost: none

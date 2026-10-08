@@ -15,7 +15,7 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | `category` | heating, hot-water, ventilation-moisture, electricity, appliances, lighting, renewables, contracts-billing, rights-rules, help-subsidies, insulation, windows-doors, indoor-air, smart-home-monitoring, building-rules |
 | `kind` | practice (something to do), explainer (a rule explained, e.g. EPB or EPC), service (a pointer to an existing tool or service) |
 | `stage` | living-in, renovating, building-new |
-| `stability` | constant (good practice that barely changes with laws or prices) or variable (depends on rules, premiums, tariffs or a service that can change) |
+| `stability` | constant (good practice that barely changes with laws or prices) or variable, shown on the site as "Subject to change" / "Kan wijzigen" (depends on rules, premiums, tariffs, prices or a service that can change) |
 | `review_by` | required for variable tips: the date by which the tip must be checked again |
 | `rung` | the effort level, 1 to 5 (see below) |
 | `time_needed` | minutes, hours, days, weeks |
@@ -41,9 +41,9 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | 4 | Renovation | One building element with a contractor, often with a premium |
 | 5 | Deep renovation | Several elements at once, an architect, EPB rules apply |
 
-## Constant and variable
+## Constant and subject to change
 
-Mark a tip `variable` when acting on it depends on something that can change: a law or rental rule, a premium, a tariff, a price, or an existing service. Variable tips need a `review_by` date. The site tells readers to check the source before acting, and flags the tip as overdue once that date passes. A `constant` tip still needs a citation like every other tip.
+On the site, variable tips are labelled "Subject to change" (Dutch: "Kan wijzigen"); in the data the value stays `variable`. Mark a tip `variable` when acting on it depends on something that can change: a law or rental rule, a premium, a tariff, a price, or an existing service. Variable tips need a `review_by` date. The site tells readers to check the source before acting, and flags the tip as overdue once that date passes. A `constant` tip still needs a citation like every other tip.
 
 ## Languages
 
