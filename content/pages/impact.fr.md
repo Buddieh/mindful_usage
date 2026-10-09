@@ -42,6 +42,8 @@ Les économies réelles sont souvent plus faibles que calculé. Les ménages qui
 
 En Flandre, l'EPC de votre logement liste les mesures recommandées par ordre de priorité et, pour les maisons, donne une estimation du coût des mesures prioritaires ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res), en néerlandais). Votre Energiehuis peut vous conseiller sur ce qu'il faut faire en premier.
 
+À Bruxelles, un certificat PEB établi depuis mars 2023 propose un scénario de rénovation recommandé, étape par étape ([Bruxelles Environnement](https://environnement.brussels/citoyen/reglementation-et-inspection/obligations-et-autorisations/le-certificat-peb-dun-logement-en-region-bruxelloise)), et Homegrade peut vous aider à le lire ([Homegrade](https://homegrade.brussels/nos-services/)). En Wallonie, les certificats établis depuis le 1er septembre 2026 indiquent un parcours de rénovation indicatif vers le label A ([SPW Énergie](https://energie.wallonie.be/actualite/certificat-peb-mieux-comprendre-son-logement-et-preparer-sa-renovation-1)), et un Guichet Énergie vous conseille gratuitement ([Wallonie.be](https://www.wallonie.be/fr/demarches/contacter-les-guichets-energie-wallonie)).
+
 <h2 id="ai">Comment ce site est réalisé</h2>
 
 Ce site est réalisé avec l'IA. Claude, un modèle d'IA d'Anthropic, a cherché et lu les sources, rédigé les textes en néerlandais, en français et en anglais, évalué l'impact de chaque conseil et construit le site web. Une personne, celle qui gère le projet, décide de ce qui figure sur le site et approuve chaque modification avant sa publication.
