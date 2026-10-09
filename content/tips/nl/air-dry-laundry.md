@@ -6,7 +6,7 @@ summary: Een zuinige droogkast (A-label) verbruikt ongeveer 0,8 kWh per beurt, e
   Aan de lucht drogen kost niets.
 savings_basis: Oudere droogkast 2–4 kWh per beurt (cijfer Vlaamse overheid); een gezin droogt gemiddeld
   zo'n 160 keer per jaar.
-impact_basis: Een oudere droogkast verbruikt 2 tot 4 kWh per beurt. Bij ongeveer 160 beurten per jaar bespaart drogen aan de lijn zo'n 320 tot 640 kWh.
+impact_basis: Een oudere droogkast verbruikt 2 tot 4 kWh per beurt. Bij ongeveer 160 beurten per jaar voor een gezin van vier bespaart drogen aan de lijn zo'n 320 tot 640 kWh.
 supports:
 - 0,8 kWh tegenover 2–4 kWh per beurt; ~160 beurten per jaar
 ---

@@ -25,8 +25,10 @@ estimated_savings:
   confidence: medium
 impact:
   band: medium
-  basis: An older dryer uses 2 to 4 kWh per cycle. At about 160 cycles a year, drying on a line instead saves about 320 to 640 kWh.
+  basis: An older dryer uses 2 to 4 kWh per cycle. At about 160 cycles a year for a family of four, drying on a line instead saves about 320 to 640 kWh.
   energy: electricity
+  kwh_min: 320
+  kwh: 640
 responsibility: tenant
 needs_landlord_permission: false
 tags:

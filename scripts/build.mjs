@@ -5,6 +5,7 @@ import { join } from "node:path";
 import { marked } from "marked";
 import { loadTips, localize, ROOT } from "./tips.mjs";
 import { t as tr, label as lb, LANGUAGES, DEFAULT_LANG } from "../src/i18n.mjs";
+import { icon } from "../src/icons.mjs";
 
 const DIST = join(ROOT, "dist");
 // Set per language in the build loop at the bottom.
@@ -51,6 +52,7 @@ ${body}
 </main>
 <footer class="site-footer"><div class="wrap">
   <p>${t("footer.license")}${REPO_URL ? ` · <a href="${REPO_URL}">${esc(t("footer.source"))}</a>` : ""}</p>
+  <p>${esc(t("footer.ai"))} <a href="${rel}impact/#ai">${esc(t("footer.aiHow"))}</a></p>
   <p>${esc(t("footer.disclaimer"))}</p>
 </div></footer>
 <script src="${rel}../app.js"></script>
@@ -77,28 +79,35 @@ const IMPACT = { large: 3, medium: 2, small: 1, unrated: 0, indirect: 0 };
 const impactRank = (d) => IMPACT[d.impact.band];
 // A big win saves a lot of energy for free or under €100.
 const isBigWin = (d) => d.impact.band === "large" && COSTS.indexOf(d.upfront_cost) <= 1;
-// kg of CO2 per kWh of natural gas (VEKA-VMM standard factor) and per forest tree per year
-// (Klimaathelpdesk, from the Dutch forest inventory); both are cited on the impact page.
-const GAS_CO2 = 0.202;
+// kg of CO2 per kWh saved and per forest tree per year, all cited on the impact page:
+// natural gas (VEKA-VMM standard factor), electricity (VEKA's fixed factor for a kWh not made
+// in a gas-fired STEG plant) and trees (Klimaathelpdesk, from the Dutch forest inventory).
+const CO2_PER_KWH = { gas: 0.202, electricity: 0.381 };
 const TREE_CO2 = 11;
-// Gas savings only: Belgian electricity has no fixed CO2 factor.
+const roundKg = (kg) => kg >= 100 ? Math.round(kg / 10) * 10 : Math.round(kg / 5) * 5;
+const roundTrees = (n) => n >= 10 ? Math.round(n / 5) * 5 : Math.max(1, Math.round(n));
 function co2(d) {
-  const { energy, kwh, up_to, per } = d.impact;
-  if (energy !== "gas" || !kwh) return null;
-  const kg = kwh * GAS_CO2;
-  const trees = kg / TREE_CO2;
+  const { energy, kwh, kwh_min, up_to, per } = d.impact;
+  if (!CO2_PER_KWH[energy] || !kwh) return null;
+  const kg = (k) => k * CO2_PER_KWH[energy];
   return {
-    kg: kg >= 100 ? Math.round(kg / 10) * 10 : Math.round(kg / 5) * 5,
-    trees: trees >= 10 ? Math.round(trees / 5) * 5 : Math.max(1, Math.round(trees)),
+    kg: roundKg(kg(kwh)), trees: roundTrees(kg(kwh) / TREE_CO2),
+    ...(kwh_min ? { kgMin: roundKg(kg(kwh_min)), treesMin: roundTrees(kg(kwh_min) / TREE_CO2) } : {}),
     upTo: Boolean(up_to), per,
   };
 }
+// "chip" puts a tree icon after the count (20×🌳); "long" spells it out for the tip page.
 function co2Text(c, key) {
   const n = new Intl.NumberFormat(LOCALES[LANG] || LANG);
+  const range = (min, max) => (min != null ? `${n.format(min)}–` : "") + n.format(max);
   return t(`co2.${key}${c.upTo ? "UpTo" : ""}${c.per ? "Per" : ""}`)
-    .replace("{kg}", n.format(c.kg)).replace("{trees}", n.format(c.trees))
+    .replace("{kg}", range(c.kgMin, c.kg)).replace("{trees}", range(c.treesMin, c.trees))
     .replace("{per}", c.per ? label("per", c.per) : "")
     .replace("{tree}", t(c.trees === 1 ? "co2.tree" : "co2.trees"));
+}
+function co2Chip(c) {
+  const text = esc(co2Text(c, "chip")).replace("{treeIcon}", icon("tree", esc(t(c.trees === 1 ? "co2.tree" : "co2.trees"))));
+  return `<span class="chip co2" title="${esc(co2Text(c, "long"))}">${text}</span>`;
 }
 const TODAY = new Date().toISOString().slice(0, 10);
 const isOverdue = (d) => d.stability === "variable" && d.review_by < TODAY;
@@ -119,13 +128,13 @@ function renderBody(md) {
 function chips(d, full) {
   const s = savingsText(d.estimated_savings);
   const impact = [
-    ...(isBigWin(d) ? [`<span class="chip bigwin" title="${esc(t("impact.bigWinTitle"))}">${esc(t("impact.bigWin"))}</span>`] : []),
+    ...(isBigWin(d) ? [`<span class="chip bigwin" title="${esc(t("impact.bigWinTitle"))}">${icon("medal")}${esc(t("impact.bigWin"))}</span>`] : []),
     // On cards a big win already says "large", so only tip pages show both.
     ...(impactRank(d) && (full || !isBigWin(d)) ? [`<span class="chip impact ${d.impact.band}">${esc(label("impactChip", d.impact.band))}</span>`] : []),
   ];
   const stability = `<span class="chip ${d.stability}" title="${esc(t(`stability.${d.stability}`))}">${esc(label("stability", d.stability))}</span>`;
   const c = co2(d);
-  const carbon = c ? [`<span class="chip co2">${esc(co2Text(c, "chip"))}</span>`] : [];
+  const carbon = c ? [co2Chip(c)] : [];
   const out = full ? [
     ...impact,
     ...carbon,
@@ -242,8 +251,7 @@ function tipPage(tip) {
     .replace("{min}", pb.min_years).replace("{max}", pb.max_years))}</strong> · ${esc(t("payback.according"))} <a href="${esc(d.sources[pb.source].url)}" rel="noopener">${esc(d.sources[pb.source].publisher)}</a>. ${esc(t("payback.note"))}`;
   const facts = [
     [t("field.impact"), `${impactText} <a href="../../impact/">${esc(t("impact.how"))}</a>`],
-    ...(co2(d) ? [[t("field.co2"), `<strong>${esc(co2Text(co2(d), "long"))}</strong> <a href="../../impact/#co2">${esc(t("co2.how"))}</a>`]]
-      : d.impact.energy === "electricity" ? [[t("field.co2"), `${esc(t("co2.electricity"))} <a href="../../impact/#co2">${esc(t("co2.how"))}</a>`]] : []),
+    ...(co2(d) ? [[t("field.co2"), `<strong>${esc(co2Text(co2(d), "long"))}</strong> <a href="../../impact/#co2">${esc(t("co2.how"))}</a>`]] : []),
     ...(pb ? [[t("field.payback"), paybackText]] : []),
     [t("field.savings"), `${savings ? `<strong>${esc(savings)}</strong> · ` : ""}${esc(l.basis)} <span class="muted">(${esc(t("field.confidence"))}: ${esc(label("confidence", s.confidence))})</span>`],
     [t("field.who"), label("responsibility", d.responsibility)],
@@ -377,5 +385,7 @@ writeFileSync(join(DIST, "tips.json"), JSON.stringify(tips.map((x) => ({
   translations: Object.fromEntries(Object.entries(x.translations).map(([l, v]) => [l, { ...v.data, body: v.body }])),
 })), null, 2));
 for (const f of ["style.css", "app.js"]) copyFileSync(join(ROOT, "src", f), join(DIST, f));
+// The icons are inlined in every page, so their licence ships with the site.
+copyFileSync(join(ROOT, "src", "icons", "LICENSE-phosphor.txt"), join(DIST, "LICENSE-phosphor-icons.txt"));
 writeFileSync(join(DIST, ".nojekyll"), "");
 console.log(`✓ built ${tips.length} tips in ${LANGUAGES.join(", ")} into dist/`);
