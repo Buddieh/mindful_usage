@@ -1,4 +1,4 @@
-# Mindful Usage
+# Energy Ladder
 
 An open, searchable collection of practical energy-saving tips, each linked to the official source it comes from. It covers homes in **Belgium**: advice that works everywhere, plus the rules, premiums and services of each region. It covers Flanders, Brussels and Wallonia, and is published in Dutch, French and English. The nine German-speaking municipalities run their own housing support; the site links to it, and a German version is not planned yet.
 
