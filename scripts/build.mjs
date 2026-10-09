@@ -89,7 +89,6 @@ const REGIONS = ["BE-VLG", "BE-BRU", "BE-WAL"];
 const isDiy = (d) => d.stability === "constant" && d.regions.includes("BE");
 // Regions the site doesn't cover yet point readers to an official advice service meanwhile.
 const COVERAGE = {
-  "BE-BRU": { name: "Homegrade", url: { nl: "https://homegrade.brussels/nl/", fr: "https://homegrade.brussels/" }, fallback: "https://homegrade.brussels/" },
   "BE-WAL": { name: "energie.wallonie.be", url: { fr: "https://energie.wallonie.be/" }, fallback: "https://energie.wallonie.be/" },
 };
 // Impact bands from largest to smallest; "unrated" and "indirect" rank last.
@@ -141,6 +140,10 @@ function renderBody(md) {
   const badge = `<span class="nocite-tag" title="${esc(t("nocite.title"))}">${esc(t("nocite.inline"))}</span>`;
   return marked.parse(md).split(NOCITE).join(badge);
 }
+
+// A paired tip that only holds in some regions says which, unless the reader's tip is from the same regions.
+const regionSuffix = (from, to) => to.regions.includes("BE") || to.regions.join() === from.regions.join()
+  ? "" : ` <span class="muted">(${esc(to.regions.map((r) => label("region", r)).join(", "))})</span>`;
 
 // The label at the top of a card: "Do it yourself", or where the item applies and whether it can change.
 function tag(d) {
@@ -322,17 +325,21 @@ function tipPage(tip) {
 
   const pairs = (d.pairs_with || []).length
     ? `<section class="pairs"><h2>${esc(t("tip.pairs"))}</h2><ul>${d.pairs_with.map((id) =>
-        `<li><a href="../${esc(id)}/">${esc(localize(byId.get(id), LANG).title)}</a></li>`).join("")}</ul></section>`
+        `<li><a href="../${esc(id)}/">${esc(localize(byId.get(id), LANG).title)}</a>${regionSuffix(d, byId.get(id).data)}</li>`).join("")}</ul></section>`
     : "";
 
   const regionNotes = l.region_notes
     ? `<aside class="notice"><strong>${esc(t("tip.regionNotes"))}</strong><p>${esc(l.region_notes)}</p></aside>` : "";
 
-  const sources = d.sources.map((src, i) => `<li>
-    <a href="${esc(src.url)}" rel="noopener" hreflang="${src.language}" lang="${src.language}">${esc(src.title)}</a>${src.language !== LANG ? ` <span class="muted">(${esc(label("inLanguage", src.language))})</span>` : ""} <span class="muted">· ${esc(src.publisher)} (${esc(label("sourceType", src.type))}) · ${esc(t("tip.accessedShort"))} ${date(src.accessed)}</span>
+  const sources = d.sources.map((src, i) => {
+    // Link the reader's language version of the page when there is one.
+    const v = src.language === LANG ? src : (src.alternates || []).find((a) => a.language === LANG) || src;
+    return `<li>
+    <a href="${esc(v.url)}" rel="noopener" hreflang="${v.language}" lang="${v.language}">${esc(v.title)}</a>${v.language !== LANG ? ` <span class="muted">(${esc(label("inLanguage", v.language))})</span>` : ""} <span class="muted">· ${esc(src.publisher)} (${esc(label("sourceType", src.type))}) · ${esc(t("tip.accessedShort"))} ${date(src.accessed)}</span>
     ${l.supports[i] ? `<div class="src-meta">${esc(t("tip.supports"))}${COLON()}${esc(l.supports[i])}</div>` : ""}
     ${src.locator ? `<div class="src-meta">${esc(t("tip.locator"))}${COLON()}${esc(src.locator)}</div>` : ""}
-  </li>`).join("");
+  </li>`;
+  }).join("");
 
   const file = l.lang === d.lang ? tip.file : `${LANG}/${tip.file}`;
   const edit = REPO_URL

@@ -332,6 +332,20 @@
             "enum": ["nl", "fr", "en", "de"],
             "description": "Language of the linked page. Readers of another language see it marked, e.g. (in Dutch)."
           },
+          "alternates": {
+            "type": "array",
+            "description": "The same page in other languages (e.g. the Dutch version of a Brussels page). Readers of that language get this link instead.",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["language", "url", "title"],
+              "properties": {
+                "language": { "enum": ["nl", "fr", "en", "de"] },
+                "url": { "type": "string", "format": "uri" },
+                "title": { "type": "string", "description": "That page's own title." }
+              }
+            }
+          },
           "publisher": {
             "type": "string"
           },

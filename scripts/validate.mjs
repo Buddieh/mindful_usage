@@ -20,6 +20,7 @@ const countNocite = (text) => text.split("{nocite}").length - 1;
 const report = (file, v) => v.errors.forEach((e) => errors.push(`${file}: ${e.instancePath || "(root)"} ${e.message}`));
 const tips = loadTips();
 const ids = new Set(tips.map((t) => t.id));
+const byId = new Map(tips.map((t) => [t.id, t]));
 
 for (const tip of tips) {
   const d = tip.data;
@@ -27,7 +28,14 @@ for (const tip of tips) {
   if (d.id !== tip.id) errors.push(`${tip.file}: id "${d.id}" must match the file name`);
   if (!tip.body) errors.push(`${tip.file}: body is empty`);
   for (const id of d.pairs_with || []) {
-    if (!ids.has(id) || id === tip.id) errors.push(`${tip.file}: pairs_with "${id}" is not another tip's id`);
+    if (!ids.has(id) || id === tip.id) { errors.push(`${tip.file}: pairs_with "${id}" is not another tip's id`); continue; }
+    // A regional tip only points to tips its readers can use; Belgium-wide tips may point anywhere (the link names the region).
+    const other = byId.get(id).data.regions;
+    if (!d.regions.includes("BE") && !other.includes("BE") && !d.regions.every((r) => other.includes(r))) errors.push(`${tip.file}: pairs_with "${id}" only applies in ${other.join(", ")}`);
+  }
+  for (const [i, src] of d.sources.entries()) {
+    const langs = [src.language, ...(src.alternates || []).map((a) => a.language)];
+    if (new Set(langs).size !== langs.length) errors.push(`${tip.file}: source ${i} lists a language twice in language/alternates`);
   }
   // "BE" already covers every region, so it stands alone.
   if (d.regions.includes("BE") && d.regions.length > 1) errors.push(`${tip.file}: regions "BE" covers all of Belgium, so list no other region`);
