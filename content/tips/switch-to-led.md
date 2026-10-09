@@ -7,7 +7,7 @@ audience:
 - tenant
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: lighting
 kind: practice
 stage:

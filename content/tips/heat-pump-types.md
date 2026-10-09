@@ -6,7 +6,7 @@ summary: A ground-source heat pump costs most but can cool passively; an air-to-
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: heating
 kind: explainer
 stage:

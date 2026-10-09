@@ -29,6 +29,9 @@ for (const tip of tips) {
   for (const id of d.pairs_with || []) {
     if (!ids.has(id) || id === tip.id) errors.push(`${tip.file}: pairs_with "${id}" is not another tip's id`);
   }
+  // "BE" already covers every region, so it stands alone.
+  if (d.regions.includes("BE") && d.regions.length > 1) errors.push(`${tip.file}: regions "BE" covers all of Belgium, so list no other region`);
+
   // Variable tips must be checked again by review_by; overdue ones are flagged on the site.
   if (d.stability === "variable" && d.review_by < today) warnings.push(`${tip.file}: review_by ${d.review_by} has passed; check the tip again`);
 

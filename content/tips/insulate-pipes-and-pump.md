@@ -6,7 +6,7 @@ summary: Insulated pipes in the attic, garage or crawl space lose less heat, and
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: heating
 kind: practice
 stage:

@@ -6,7 +6,7 @@ summary: Outer walls are the second-largest source of heat loss; insulating them
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: insulation
 kind: practice
 stage:

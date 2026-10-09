@@ -6,7 +6,7 @@ audience:
 - tenant
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: appliances
 kind: practice
 stage:

@@ -17,4 +17,4 @@ De Vlaamse overheid raadt op verschillende pagina's dezelfde volgorde aan. Beper
 
 Verwarm daarna op lage temperatuur. Een goed geïsoleerd huis blijft warm met water van een lagere temperatuur, via vloerverwarming of geschikte radiatoren. Pas dan werkt een warmtepomp of warmtenet zuinig. Kies als derde stap voor hernieuwbare energie, zoals zonnepanelen.
 
-Is het huis geïsoleerd en luchtdicht, dan is gecontroleerde ventilatie een noodzaak. Plan ze dus samen met de isolatiewerken. Kun je niet alles tegelijk doen, dan helpt gratis advies van je Energiehuis om de stappen te plannen.
+Is het huis geïsoleerd en luchtdicht, dan is gecontroleerde ventilatie een noodzaak. Plan ze dus samen met de isolatiewerken. Kun je niet alles tegelijk doen, dan helpt gratis advies om de stappen te plannen; in Vlaanderen kun je terecht bij je Energiehuis.

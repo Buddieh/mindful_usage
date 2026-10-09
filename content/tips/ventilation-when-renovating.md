@@ -6,7 +6,7 @@ summary: An insulated, airtight home needs controlled ventilation, usually syste
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: indoor-air
 kind: practice
 stage:

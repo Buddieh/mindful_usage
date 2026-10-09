@@ -12,4 +12,4 @@ supports:
 
 Een douchekop schroef je met de hand los. Bewaar de originele en zet die terug als je verhuist. Minder warm water betekent minder gas of elektriciteit om het op te warmen, en een lagere waterfactuur.
 
-Een spaardouchekop zit ook in het gratis pakket van Mijn Energiescan voor wie in aanmerking komt.
+In Vlaanderen zit een spaardouchekop ook in het gratis pakket van Mijn Energiescan voor wie in aanmerking komt.

@@ -6,7 +6,7 @@ summary: Switching a combi boiler's hot water to eco mode saves around 1% of hea
 audience:
 - tenant
 regions:
-- BE-VLG
+- BE
 category: heating
 kind: practice
 stage:

@@ -7,7 +7,7 @@ audience:
 - homeowner
 - landlord
 regions:
-- BE-VLG
+- BE
 category: building-rules
 kind: explainer
 stage:

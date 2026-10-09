@@ -6,7 +6,7 @@ summary: Households receiving certain benefits get the social tariff, usually au
 audience:
 - tenant
 regions:
-- BE-VLG
+- BE
 category: contracts-billing
 kind: service
 stage:
@@ -34,6 +34,12 @@ sources:
   url: https://www.vlaanderen.be/sociaal-tarief-voor-energie-elektriciteit-aardgas-warmte
   accessed: '2026-10-07'
   supports: eligibility, automatic application, collective heating
+- title: Sociaal tarief voor energie
+  publisher: FOD Economie
+  type: official
+  url: https://economie.fgov.be/nl/themas/energie/energieprijzen/sociaal-tarief-voor-energie
+  accessed: '2026-10-09'
+  supports: the same federal tariff everywhere in Belgium, applied automatically in most cases
 verification:
   status: verified
   flags: []

@@ -4,7 +4,7 @@ Each item shows how much energy it saves in a year in an average Flemish house. 
 
 ## The average house
 
-An average Flemish house uses about 15,000 kWh of gas a year for heating and about 2,000 kWh for hot water, plus about 1,000 kWh of electricity per resident ([Vlaamse overheid](https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik), section "Huishoudelijk energiegebruik"). Heating is by far the largest part, so heating items tend to rate highest.
+An average Flemish house uses about 15,000 kWh of gas a year for heating and about 2,000 kWh for hot water, plus about 1,000 kWh of electricity per resident ([Vlaamse overheid](https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik), section "Huishoudelijk energiegebruik"). Heating is by far the largest part, so heating items tend to rate highest. We use this Flemish reference house for all of Belgium, because we have not found a comparable official figure for Brussels or Wallonia yet; homes there differ, so read the bands as a rough guide.
 
 Where a source gives a saving in cubic metres of gas, we count 1 m³ as at least about 8.8 kWh, based on the Dutch government's reference of 31.65 MJ per m³ ([IPLO](https://iplo.nl/thema/energiebesparing/verduurzaming-energiegebruik/achterliggende-pagina-energiebesparing/tabel-aardgasequivalenten)).
 
@@ -40,7 +40,7 @@ We only show a payback time when an official source states one, and we link to t
 
 Real savings are often smaller than calculated. Households in poorly insulated homes already use much less energy than models predict, by about 30% on average in a large German study, with similar patterns in Belgium ([University of Cambridge](https://www.cam.ac.uk/research/news/the-prebound-effect)). In a large US home insulation programme, households saved only about 40% of the projected amount ([NBER](https://www.nber.org/papers/w21331)).
 
-For your own home, the EPC lists recommended measures in order of priority, and for houses gives a cost estimate for the priority ones ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res)). Your Energiehuis can advise you on what to do first.
+In Flanders, the EPC for your home lists recommended measures in order of priority, and for houses gives a cost estimate for the priority ones ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res)). Your Energiehuis can advise you on what to do first.
 
 <h2 id="ai">How this site is made</h2>
 

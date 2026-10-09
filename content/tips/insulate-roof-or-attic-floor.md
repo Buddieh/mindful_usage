@@ -6,7 +6,7 @@ summary: Roof insulation is usually the first and most effective insulation step
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: insulation
 kind: practice
 stage:
@@ -76,4 +76,4 @@ A pitched roof needs three layers: a windproof underlay, insulation that complet
 
 If the space under the roof stays unheated, insulate the attic floor instead. It saves energy, material and work, and it is easier to do yourself than the roof slopes.
 
-Aim well above the legal minimum: a common Flemish target is a thermal resistance (R) of about 4.2 m²K/W, which takes roughly 10 to 16 cm of insulation depending on the material. Premiums and their conditions change, so check the current ones with your Energiehuis before you start.
+Aim well above the legal minimum: a common Flemish target is a thermal resistance (R) of about 4.2 m²K/W, which takes roughly 10 to 16 cm of insulation depending on the material. Premiums and their conditions change, so check the current ones before you start; in Flanders, your Energiehuis can tell you.

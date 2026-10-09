@@ -7,7 +7,7 @@ audience:
 - homeowner
 - tenant
 regions:
-- BE-VLG
+- BE
 category: smart-home-monitoring
 kind: explainer
 stage:

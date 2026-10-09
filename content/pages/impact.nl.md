@@ -4,7 +4,7 @@ Bij elke tip staat hoeveel energie hij per jaar bespaart in een gemiddeld Vlaams
 
 ## Het gemiddelde huis
 
-Een gemiddeld Vlaams huis verbruikt per jaar zo'n 15.000 kWh gas voor verwarming en zo'n 2.000 kWh voor warm water, plus ongeveer 1.000 kWh elektriciteit per bewoner ([Vlaamse overheid](https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik), onderdeel "Huishoudelijk energiegebruik"). Verwarming is veruit het grootste deel, dus verwarmingstips scoren meestal het hoogst.
+Een gemiddeld Vlaams huis verbruikt per jaar zo'n 15.000 kWh gas voor verwarming en zo'n 2.000 kWh voor warm water, plus ongeveer 1.000 kWh elektriciteit per bewoner ([Vlaamse overheid](https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik), onderdeel "Huishoudelijk energiegebruik"). Verwarming is veruit het grootste deel, dus verwarmingstips scoren meestal het hoogst. We gebruiken dit Vlaamse referentiehuis voor heel België, omdat we nog geen vergelijkbaar officieel cijfer voor Brussel of Wallonië vonden; woningen daar verschillen, dus lees de klassen als een ruwe richtlijn.
 
 Als een bron een besparing in kubieke meter gas geeft, rekenen we 1 m³ als minstens zo'n 8,8 kWh, op basis van de Nederlandse referentiewaarde van 31,65 MJ per m³ ([IPLO](https://iplo.nl/thema/energiebesparing/verduurzaming-energiegebruik/achterliggende-pagina-energiebesparing/tabel-aardgasequivalenten)).
 
@@ -40,7 +40,7 @@ We tonen alleen een terugverdientijd als een officiële bron er een noemt, en we
 
 Echte besparingen vallen vaak lager uit dan berekend. Gezinnen in slecht geïsoleerde woningen verbruiken al veel minder dan modellen voorspellen, gemiddeld zo'n 30% in een grote Duitse studie, met gelijkaardige patronen in België ([University of Cambridge](https://www.cam.ac.uk/research/news/the-prebound-effect)). In een groot Amerikaans isolatieprogramma bespaarden gezinnen maar zo'n 40% van wat voorspeld was ([NBER](https://www.nber.org/papers/w21331)).
 
-Voor je eigen woning zet het EPC de aanbevolen maatregelen in volgorde van prioriteit, en voor huizen geeft het een kostenraming voor de dringendste ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res)). Je Energiehuis kan je adviseren over wat eerst moet.
+In Vlaanderen zet het EPC van je woning de aanbevolen maatregelen in volgorde van prioriteit, en voor huizen geeft het een kostenraming voor de dringendste ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res)). Je Energiehuis kan je adviseren over wat eerst moet.
 
 <h2 id="ai">Hoe deze site gemaakt is</h2>
 

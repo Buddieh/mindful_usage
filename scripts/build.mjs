@@ -80,6 +80,16 @@ const WHO = {
   build: (d) => d.stage.includes("renovating") || d.stage.includes("building-new"),
   flat: (d) => d.tags.includes("apartment"),
 };
+// Where a reader can live. "BE" items apply in every region.
+const REGIONS = ["BE-VLG", "BE-BRU", "BE-WAL"];
+// "Do it yourself": stable good practice that holds in all of Belgium. Everything else
+// depends on a region's or the federal rules and shows under the reader's region.
+const isDiy = (d) => d.stability === "constant" && d.regions.includes("BE");
+// Regions the site doesn't cover yet point readers to an official advice service meanwhile.
+const COVERAGE = {
+  "BE-BRU": { name: "Homegrade", url: { nl: "https://homegrade.brussels/nl/" }, fallback: "https://homegrade.brussels/" },
+  "BE-WAL": { name: "energie.wallonie.be", url: {}, fallback: "https://energie.wallonie.be/" },
+};
 // Impact bands from largest to smallest; "unrated" and "indirect" rank last.
 const IMPACT = { large: 3, medium: 2, small: 1, unrated: 0, indirect: 0 };
 const impactRank = (d) => IMPACT[d.impact.band];
@@ -130,6 +140,14 @@ function renderBody(md) {
   return marked.parse(md).split(NOCITE).join(badge);
 }
 
+// The label at the top of a card: "Do it yourself", or where the item applies and whether it can change.
+function tag(d) {
+  if (isDiy(d)) return `<span class="tag diy" title="${esc(t("tag.diyTitle"))}">${esc(t("tag.diy"))}</span>`;
+  const where = d.regions.map((r) => label("region", r)).join(", ");
+  const text = d.stability === "variable" ? `${where} · ${label("stability", "variable")}` : where;
+  return `<span class="tag local" title="${esc(t(`stability.${d.stability}`))}">${esc(text)}</span>`;
+}
+
 // Cards show only what tells tips apart (saving, cost, warnings); tip pages show everything.
 function chips(d, full) {
   const s = savingsText(d.estimated_savings);
@@ -138,7 +156,6 @@ function chips(d, full) {
     // On cards a big win already says "large", so only tip pages show both.
     ...(impactRank(d) && (full || !isBigWin(d)) ? [`<span class="chip impact ${d.impact.band}">${esc(label("impactChip", d.impact.band))}</span>`] : []),
   ];
-  const stability = `<span class="chip ${d.stability}" title="${esc(t(`stability.${d.stability}`))}">${esc(label("stability", d.stability))}</span>`;
   const c = co2(d);
   const carbon = c ? [co2Chip(c)] : [];
   const out = full ? [
@@ -148,13 +165,12 @@ function chips(d, full) {
     `<span class="chip level">${esc(levelText(d.rung))}</span>`,
     `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
     `<span class="chip">${esc(label("time", d.time_needed))}</span>`,
-    stability,
   ] : [
+    `<span class="chip level">${esc(levelText(d.rung))}</span>`,
     ...impact,
     ...carbon,
     ...(s ? [`<span class="chip save">${esc(s)}</span>`] : []),
     `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
-    ...(d.stability === "variable" ? [stability] : []),
   ];
   if (isOverdue(d)) out.push(`<span class="chip warn">${esc(t("chip.overdue"))}</span>`);
   if (full && s) out.push(`<span class="chip save">${esc(s)}</span>`);
@@ -169,7 +185,8 @@ function card(tip) {
   const l = localize(tip, LANG);
   const haystack = [l.title, l.summary, ...(d.tags || []), label("category", d.category)].join(" ").toLowerCase();
   const who = Object.keys(WHO).filter((w) => WHO[w](d)).join(" ");
-  return `<li class="card" data-category="${esc(d.category)}" data-rung="${d.rung}" data-cost="${COSTS.indexOf(d.upfront_cost)}" data-impact="${impactRank(d)}" data-big="${isBigWin(d)}" data-who="${who}" data-stability="${d.stability}" data-landlord="${d.needs_landlord_permission}" data-cited="${d.verification.status === "verified"}" data-text="${esc(haystack)}">
+  return `<li class="card" data-category="${esc(d.category)}" data-rung="${d.rung}" data-cost="${COSTS.indexOf(d.upfront_cost)}" data-impact="${impactRank(d)}" data-big="${isBigWin(d)}" data-who="${who}" data-stability="${d.stability}" data-regions="${esc(d.regions.join(" "))}" data-landlord="${d.needs_landlord_permission}" data-cited="${d.verification.status === "verified"}" data-text="${esc(haystack)}">
+  ${tag(d)}
   <h3><a href="tips/${esc(tip.id)}/">${esc(l.title)}</a></h3>
   <p>${esc(l.summary)}</p>
   <div class="chips">${chips(d, false)}</div>
@@ -192,6 +209,12 @@ function indexPage(tips) {
   <p class="impact-intro">${esc(t("index.impactIntro"))} <a href="impact/">${esc(t("impact.how"))}</a></p>
 </section>
 <form class="filters" role="search" onsubmit="return false">
+  <fieldset class="where" id="where">
+    <legend>${esc(t("filter.where"))}</legend>
+    <div class="steps">${["", ...REGIONS].map((r) => `<label class="step">
+      <input type="radio" name="where" value="${r}"${r ? "" : " checked"}>
+      <span>${esc(r ? label("region", r) : t("where.all"))}</span></label>`).join("")}</div>
+  </fieldset>
   <fieldset class="ladder" id="ladder">
     <legend>${esc(t("filter.level"))} <span class="hint">${esc(t("filter.levelHint"))}</span></legend>
     <div class="steps">${RUNGS.map((n) => `<label class="step">
@@ -227,12 +250,21 @@ function indexPage(tips) {
   <button type="button" class="link-button" id="clear" hidden>${esc(t("filter.clear"))}</button>
 </div>
 <div id="cards">
-${RUNGS.filter((n) => tips.some((x) => x.data.rung === n)).map((n) => `<section class="group" data-rung="${n}">
-<h2>${esc(levelText(n))}</h2>
+<section class="group diy">
+<h2>${esc(t("section.diy"))} <small class="n"></small></h2>
 <ul class="cards">
-${tips.filter((x) => x.data.rung === n).map(card).join("\n")}
+${tips.filter((x) => isDiy(x.data)).map(card).join("\n")}
 </ul>
-</section>`).join("\n")}
+</section>
+<section class="group local" id="local" data-heading="${esc(t("section.localIn"))}"
+  data-names="${esc(JSON.stringify(Object.fromEntries(REGIONS.map((r) => [r, label("region", r)]))))}">
+<h2><span class="title">${esc(t("section.local"))}</span> <small class="n"></small></h2>
+${Object.entries(COVERAGE).map(([r, c]) => `<p class="coverage" data-region="${r}" hidden>${esc(t(`coverage.${r}`))}
+  <a href="${esc(c.url[LANG] || c.fallback)}" rel="noopener">${esc(c.name)}</a>${c.url[LANG] ? "" : ` (${esc(t("coverage.inFrench"))})`}.</p>`).join("\n")}
+<ul class="cards">
+${tips.filter((x) => !isDiy(x.data)).map(card).join("\n")}
+</ul>
+</section>
 </div>
 <p class="empty" id="empty" hidden>${esc(t("index.empty"))} <button type="button" class="link-button" data-clear>${esc(t("filter.clear"))}</button></p>
 <div class="more" id="more" hidden data-one="${esc(t("index.more1"))}" data-many="${esc(t("index.moreN"))}">
@@ -309,6 +341,7 @@ function tipPage(tip) {
 <article class="tip">
   <h1 lang="${l.lang}">${esc(l.title)}</h1>
   <p class="lead">${esc(l.summary)}</p>
+  <p class="tag-row">${tag(d)}</p>
   <div class="chips">${chips(d, true)}</div>
   ${variable}
   <div class="prose">${renderBody(l.body)}</div>

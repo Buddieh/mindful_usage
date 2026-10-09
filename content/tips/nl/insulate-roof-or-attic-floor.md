@@ -18,4 +18,4 @@ Een hellend dak heeft drie lagen nodig: een winddicht onderdak, isolatie die de 
 
 Blijft de ruimte onder het dak onverwarmd, isoleer dan de zoldervloer. Dat bespaart energie, materiaal en werk, en het is makkelijker zelf te doen dan de dakhellingen.
 
-Mik ruim boven het wettelijke minimum: een gangbaar Vlaams streefdoel is een warmteweerstand (R) van ongeveer 4,2 m²K/W, wat neerkomt op zo'n 10 tot 16 cm isolatie, afhankelijk van het materiaal. Premies en hun voorwaarden veranderen, dus kijk de actuele bij je Energiehuis na voor je begint.
+Mik ruim boven het wettelijke minimum: een gangbaar Vlaams streefdoel is een warmteweerstand (R) van ongeveer 4,2 m²K/W, wat neerkomt op zo'n 10 tot 16 cm isolatie, afhankelijk van het materiaal. Premies en hun voorwaarden veranderen, dus kijk de actuele na voor je begint; in Vlaanderen kan je Energiehuis je die geven.
