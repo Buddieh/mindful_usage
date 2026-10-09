@@ -33,7 +33,8 @@ for (const tip of tips) {
   if (d.stability === "variable" && d.review_by < today) warnings.push(`${tip.file}: review_by ${d.review_by} has passed; check the tip again`);
 
   // A yearly kWh figure for the whole home must fall inside its impact band.
-  const { kwh, per } = d.impact;
+  const { kwh, kwh_min, per } = d.impact;
+  if (kwh_min && !(kwh > kwh_min)) errors.push(`${tip.file}: impact.kwh_min ${kwh_min} needs a larger impact.kwh`);
   if (kwh && !per) {
     const band = kwh >= 1000 ? "large" : kwh >= 250 ? "medium" : "small";
     if (band !== d.impact.band) errors.push(`${tip.file}: impact.kwh ${kwh} belongs in band "${band}", not "${d.impact.band}"`);

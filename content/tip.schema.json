@@ -217,7 +217,12 @@
         "kwh": {
           "type": "number",
           "exclusiveMinimum": 0,
-          "description": "The yearly saving in kWh from impact.basis, if it gives one. The site turns gas savings into kg of CO2 and tree equivalents."
+          "description": "The yearly saving in kWh from impact.basis, if it gives one (the top of the range when kwh_min is set). The site turns it into kg of CO2 and tree equivalents."
+        },
+        "kwh_min": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "When impact.basis gives a range, its lower end; kwh is then the upper end."
         },
         "up_to": {
           "type": "boolean",

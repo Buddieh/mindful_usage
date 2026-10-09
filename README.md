@@ -26,4 +26,4 @@ Suggestions are very welcome, from a typo fix to a new tip. See [CONTRIBUTING.md
 
 ## License
 
-Code: [MIT](LICENSE). Tip content: [CC BY 4.0](content/LICENSE.md).
+Code: [MIT](LICENSE). Tip content: [CC BY 4.0](content/LICENSE.md). The tree and medal icons come from [Phosphor Icons](https://phosphoricons.com) ([MIT](src/icons/LICENSE-phosphor.txt)).
