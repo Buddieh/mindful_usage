@@ -42,6 +42,8 @@ Real savings are often smaller than calculated. Households in poorly insulated h
 
 In Flanders, the EPC for your home lists recommended measures in order of priority, and for houses gives a cost estimate for the priority ones ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res)). Your Energiehuis can advise you on what to do first.
 
+In Brussels, a PEB certificate issued since March 2023 sets out a recommended renovation scenario, step by step ([Brussels Environment](https://environnement.brussels/citoyen/reglementation-et-inspection/obligations-et-autorisations/le-certificat-peb-dun-logement-en-region-bruxelloise), in French), and Homegrade can help you read it ([Homegrade](https://homegrade.brussels/nos-services/), in French). In Wallonia, certificates issued since 1 September 2026 show an indicative renovation path towards label A ([SPW Énergie](https://energie.wallonie.be/actualite/certificat-peb-mieux-comprendre-son-logement-et-preparer-sa-renovation-1), in French), and a Guichet Énergie gives free advice ([Wallonie.be](https://www.wallonie.be/fr/demarches/contacter-les-guichets-energie-wallonie), in French).
+
 <h2 id="ai">How this site is made</h2>
 
 This site is made with AI. Claude, an AI model by Anthropic, searched for and read the sources, wrote the texts in Dutch, French and English, rated the impact of each item, and built the website. A person, the maintainer of the project, decides what goes on the site and approves every change before it is published.

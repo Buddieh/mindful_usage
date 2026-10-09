@@ -32,6 +32,8 @@ tags:
 pairs_with:
 - free-renovation-coaching
 - heat-pump-ready-check
+- homegrade-advice-brussels
+- guichet-energie-advice-wallonia
 sources:
 - title: Een energiezuinige woning, algemeen
   publisher: Woningpas (Vlaamse overheid)

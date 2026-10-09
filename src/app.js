@@ -33,6 +33,7 @@
   var localDefault = localTitle.textContent;
   var regionNames = JSON.parse(local.dataset.names);
   var coverage = Array.prototype.slice.call(local.querySelectorAll(".coverage"));
+  var rungCounts = Array.prototype.slice.call(form.querySelectorAll('input[name="rung"] + span small'));
   // The reader's region is remembered on this device, unless a link sets one.
   var savedRegion = "";
   try { savedRegion = localStorage.getItem("region") || ""; } catch (e) {}
@@ -92,7 +93,7 @@
     var rung = Number(radio("rung").value) || 5;
     var who = radio("who").value;
     var where = radio("where").value;
-    var shown = 0, higher = 0, byRung = {};
+    var shown = 0, higher = 0, byRung = {}, perRung = {};
     cards.forEach(function (c) {
       var ok =
         (!category.value || c.dataset.category === category.value) &&
@@ -105,10 +106,13 @@
         (!cited.checked || c.dataset.cited === "true") &&
         words.every(function (w) { return c.dataset.text.indexOf(w) !== -1; });
       var r = Number(c.dataset.rung);
+      if (ok) perRung[r] = (perRung[r] || 0) + 1;
       c.hidden = !(ok && r <= rung);
       if (ok && r <= rung) shown++;
       else if (ok) { higher++; byRung[r] = (byRung[r] || 0) + 1; }
     });
+    // Each level shows how many tips it holds for the reader's current choices.
+    rungCounts.forEach(function (s, i) { s.textContent = "(" + (perRung[i + 1] || 0) + ")"; });
     localTitle.textContent = where ? local.dataset.heading.replace("{region}", regionNames[where]) : localDefault;
     coverage.forEach(function (p) { p.hidden = p.dataset.region !== where; });
     groups.forEach(function (g) {

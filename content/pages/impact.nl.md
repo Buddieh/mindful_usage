@@ -42,6 +42,8 @@ Echte besparingen vallen vaak lager uit dan berekend. Gezinnen in slecht geïsol
 
 In Vlaanderen zet het EPC van je woning de aanbevolen maatregelen in volgorde van prioriteit, en voor huizen geeft het een kostenraming voor de dringendste ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res)). Je Energiehuis kan je adviseren over wat eerst moet.
 
+In Brussel geeft een EPB-certificaat van na maart 2023 een aanbevolen renovatiescenario, stap voor stap ([Leefmilieu Brussel](https://leefmilieu.brussels/burgers/regelgeving-en-inspectie/verplichtingen-en-vergunningen/het-epb-certificaat-voor-een-woning-het-brussels-hoofdstedelijk-gewest)), en Homegrade helpt je het te lezen ([Homegrade](https://homegrade.brussels/nl/onze-diensten/)). In Wallonië tonen certificaten van na 1 september 2026 een indicatief renovatietraject naar label A ([SPW Énergie](https://energie.wallonie.be/actualite/certificat-peb-mieux-comprendre-son-logement-et-preparer-sa-renovation-1), in het Frans), en een Guichet Énergie geeft gratis advies ([Wallonie.be](https://www.wallonie.be/fr/demarches/contacter-les-guichets-energie-wallonie), in het Frans).
+
 <h2 id="ai">Hoe deze site gemaakt is</h2>
 
 Deze site is gemaakt met AI. Claude, een AI-model van Anthropic, zocht en las de bronnen, schreef de teksten in het Nederlands, het Frans en het Engels, schatte de impact van elke tip in en bouwde de website. Een mens, de beheerder van het project, beslist wat er op de site komt en keurt elke wijziging goed voor ze gepubliceerd wordt.

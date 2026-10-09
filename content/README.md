@@ -112,3 +112,15 @@ Variable tips are spread over the year so that a few come up each month, grouped
 ## Apartments (phase 2, Flanders, 2026-10-07)
 
 6 items for apartment buildings: how the association of co-owners decides on energy works, free renovation coaching for a VME, the EPC for common parts, Mijn VerbouwPremie for apartment buildings, bills with collective heating, and sharing solar power within the building. Items tagged `apartment` appear under "I live in an apartment" in the "Who are you?" filter; three existing items that also apply to apartments got the tag. No official source says when one owner may replace windows or change the facade without the VME, so that is left out. Every source page was opened on 2026-10-07.
+
+## French (2026-10-09)
+
+Every tip and page was translated into French, following [`glossary-fr.md`](glossary-fr.md).
+
+## Brussels (2026-10-09)
+
+19 items for the Brussels-Capital Region: Homegrade advice, RENOLUTION premiums and the Ecoreno loan, BRUSIM, protected customers, Infor GazElec and CPAS energy cells, the PEB certificate and its renovation scenario, the announced minimum performance by 2033, rent indexation, housing standards, co-ownership help, Sibelga smart meters, boiler checks, the oil boiler phase-out, the solar map and green certificates. Sources are cited in French with the Dutch page as an alternate. Every source page was opened on 2026-10-09.
+
+## Wallonia (2026-10-09)
+
+20 items for the Walloon Region: Guichets Énergie, the Rénopack and Rénoprêt loans that replaced the renovation grants on 1 October 2026, the audit logement, MEBAR, the PEB certificate and its new renovation path, the announced renovation obligations (not yet law), rent indexation, minimum quality rules for rented homes, CompaCWaPE, the 2026 day/night hours and tarif Impact, ORES smart meters, protected customers, prepayment meters, solar compensation before and after 2024, the solar map, boiler checks and the oil boiler phase-out. Most sources exist only in French; German versions are listed as alternates where they exist. In the nine German-speaking municipalities housing support is run by the German-speaking Community, which the site points to. Every source page was opened on 2026-10-09.

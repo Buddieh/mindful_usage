@@ -33,6 +33,8 @@ tags:
 - hot-water
 pairs_with:
 - solar-panels-zonnekaart
+- solar-map-brussels
+- solar-map-wallonia
 sources:
 - title: Zonneboiler
   publisher: Vlaamse overheid (vlaanderen.be)
