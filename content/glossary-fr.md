@@ -5,9 +5,9 @@ Translations into French use these terms, so that the site uses the words Belgia
 ## Style
 
 - Address the reader as **vous** (as Belgian official sites do).
-- Numbers: `15 000 kWh` (narrow space for thousands), `0,8 kWh` (decimal comma), `18–19 °C`, `7 %`, `100 €`, `2 500–25 000 €`.
+- Numbers: `15 000 kWh` (space for thousands), `0,8 kWh` (decimal comma), `18–19 °C`, `7 %`, `100 €`, `2 500–25 000 €`.
 - Keep the meaning of the Dutch and English texts exactly; don't add facts, figures or advice. Every `{nocite}` marker stays, after the same sentence.
-- Names of Flemish services and organisations stay as they are, without translation: Energiehuis, Mijn VerbouwPremie, Mijn VerbouwLening, Mijn Energiescan, Mijn Verbouwbegeleiding, Woningpas, Zonnekaart, Warmtepompklaar, V-test, Fluvius, VREG / Vlaamse Nutsregulator, VEKA, OVAM, VMM. On first mention in a tip, a short French gloss in brackets may help, e.g. "votre Energiehuis (le service flamand de conseil en énergie)".
+- Names of Flemish services and organisations stay as they are, without translation: Energiehuis, Mijn VerbouwPremie, Mijn VerbouwLening, Mijn Energiescan, Mijn VerbouwBegeleiding, Woningpas, Zonnekaart, Warmtepompklaar, V-test, Fluvius, VREG / Vlaamse Nutsregulator, VEKA, OVAM, VMM. On first mention in a tip, a short French gloss in brackets may help, e.g. "votre Energiehuis (le service flamand de conseil en énergie)".
 - Source titles are never translated; they stay in the language of the page they link to.
 
 ## Terms
@@ -57,6 +57,17 @@ Translations into French use these terms, so that the site uses the words Belgia
 | dampkap | cooker hood | hotte |
 | gecertificeerde installateur | certified installer | installateur certifié |
 | renovatiebegeleiding | renovation coaching | accompagnement à la rénovation |
+| elektrische boiler | electric water heater | boiler électrique |
+| circulatiepomp | circulation pump | circulateur |
+| budgetmeter | prepaid meter | compteur à budget |
+| EPB-verslaggever | EPB reporter | rapporteur PEB |
+| warmtezoneringsplan | heat zoning plan | plan de zonage thermique |
+| spouw | cavity | coulisse |
+| Ombudsdienst voor Energie | energy ombudsman | Service de médiation de l'énergie |
+| stookadvies | burning advisory | avis de chauffage (stookadvies) |
+| CO2-meter | CO2 meter | détecteur de CO2 |
+| combiketel | combi boiler | chaudière mixte |
+| bodem-water, lucht-water, lucht-lucht, water-water warmtepomp | ground-water, air-water, air-air, water-water heat pump | pompe à chaleur sol-eau, air-eau, air-air, eau-eau |
 
 ## Effort levels and labels
 
