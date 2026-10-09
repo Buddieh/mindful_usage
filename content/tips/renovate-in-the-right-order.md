@@ -7,7 +7,7 @@ audience:
 - homeowner
 - landlord
 regions:
-- BE-VLG
+- BE
 category: insulation
 kind: explainer
 stage:
@@ -65,4 +65,4 @@ The Flemish government advises the same order on several of its pages. First, cu
 
 Second, heat at low temperature. A well-insulated house stays warm with water at a lower temperature, through underfloor heating or suitable radiators. Only then does a heat pump or a heat network work efficiently. Third, add renewable energy such as solar panels.
 
-Once the house is insulated and airtight, controlled ventilation becomes a necessity, so plan it with the insulation works. If you can't do everything at once, free advice from your Energiehuis helps you plan the steps.
+Once the house is insulated and airtight, controlled ventilation becomes a necessity, so plan it with the insulation works. If you can't do everything at once, free advice helps you plan the steps; in Flanders, ask your Energiehuis.

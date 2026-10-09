@@ -1,6 +1,6 @@
 # Mindful Usage
 
-An open, searchable collection of practical energy-saving tips, each linked to the official source it comes from. It starts with **tenants in Flanders, Belgium**, in Dutch and English, and is meant to grow to homeowners, landlords, architects and building professionals.
+An open, searchable collection of practical energy-saving tips, each linked to the official source it comes from. It covers homes in **Belgium**: advice that works everywhere, plus the rules, premiums and services of each region. Flanders is covered first; Brussels and Wallonia are being added, together with French next to Dutch and English.
 
 ## How it works
 

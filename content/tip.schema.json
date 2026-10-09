@@ -60,9 +60,9 @@
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
+      "description": "Where the item applies. BE: all of Belgium (federal rules, or advice that holds everywhere). Otherwise one or more regions as ISO 3166-2 codes: BE-VLG (Flanders), BE-BRU (Brussels), BE-WAL (Wallonia).",
       "items": {
-        "type": "string",
-        "description": "ISO 3166-2 code, e.g. BE-VLG (Flanders), BE-BRU, BE-WAL, or 'global'."
+        "enum": ["BE", "BE-VLG", "BE-BRU", "BE-WAL"]
       }
     },
     "category": {

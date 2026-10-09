@@ -6,7 +6,7 @@ summary: A solar water heater covers about half of a household's hot water most 
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: renewables
 kind: practice
 stage:
@@ -58,4 +58,4 @@ Collectors on the roof absorb heat from daylight, and a pump carries it to an in
 
 Sizing it to cover 50 to 60% of your hot water gives the best return; in summer it can cover nearly all of it. The yearly cost of heating water then drops to about half.
 
-It works best facing between south-east and south-west, at a tilt of 30° to 50°, without shade. The Zonnekaart also scores roofs for a solar water heater, and a certified installer can check yours.
+It works best facing between south-east and south-west, at a tilt of 30° to 50°, without shade. In Flanders, the Zonnekaart also scores roofs for a solar water heater, and a certified installer can check yours.

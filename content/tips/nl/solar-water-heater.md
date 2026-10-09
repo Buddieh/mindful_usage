@@ -17,4 +17,4 @@ Collectoren op het dak vangen warmte uit daglicht op, en een pomp brengt die naa
 
 Een installatie die 50 tot 60% van je warm water dekt, rendeert het best; in de zomer kan ze bijna alles leveren. De jaarlijkse kost om water te verwarmen daalt dan tot ongeveer de helft.
 
-Ze werkt het best gericht tussen zuidoost en zuidwest, onder een helling van 30° tot 50°, zonder schaduw. De Zonnekaart beoordeelt daken ook voor een zonneboiler, en een gecertificeerde installateur kan het jouwe nakijken.
+Ze werkt het best gericht tussen zuidoost en zuidwest, onder een helling van 30° tot 50°, zonder schaduw. In Vlaanderen beoordeelt de Zonnekaart daken ook voor een zonneboiler, en een gecertificeerde installateur kan het jouwe nakijken.

@@ -8,6 +8,7 @@ savings_basis: Het sociaal tarief ligt meestal een stuk lager dan de marktprijs;
   per kwartaal.
 supports:
 - wie recht heeft, automatische toekenning, collectieve verwarming
+- hetzelfde federale tarief in heel België, in de meeste gevallen automatisch toegekend
 ---
 
 Recht hebben onder meer mensen met een leefloon of andere steun van het OCMW, bepaalde tegemoetkomingen voor personen met een handicap, de IGO voor ouderen, het Vlaamse zorgbudget voor ouderen of de zorgtoeslag voor kinderen. Eén gerechtigde persoon geldt voor het hele gezin. De FOD Economie bezorgt de lijst elk kwartaal aan de leveranciers, dus meestal hoef je niets te doen. Staat het niet op je factuur, vraag dan een attest aan bij de instantie die je uitkering betaalt en bezorg het aan je leverancier.

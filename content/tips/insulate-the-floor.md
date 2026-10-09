@@ -6,7 +6,7 @@ summary: A floor above a cellar or crawl space can be insulated from underneath 
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: insulation
 kind: practice
 stage:

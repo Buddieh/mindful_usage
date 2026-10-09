@@ -2,7 +2,7 @@
   "name": "mindful-usage",
   "version": "0.1.0",
   "private": true,
-  "description": "An open, searchable collection of sourced energy-saving tips, starting with tenants in Flanders.",
+  "description": "An open, searchable collection of sourced energy-saving tips, for homes in Belgium.",
   "license": "MIT",
   "type": "module",
   "scripts": {

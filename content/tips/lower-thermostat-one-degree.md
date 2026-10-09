@@ -5,7 +5,7 @@ summary: Each degree lower on the room thermostat cuts heating use by about 7%.
 audience:
 - tenant
 regions:
-- BE-VLG
+- BE
 category: heating
 kind: practice
 stage:

@@ -7,7 +7,7 @@ audience:
 - tenant
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: hot-water
 kind: practice
 stage:

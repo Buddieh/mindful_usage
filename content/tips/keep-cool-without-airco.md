@@ -6,7 +6,7 @@ summary: Sun through windows causes most overheating; screens or shutters on the
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: windows-doors
 kind: practice
 stage:

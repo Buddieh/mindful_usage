@@ -6,7 +6,7 @@ summary: A heat-pump boiler heats water with warmth taken from the air and is th
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: hot-water
 kind: practice
 stage:

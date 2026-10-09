@@ -11,7 +11,7 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | `id` | kebab-case slug, equal to the file name |
 | `title`, `summary` | card title and one or two sentence summary |
 | `audience` | tenant, homeowner, landlord, architect, building-professional |
-| `regions` | ISO 3166-2 codes, e.g. `BE-VLG` for Flanders |
+| `regions` | `BE` for all of Belgium, or one or more of `BE-VLG` (Flanders), `BE-BRU` (Brussels), `BE-WAL` (Wallonia). Items that are `constant` and `BE` show under "Do it yourself"; all others show under the reader's region. |
 | `category` | heating, hot-water, ventilation-moisture, electricity, appliances, lighting, renewables, contracts-billing, rights-rules, help-subsidies, insulation, windows-doors, indoor-air, smart-home-monitoring, building-rules |
 | `kind` | practice (something to do), explainer (a rule explained, e.g. EPB or EPC), service (a pointer to an existing tool or service) |
 | `stage` | living-in, renovating, building-new |
@@ -74,7 +74,7 @@ The site is published in Dutch and English, with an NL | EN switch on every page
 - Every tip cites at least one source, and every number in it must be traceable to a cited page. Use `locator` to say where on the page (section heading, or page and tip number in a PDF) and `supports` to say which claim it backs.
 - Write the essence in your own words. Don't copy text or tables of figures from the source; readers who want the detail follow the link.
 - Link to the exact page, not a home page.
-- Prefer primary sources (vlaanderen.be, VREG, Fluvius, VEKA, FOD Economie). Set `type` on each source (official, consumer-organisation, commercial, media, other) so readers can see what kind of source it is.
+- Prefer primary sources (vlaanderen.be, VREG, Fluvius, VEKA, FOD Economie, and their Brussels and Walloon counterparts). Set `type` on each source (official, consumer-organisation, commercial, media, other) so readers can see what kind of source it is.
 - Anything not backed by a cited source (our own advice or reasoning) gets `{nocite}` right after the sentence, in every language, plus a `no-citation` flag explaining it. The site shows those sentences with a "No citation" label, and the build refuses to mark such a tip as verified.
 - Figures that change yearly (tariffs, income limits, premiums) get a flag reminding reviewers to recheck them.
 - Region-specific rules go in `region_notes`, and `regions` must list only regions where the tip holds.

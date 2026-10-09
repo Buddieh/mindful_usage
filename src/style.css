@@ -3,6 +3,8 @@
   --accent: #1f6b4a; --accent-soft: #e3f1e9; --warn-soft: #fbf0d9; --warn: #7a5300;
   --review-soft: #eee9fb; --review: #4b3a8c; --radius: 10px;
   --nocite: #b42318; --nocite-soft: #fdecea; --on-nocite: #ffffff;
+  /* The two sections: "Do it yourself" (blue) and regional rules (amber). */
+  --diy: #1e4f8a; --diy-soft: #e8f0fa; --diy-line: #9dbbe0; --local-line: #d9b56b;
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -11,6 +13,7 @@
     --accent: #6fcf9f; --accent-soft: #1d3329; --warn-soft: #3a2f17; --warn: #f0c46b;
     --review-soft: #2a2540; --review: #c4b5fd;
     --nocite: #ff8a80; --nocite-soft: #3b1d1b; --on-nocite: #2a0a08;
+    --diy: #9cc3f5; --diy-soft: #17243a; --diy-line: #2e4a72; --local-line: #6b5422;
   }
 }
 * { box-sizing: border-box; }
@@ -54,7 +57,17 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 .more-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .group { margin-top: 20px; }
 .group[hidden] { display: none; }
-.group h2 { font-size: 1rem; margin: 0 0 10px; color: var(--muted); font-weight: 600; }
+.group h2 { font-size: 1.05rem; margin: 0 0 12px; color: var(--text); font-weight: 700; }
+.group h2 .n { font-size: .85rem; font-weight: 400; color: var(--muted); }
+/* Option B: each section sits in a tinted box; the cards inside stay plain. */
+.group.diy, .group.local { border: 1px solid; border-radius: 14px; padding: 14px; }
+.group.diy { background: var(--diy-soft); border-color: var(--diy-line); }
+.group.local { background: var(--warn-soft); border-color: var(--local-line); }
+.coverage { margin: 0 0 12px; font-size: .93rem; }
+.tag { display: inline-block; align-self: flex-start; font-size: .75rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; border: 1px solid; margin-bottom: 8px; }
+.tag.diy { color: var(--diy); border-color: var(--diy); }
+.tag.local { color: var(--warn); border-color: var(--warn); }
+.tag-row { margin: 0 0 8px; }
 
 /* The effort ladder and "who are you": rows of radio buttons styled as steps. */
 .filters fieldset { grid-column: 1 / -1; border: 0; padding: 0; margin: 0; min-width: 0; }
@@ -155,6 +168,7 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 
 /* Phones: drop the tagline so the language switch stays on the brand row, and tighten the filters. */
 @media (max-width: 520px) {
+  .group.diy, .group.local { padding: 10px; margin-left: -6px; margin-right: -6px; }
   .tagline { display: none; }
   .site-header .wrap { padding-top: 10px; padding-bottom: 10px; }
   main { padding-top: 16px; }

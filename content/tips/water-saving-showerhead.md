@@ -7,7 +7,7 @@ audience:
 - tenant
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: hot-water
 kind: practice
 stage:
@@ -53,4 +53,4 @@ last_reviewed: '2026-10-07'
 
 Showerheads unscrew by hand. Keep the original one and put it back when you move out. Less hot water means less gas or electricity for heating it, and a lower water bill.
 
-A water-saving showerhead is also part of the free Mijn Energiescan kit for eligible households.
+In Flanders, a water-saving showerhead is also part of the free Mijn Energiescan kit for eligible households.

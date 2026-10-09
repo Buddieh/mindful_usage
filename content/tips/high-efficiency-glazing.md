@@ -6,7 +6,7 @@ summary: High-efficiency glass insulates two to three times better than ordinary
 audience:
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: windows-doors
 kind: practice
 stage:

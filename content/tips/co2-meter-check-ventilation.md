@@ -7,7 +7,7 @@ audience:
 - tenant
 - homeowner
 regions:
-- BE-VLG
+- BE
 category: indoor-air
 kind: practice
 stage:

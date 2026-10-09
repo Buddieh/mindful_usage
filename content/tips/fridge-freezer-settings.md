@@ -6,7 +6,7 @@ summary: Keep the fridge at 4–5 °C and the freezer at –18 °C; a 2 mm layer
 audience:
 - tenant
 regions:
-- BE-VLG
+- BE
 category: appliances
 kind: practice
 stage:

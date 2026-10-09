@@ -5,7 +5,7 @@ summary: About 3 m² of radiator foil on uninsulated outer walls saves around 2%
 audience:
 - tenant
 regions:
-- BE-VLG
+- BE
 category: heating
 kind: practice
 stage:
