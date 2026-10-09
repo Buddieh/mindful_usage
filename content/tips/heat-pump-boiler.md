@@ -37,6 +37,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/warmtepompboiler
+  language: nl
   accessed: '2026-10-07'
   supports: how it works, 70% from the air, backup above 55 °C, placement, exhaust air most efficient, 3 to
     4 times more efficient, heating during solar hours, size for a family of four

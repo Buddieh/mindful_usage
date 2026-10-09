@@ -33,6 +33,7 @@ sources:
   publisher: Leefmilieu Brussel
   type: official
   url: https://document.environnement.brussels/opac_css/elecfile/100tipsEnergieNL
+  language: nl
   accessed: '2026-10-07'
   locator: p. 9 tip 3; p. 12 tip 10
   supports: valve settings table; keep unheated rooms closed
@@ -40,6 +41,7 @@ sources:
   publisher: Energieloket Stad Mechelen
   type: official
   url: https://klimaatneutraal.mechelen.be/tech-bib_duurzaam-verwarmen_energieloket-mechelen_-thermostatische-radiatorkranen
+  language: nl
   accessed: '2026-10-07'
   supports: setting 1.5–2 ≈ 15–16 °C, keep rooms at 15 °C, thermostat room valve open
 verification:

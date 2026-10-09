@@ -37,6 +37,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/warmtepomp/types-warmtepompen
+  language: nl
   accessed: '2026-10-07'
   locator: sections per type and 'Een warmtepomp geeft warmte af aan het gebouw via water of lucht'
   supports: cost, passive cooling, noise, garden space, tap water per type; low-temperature heating needed
@@ -44,6 +45,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/warmtepomp
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Werking' and 'Is uw woning warmtepompklaar?'
   supports: low-temperature emitters (underfloor, adapted radiators, fan convectors, wall heating); hybrid as an
@@ -52,6 +54,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/warmtepomp/hybride-warmtepomp
+  language: nl
   accessed: '2026-10-07'
   supports: hybrid is a heat pump plus a gas boiler; insulate first in a moderately insulated home; well insulated
     means choose a full heat pump

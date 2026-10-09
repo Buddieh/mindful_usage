@@ -39,6 +39,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/investeren-in-energiebesparing/isolatie-en-luchtdichtheid/muurisolatie
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Spouwmuurisolatie' and 'Zijn de spouwmuren geschikt voor isolatie?'
   supports: duration, no permit, payback, how to check suitability, what rules it out, contractor liability

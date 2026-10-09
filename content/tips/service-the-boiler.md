@@ -40,6 +40,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  language: nl
   accessed: '2026-10-07'
   locator: under 'Grootste besparingskansen' > 'Laat de ketel beter renderen'
   supports: 5% saving for a serviced gas boiler
@@ -47,6 +48,7 @@ sources:
   publisher: Departement Omgeving, Vlaamse overheid
   type: official
   url: https://omgeving.vlaanderen.be/overzicht-van-de-verplichtingen
+  language: nl
   accessed: '2026-10-07'
   locator: table, rows by power and 'Wie is verantwoordelijk?'
   supports: servicing frequency by fuel and power, no legal duty for gas and oil under 20 kW, tenant does periodic
@@ -55,6 +57,7 @@ sources:
   publisher: Vlaamse Regering
   type: official
   url: https://themis.vlaanderen.be/files/1c355f30-d653-11e9-99f3-0242ac1b0003/download
+  language: nl
   accessed: '2026-10-07'
   locator: section 3.3.2 '(Centrale) verwarmingsketel/waterverwarmer'
   supports: periodic cleaning of the boiler is a small repair for the tenant

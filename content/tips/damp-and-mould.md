@@ -38,6 +38,7 @@ sources:
   publisher: Departement Zorg (Vlaamse overheid)
   type: official
   url: https://publicaties.vlaanderen.be/view-file/69153
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Herstel bouwtechnische problemen' and 'Let op de temperatuur en de luchtvochtigheid'
   supports: daily airing; causes (rising damp, cold bridges, leaks, seepage); fix quickly; above 15 °C; humidity
@@ -46,6 +47,7 @@ sources:
   publisher: Departement Zorg (Vlaamse overheid)
   type: official
   url: https://www.vlaanderen.be/publicaties/weg-met-schimmel-hoe-verwijder-je-schimmel-infofiche
+  language: nl
   accessed: '2026-10-07'
   supports: avoid bleach, wear gloves and a mask, don't remove it yourself with breathing problems or allergy, mould
     returns while material is damp, call a professional

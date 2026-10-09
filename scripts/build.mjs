@@ -13,6 +13,8 @@ const DIST = join(ROOT, "dist");
 let LANG = DEFAULT_LANG;
 const t = (key) => tr(LANG, key);
 const label = (group, value) => lb(LANG, group, value);
+// French puts a non-breaking space before a colon.
+const COLON = () => (LANG === "fr" ? "\u00a0: " : ": ");
 // Set automatically in GitHub Actions; used for "suggest an edit" links.
 const REPO = process.env.GITHUB_REPOSITORY;
 const REPO_URL = REPO ? `https://github.com/${REPO}` : null;
@@ -87,8 +89,8 @@ const REGIONS = ["BE-VLG", "BE-BRU", "BE-WAL"];
 const isDiy = (d) => d.stability === "constant" && d.regions.includes("BE");
 // Regions the site doesn't cover yet point readers to an official advice service meanwhile.
 const COVERAGE = {
-  "BE-BRU": { name: "Homegrade", url: { nl: "https://homegrade.brussels/nl/" }, fallback: "https://homegrade.brussels/" },
-  "BE-WAL": { name: "energie.wallonie.be", url: {}, fallback: "https://energie.wallonie.be/" },
+  "BE-BRU": { name: "Homegrade", url: { nl: "https://homegrade.brussels/nl/", fr: "https://homegrade.brussels/" }, fallback: "https://homegrade.brussels/" },
+  "BE-WAL": { name: "energie.wallonie.be", url: { fr: "https://energie.wallonie.be/" }, fallback: "https://energie.wallonie.be/" },
 };
 // Impact bands from largest to smallest; "unrated" and "indirect" rank last.
 const IMPACT = { large: 3, medium: 2, small: 1, unrated: 0, indirect: 0 };
@@ -129,7 +131,7 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const isOverdue = (d) => d.stability === "variable" && d.review_by < TODAY;
 const levelText = (n) => t("chip.level").replace("{n}", n).replace("{name}", label("rung", n));
 // Dates read as "7 Oct 2026" / "7 okt 2026"; the ISO date stays in the markup.
-const LOCALES = { nl: "nl-BE", en: "en-GB" };
+const LOCALES = { nl: "nl-BE", fr: "fr-BE", en: "en-GB" };
 const date = (iso) => `<time datetime="${esc(iso)}">${esc(new Intl.DateTimeFormat(LOCALES[LANG] || LANG,
   { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(iso)))}</time>`;
 
@@ -163,14 +165,14 @@ function chips(d, full) {
     ...carbon,
     `<span class="chip cat">${esc(label("category", d.category))}</span>`,
     `<span class="chip level">${esc(levelText(d.rung))}</span>`,
-    `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
+    `<span class="chip">${esc(t("field.cost"))}${COLON()}${esc(label("cost", d.upfront_cost))}</span>`,
     `<span class="chip">${esc(label("time", d.time_needed))}</span>`,
   ] : [
     `<span class="chip level">${esc(levelText(d.rung))}</span>`,
     ...impact,
     ...carbon,
     ...(s ? [`<span class="chip save">${esc(s)}</span>`] : []),
-    `<span class="chip">${esc(t("field.cost"))}: ${esc(label("cost", d.upfront_cost))}</span>`,
+    `<span class="chip">${esc(t("field.cost"))}${COLON()}${esc(label("cost", d.upfront_cost))}</span>`,
   ];
   if (isOverdue(d)) out.push(`<span class="chip warn">${esc(t("chip.overdue"))}</span>`);
   if (full && s) out.push(`<span class="chip save">${esc(s)}</span>`);
@@ -291,7 +293,7 @@ function tipPage(tip) {
     [t("field.impact"), `${impactText} <a href="../../impact/">${esc(t("impact.how"))}</a>`],
     ...(co2(d) ? [[t("field.co2"), `<strong>${esc(co2Text(co2(d), "long"))}</strong> <a href="../../impact/#co2">${esc(t("co2.how"))}</a>`]] : []),
     ...(pb ? [[t("field.payback"), paybackText]] : []),
-    [t("field.savings"), `${savings ? `<strong>${esc(savings)}</strong> · ` : ""}${esc(l.basis)} <span class="muted">(${esc(t("field.confidence"))}: ${esc(label("confidence", s.confidence))})</span>`],
+    [t("field.savings"), `${savings ? `<strong>${esc(savings)}</strong> · ` : ""}${esc(l.basis)} <span class="muted">(${esc(t("field.confidence"))}${COLON()}${esc(label("confidence", s.confidence))})</span>`],
     [t("field.who"), label("responsibility", d.responsibility)],
     [t("field.landlord"), d.needs_landlord_permission ? t("yes") : t("no")],
     [t("field.kind"), label("kind", d.kind)],
@@ -327,9 +329,9 @@ function tipPage(tip) {
     ? `<aside class="notice"><strong>${esc(t("tip.regionNotes"))}</strong><p>${esc(l.region_notes)}</p></aside>` : "";
 
   const sources = d.sources.map((src, i) => `<li>
-    <a href="${esc(src.url)}" rel="noopener">${esc(src.title)}</a> <span class="muted">· ${esc(src.publisher)} (${esc(label("sourceType", src.type))}) · ${esc(t("tip.accessedShort"))} ${date(src.accessed)}</span>
-    ${l.supports[i] ? `<div class="src-meta">${esc(t("tip.supports"))}: ${esc(l.supports[i])}</div>` : ""}
-    ${src.locator ? `<div class="src-meta">${esc(t("tip.locator"))}: ${esc(src.locator)}</div>` : ""}
+    <a href="${esc(src.url)}" rel="noopener" hreflang="${src.language}" lang="${src.language}">${esc(src.title)}</a>${src.language !== LANG ? ` <span class="muted">(${esc(label("inLanguage", src.language))})</span>` : ""} <span class="muted">· ${esc(src.publisher)} (${esc(label("sourceType", src.type))}) · ${esc(t("tip.accessedShort"))} ${date(src.accessed)}</span>
+    ${l.supports[i] ? `<div class="src-meta">${esc(t("tip.supports"))}${COLON()}${esc(l.supports[i])}</div>` : ""}
+    ${src.locator ? `<div class="src-meta">${esc(t("tip.locator"))}${COLON()}${esc(src.locator)}</div>` : ""}
   </li>`).join("");
 
   const file = l.lang === d.lang ? tip.file : `${LANG}/${tip.file}`;

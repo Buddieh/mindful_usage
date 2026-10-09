@@ -37,6 +37,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/warmtenet
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Werking van een warmtenet', 'Kan elke woning aansluiten?', 'Waar zijn er al warmtenetten?' and
     'Voordelen van warmtenetten'
@@ -46,6 +47,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/aansluitpremie-warmtenet
+  language: nl
   accessed: '2026-10-07'
   supports: a connection premium exists for owners of existing buildings, while budget lasts
 verification:

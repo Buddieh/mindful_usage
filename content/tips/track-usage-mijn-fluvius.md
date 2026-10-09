@@ -34,6 +34,7 @@ sources:
   publisher: Test-Aankoop
   type: consumer-organisation
   url: https://www.test-aankoop.be/woning-energie/gas-elektriciteit-mazout-pellets/nieuws/verbruik-berekenen-digitale-meter
+  language: nl
   accessed: '2026-10-07'
   supports: quarter-hour data in Mijn Fluvius; user-port dongle
 verification:

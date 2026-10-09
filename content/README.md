@@ -67,7 +67,7 @@ On the site, variable tips are labelled "Subject to change" (Dutch: "Kan wijzige
 
 ## Languages
 
-The site is published in Dutch and English, with an NL | EN switch on every page. The main tip file (`tips/<id>.md`) holds all structured data plus the English text. The Dutch text lives in `tips/nl/<id>.md`, which only contains the reader-facing fields (`title`, `summary`, `savings_basis`, `region_notes`, `flags`, `supports`) and the translated body. Its format is defined in [`translation.schema.json`](translation.schema.json). The build fails if a tip is missing a translation.
+The site is published in Dutch, French and English, with an NL | FR | EN switch on every page. The main tip file (`tips/<id>.md`) holds all structured data plus the English text. The Dutch and French texts live in `tips/nl/<id>.md` and `tips/fr/<id>.md`, which only contains the reader-facing fields (`title`, `summary`, `savings_basis`, `region_notes`, `flags`, `supports`) and the translated body. Its format is defined in [`translation.schema.json`](translation.schema.json). The build fails if a tip is missing a translation. French translations follow [`glossary-fr.md`](glossary-fr.md). Source titles are never translated; each source has a `language` (`nl`, `fr`, `en` or `de`), and readers of another language see it marked, e.g. "(in Dutch)".
 
 ## Rules for contributors
 

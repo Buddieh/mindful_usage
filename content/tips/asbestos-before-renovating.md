@@ -37,6 +37,7 @@ sources:
   publisher: OVAM
   type: official
   url: https://ovam.vlaanderen.be/renoveren
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Renoveren? Da's altijd best mét asbestattest' and 'Nóg beter bezig met een aanvullend onderzoek'
   supports: get the attest before demolition; extra (sometimes destructive) investigation by an experienced certified
@@ -46,12 +47,14 @@ sources:
   publisher: OVAM
   type: official
   url: https://ovam.vlaanderen.be/heb-ik-een-asbestattest-nodig
+  language: nl
   accessed: '2026-10-07'
   supports: attest needed when selling since 23 November 2022; only for buildings from before 2001; deadline 2032
 - title: Asbestinventaris
   publisher: OVAM
   type: official
   url: https://ovam.vlaanderen.be/de-asbestinventaris
+  language: nl
   accessed: '2026-10-07'
   supports: a contractor renovating for a private owner must first have a destructive asbestos inventory made
 verification:

@@ -38,6 +38,7 @@ sources:
   publisher: Woningpas (Vlaamse overheid)
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/aan-de-slag/muurisolatie
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Waar gaat het over?' and 'Hoe verhelpen en door wie?'
   supports: second-largest heat loss, cavity filling alone usually not enough for 2050, inside insulation
@@ -46,6 +47,7 @@ sources:
   publisher: WTCB and KU Leuven
   type: research
   url: https://publicaties.vlaanderen.be/view-file/12196
+  language: nl
   accessed: '2026-10-07'
   locator: pp. 3, 8-16, 19-24
   supports: outside insulation technically best; risks of inside insulation and when it is unsuitable

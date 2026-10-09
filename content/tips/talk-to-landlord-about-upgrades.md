@@ -33,18 +33,21 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/en/moving-housing-and-energy/energy-performance-certificate-epc-for-sale-or-rent-of-a-dwelling
+  language: en
   accessed: '2026-10-07'
   supports: the landlord must attach a copy of the EPC to the lease
 - title: EPC for a dwelling
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/en/epc-for-a-dwelling
+  language: en
   accessed: '2026-10-07'
   supports: the EPC contains recommendations to make the home more energy efficient
 - title: Energiehuizen
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-energiehuis
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Waarvoor kunt u terecht in een energiehuis?'
   supports: renovation advice, free for most households, a small fee may apply for higher incomes
@@ -52,6 +55,7 @@ sources:
   publisher: Woningpas, Vlaamse overheid
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/minimale-vereisten
+  language: nl
   accessed: '2026-10-07'
   locator: section 'De energienorm'
   supports: minimum label requirements for rental homes from 2030
@@ -59,6 +63,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Minder verwarmen?', 'Minder ruimtes verwarmen', 'Laat de ketel beter renderen' and 'Isoleer
     de woning rondomrond'

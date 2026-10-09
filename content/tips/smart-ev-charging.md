@@ -38,6 +38,7 @@ sources:
   publisher: Vlaamse Nutsregulator
   type: official
   url: https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/nettarieven/capaciteitstarief/tips-om-je-verbruik-te-spreiden-met-een-digitale-meter
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Je hebt een elektrische auto' and 'Je hebt zonnepanelen'
   supports: charge daily rather than fully every few days; charge slower at lower power; a socket gives about 10 km and
@@ -47,6 +48,7 @@ sources:
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/blog/elektrisch-rijden/voordelig-laden
+  language: nl
   accessed: '2026-10-07'
   supports: charge at lower power, use a timer, charge on solar power; smart charger useful with a dynamic tariff; load
     balancing prevents overloading; P1 port as measuring point
@@ -54,6 +56,7 @@ sources:
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/elektrisch-rijden/elektrisch-laden/waar/thuis
+  language: nl
   accessed: '2026-10-07'
   supports: a home charge point must always be registered with Fluvius
 verification:

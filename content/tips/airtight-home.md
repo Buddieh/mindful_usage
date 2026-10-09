@@ -36,6 +36,7 @@ sources:
   publisher: Woningpas (Vlaamse overheid)
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/aangenaam-binnenklimaat/aan-de-slag/luchtdichtheid
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Waar gaat het over?' and 'Hoe verhelpen en door wie?'
   supports: draughts and heat loss through cracks, gaps and joints; measurable; recognised testers; ventilation
@@ -44,6 +45,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/epb-pedia/gebouw/luchtdichtheid
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Principe' and 'Luchtdichtheid en EPB'
   supports: draughts, condensation and mould from air leaks; a valid measurement lowers the E-level

@@ -32,6 +32,7 @@ sources:
   publisher: Woningpas, Vlaamse overheid
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/minimale-vereisten
+  language: nl
   accessed: '2026-10-07'
   locator: section 'De dakisolatienorm'
   supports: roof insulation minimum (R-value 0.75 m²K/W or 3 to 4 cm), and when missing roof insulation counts
@@ -40,6 +41,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/woningkwaliteitsnormen/dubbele-beglazing-in-elke-woning
+  language: nl
   accessed: '2026-10-07'
   supports: double glazing required in every home since 2020; per window for houses and flats, unfit since 2023
     with more than one single-glazed window, exemption with a low EPC energy score; living rooms and bathroom
@@ -48,6 +50,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Isoleer de woning rondomrond', 'Begin met dikke dakisolatie'
   supports: recommended roof insulation of at least Rd 4.5 m²K/W
@@ -55,6 +58,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/stappen-bij-problemen-met-de-woningkwaliteit
+  language: nl
   accessed: '2026-10-07'
   supports: tell the landlord in writing first, then report to the municipality, which can send a housing
     inspector free of charge; keep paying the rent

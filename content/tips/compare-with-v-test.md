@@ -33,12 +33,14 @@ sources:
   publisher: VREG (Vlaamse Nutsregulator)
   type: official
   url: https://www.vtest.be/
+  language: nl
   accessed: '2026-10-07'
   supports: Mijn V-test profile with Fluvius data
 - title: Easily switching energy supplier
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/en/moving-housing-and-energy/easily-switching-energy-supplier
+  language: en
   accessed: '2026-10-07'
   supports: no exit fee; yearly fixed fee timing
 verification:

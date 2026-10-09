@@ -32,12 +32,14 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/en/moving-housing-and-energy/energy-performance-certificate-epc-for-sale-or-rent-of-a-dwelling
+  language: en
   accessed: '2026-10-07'
   supports: label in ads, copy with lease, €500–5,000 fine
 - title: 'Een woning verhuren in Vlaanderen: dit zijn de nieuwe regels'
   publisher: KBC
   type: commercial
   url: https://www.kbc.be/particulieren/nl/thema/myhome/artikels/een-woning-verhuren-in-vlaanderen-dit-zijn-de-nieuwe-regels.html
+  language: nl
   accessed: '2026-10-07'
   supports: EPCs from before 2019 no longer valid
 verification:

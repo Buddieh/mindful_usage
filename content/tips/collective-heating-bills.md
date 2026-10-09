@@ -37,6 +37,7 @@ sources:
   publisher: VREG (Vlaamse Regulator van de Elektriciteits- en Gasmarkt)
   type: official
   url: https://www.vreg.be/nl/faq/collectieve-verwarming
+  language: nl
   accessed: '2026-10-07'
   supports: manager chooses the supplier; heat use measured per unit; remote reading by 1 January 2027; shared part 10
     to 60%, consumption part 40 to 90%; free monthly information; distribution losses are shared; complaints route
@@ -44,6 +45,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/keuring-en-onderhoud-van-uw-verwarming/verplichtingen-voor-centrale-verwarming-en-stookolietank-voor-verhuurder-en-huurder
+  language: nl
   accessed: '2026-10-07'
   supports: individual heat meters required with a central boiler room; landlord pays the inspection, tenant pays maintenance
     unless the lease says otherwise

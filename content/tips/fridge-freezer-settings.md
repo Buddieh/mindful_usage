@@ -32,6 +32,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  language: nl
   accessed: '2026-10-07'
   locator: under 'Grootste besparingskansen' > 'Besparen op verbruik van elektrische toestellen en verlichting'
   supports: 4–5 °C / –18 °C; 2 mm ice = 10% extra

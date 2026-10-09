@@ -33,6 +33,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/flexibel-omgaan-met-elektriciteit
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Een dynamisch prijscontract afsluiten'
   supports: hourly or quarter-hour prices, who benefits, cheap and expensive times of day, the advantage can
@@ -41,6 +42,7 @@ sources:
   publisher: Vlaamse Nutsregulator
   type: official
   url: https://www.vlaamsenutsregulator.be/publicaties/rapp-2026-07
+  language: nl
   accessed: '2026-10-07'
   locator: §3.3.4 and §4.4.1
   supports: the customer carries much of the price risk; the advantage comes from using less in high-price hours
@@ -48,6 +50,7 @@ sources:
   publisher: Vlaamse Nutsregulator
   type: official
   url: https://www.vtest.be/
+  language: nl
   accessed: '2026-10-07'
   supports: dynamic offers in the comparison; importing more than a year of quarter-hour data
 verification:

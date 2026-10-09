@@ -36,6 +36,7 @@ sources:
   publisher: Vlaamse Nutsregulator
   type: official
   url: https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/nettarieven/capaciteitstarief
+  language: nl
   accessed: '2026-10-07'
   supports: highest 15-minute peak per month, yearly charge on the average of 12 monthly peaks, 2.5 kW minimum,
     injection peaks don't count, 2026 average price per kW, monthly peaks in Mijn Fluvius
@@ -43,6 +44,7 @@ sources:
   publisher: Vlaamse Nutsregulator
   type: official
   url: https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/nettarieven/capaciteitstarief/tips-om-je-verbruik-te-spreiden-met-een-digitale-meter
+  language: nl
   accessed: '2026-10-07'
   supports: avoid running heavy appliances together, use delay buttons and timers, find your peak moment in Mijn
     Fluvius
@@ -50,6 +52,7 @@ sources:
   publisher: Test-Aankoop
   type: consumer-organisation
   url: https://www.test-aankoop.be/woning-energie/gas-elektriciteit-mazout-pellets/nieuws/verbruik-berekenen-digitale-meter
+  language: nl
   accessed: '2026-10-07'
   supports: meter display code 1.6.0
 verification:

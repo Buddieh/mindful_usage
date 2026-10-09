@@ -32,12 +32,14 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/sociaal-tarief-voor-energie-elektriciteit-aardgas-warmte
+  language: nl
   accessed: '2026-10-07'
   supports: eligibility, automatic application, collective heating
 - title: Sociaal tarief voor energie
   publisher: FOD Economie
   type: official
   url: https://economie.fgov.be/nl/themas/energie/energieprijzen/sociaal-tarief-voor-energie
+  language: nl
   accessed: '2026-10-09'
   supports: the same federal tariff everywhere in Belgium, applied automatically in most cases
 verification:

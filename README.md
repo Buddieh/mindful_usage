@@ -1,6 +1,6 @@
 # Mindful Usage
 
-An open, searchable collection of practical energy-saving tips, each linked to the official source it comes from. It covers homes in **Belgium**: advice that works everywhere, plus the rules, premiums and services of each region. Flanders is covered first; Brussels and Wallonia are being added, together with French next to Dutch and English.
+An open, searchable collection of practical energy-saving tips, each linked to the official source it comes from. It covers homes in **Belgium**: advice that works everywhere, plus the rules, premiums and services of each region. It is published in Dutch, French and English. Flanders is covered first; Brussels and Wallonia are being added.
 
 ## How it works
 
@@ -10,7 +10,7 @@ An open, searchable collection of practical energy-saving tips, each linked to t
 
 ## Made with AI
 
-The content was gathered and the site was built with Claude, an AI model by Anthropic. The maintainer decides what goes on the site and approves every change before it is published. Because AI can get things wrong, every tip links to its sources so readers can check it. The site says this in Dutch and English in its footer and on the impact page.
+The content was gathered and the site was built with Claude, an AI model by Anthropic. The maintainer decides what goes on the site and approves every change before it is published. Because AI can get things wrong, every tip links to its sources so readers can check it. The site says this in all its languages in its footer and on the impact page.
 
 ## Run it locally
 

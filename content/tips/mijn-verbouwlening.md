@@ -36,6 +36,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/lenen-voor-een-woning/mijn-verbouwlening
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Welk bedrag', 'Hoe aanvragen' and 'Wat met Mijn VerbouwPremie in combinatie met Mijn VerbouwLening'
   supports: renovation loan for energy and housing quality works, income-dependent interest, simulator, apply

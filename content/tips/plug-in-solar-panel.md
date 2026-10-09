@@ -34,6 +34,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnepanelen/stekkerzonnepanelen-en-stekkerbatterijen-in-vlaanderen
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Voordelen', 'Voorwaarden in Vlaanderen', 'Een veilige installatie' and 'Meer informatie'
   supports: date, 800 W advice and registration from 800 W, Synergrid approval, socket and circuit rules, registration,
@@ -42,6 +43,7 @@ sources:
   publisher: European Commission, Joint Research Centre
   type: official
   url: https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en
+  language: en
   accessed: '2026-10-07'
   supports: free tool to estimate yearly production for your location, tilt and orientation
 verification:

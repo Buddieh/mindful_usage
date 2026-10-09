@@ -38,6 +38,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonneboiler
+  language: nl
   accessed: '2026-10-07'
   supports: how it works, works on cloudy days, always a backup heater, 50 to 60% coverage, orientation and
     tilt, tank size per m², cost of heating water halved
@@ -45,6 +46,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnekaart-is-uw-dak-geschikt-voor-zonneboiler-of-zonnepanelen
+  language: nl
   accessed: '2026-10-07'
   supports: the Zonnekaart scores roofs for a solar water heater too
 verification:

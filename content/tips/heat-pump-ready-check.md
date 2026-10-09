@@ -40,6 +40,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/nieuwe-verwarmingsinstallatie-kiezen/verwarming-met-warmtepomp-of-warmtenet/is-uw-woning-warmtepompklaar
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Doel van de tool'
   supports: the tool gives an indication; efficiency depends on insulation and emitter temperature; full assessment
@@ -48,6 +49,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/nieuwe-verwarmingsinstallatie-kiezen/verwarming-met-warmtepomp-of-warmtenet/is-uw-woning-warmtepompklaar/technische-achtergrond-bij-de-tool-warmtepompklaar
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Van de studie naar drie categorieën' and 'Advies per typegeval'
   supports: three categories (full heat pump, hybrid, insulate first); radiators are often oversized; advice
