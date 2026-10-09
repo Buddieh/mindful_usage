@@ -41,3 +41,9 @@ We only show a payback time when an official source states one, and we link to t
 Real savings are often smaller than calculated. Households in poorly insulated homes already use much less energy than models predict, by about 30% on average in a large German study, with similar patterns in Belgium ([University of Cambridge](https://www.cam.ac.uk/research/news/the-prebound-effect)). In a large US home insulation programme, households saved only about 40% of the projected amount ([NBER](https://www.nber.org/papers/w21331)).
 
 For your own home, the EPC lists recommended measures in order of priority, and for houses gives a cost estimate for the priority ones ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res)). Your Energiehuis can advise you on what to do first.
+
+<h2 id="ai">How this site is made</h2>
+
+This site is made with AI. Claude, an AI model by Anthropic, searched for and read the sources, wrote the texts in Dutch and English, rated the impact of each item, and built the website. A person, the maintainer of the project, decides what goes on the site and approves every change before it is published.
+
+AI can get things wrong. That is why every item links to the sources it is based on, so you can check what it says. If you find a mistake, please report it on [GitHub](https://github.com/Buddieh/mindful_usage/issues).

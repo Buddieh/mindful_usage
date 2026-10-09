@@ -51,6 +51,7 @@ ${body}
 </main>
 <footer class="site-footer"><div class="wrap">
   <p>${t("footer.license")}${REPO_URL ? ` · <a href="${REPO_URL}">${esc(t("footer.source"))}</a>` : ""}</p>
+  <p>${esc(t("footer.ai"))} <a href="${rel}impact/#ai">${esc(t("footer.aiHow"))}</a></p>
   <p>${esc(t("footer.disclaimer"))}</p>
 </div></footer>
 <script src="${rel}../app.js"></script>

@@ -41,3 +41,9 @@ We tonen alleen een terugverdientijd als een officiële bron er een noemt, en we
 Echte besparingen vallen vaak lager uit dan berekend. Gezinnen in slecht geïsoleerde woningen verbruiken al veel minder dan modellen voorspellen, gemiddeld zo'n 30% in een grote Duitse studie, met gelijkaardige patronen in België ([University of Cambridge](https://www.cam.ac.uk/research/news/the-prebound-effect)). In een groot Amerikaans isolatieprogramma bespaarden gezinnen maar zo'n 40% van wat voorspeld was ([NBER](https://www.nber.org/papers/w21331)).
 
 Voor je eigen woning zet het EPC de aanbevolen maatregelen in volgorde van prioriteit, en voor huizen geeft het een kostenraming voor de dringendste ([Vlaamse overheid](https://www.vlaanderen.be/epc-voor-een-residentiele-eenheid/uitleg-bij-het-epc-res)). Je Energiehuis kan je adviseren over wat eerst moet.
+
+<h2 id="ai">Hoe deze site gemaakt is</h2>
+
+Deze site is gemaakt met AI. Claude, een AI-model van Anthropic, zocht en las de bronnen, schreef de teksten in het Nederlands en het Engels, schatte de impact van elke tip in en bouwde de website. Een mens, de beheerder van het project, beslist wat er op de site komt en keurt elke wijziging goed voor ze gepubliceerd wordt.
+
+AI kan zich vergissen. Daarom linkt elke tip naar de bronnen waarop hij gebaseerd is, zodat je zelf kunt nakijken wat er staat. Zie je een fout? Meld het dan op [GitHub](https://github.com/Buddieh/mindful_usage/issues).
