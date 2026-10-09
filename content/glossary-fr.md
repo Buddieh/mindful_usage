@@ -67,6 +67,10 @@ Translations into French use these terms, so that the site uses the words Belgia
 | stookadvies | burning advisory | avis de chauffage (stookadvies) |
 | CO2-meter | CO2 meter | détecteur de CO2 |
 | combiketel | combi boiler | chaudière mixte |
+| slimme meter (Wallonië) | smart meter (Wallonia) | compteur communicant |
+| budgetmeter / meter met voorafbetaling (Wallonië) | prepayment meter (Wallonia) | compteur à prépaiement (formerly compteur à budget) |
+| prosumententarief | prosumer tariff | tarif prosumer |
+| tweevoudig uurtarief (dag/nacht) | bi-hourly (day/night) tariff | tarif bihoraire |
 | bodem-water, lucht-water, lucht-lucht, water-water warmtepomp | ground-water, air-water, air-air, water-water heat pump | pompe à chaleur sol-eau, air-eau, air-air, eau-eau |
 
 ## Effort levels and labels

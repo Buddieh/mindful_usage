@@ -89,7 +89,7 @@ const REGIONS = ["BE-VLG", "BE-BRU", "BE-WAL"];
 const isDiy = (d) => d.stability === "constant" && d.regions.includes("BE");
 // Regions the site doesn't cover yet point readers to an official advice service meanwhile.
 const COVERAGE = {
-  "BE-WAL": { name: "energie.wallonie.be", url: { fr: "https://energie.wallonie.be/" }, fallback: "https://energie.wallonie.be/" },
+  "BE-WAL": { name: "ostbelgienlive.be", url: {}, fallback: "https://ostbelgienlive.be/desktopdefault.aspx/tabid-8275/", language: "de" },
 };
 // Impact bands from largest to smallest; "unrated" and "indirect" rank last.
 const IMPACT = { large: 3, medium: 2, small: 1, unrated: 0, indirect: 0 };
@@ -265,7 +265,7 @@ ${tips.filter((x) => isDiy(x.data)).map(card).join("\n")}
   data-names="${esc(JSON.stringify(Object.fromEntries(REGIONS.map((r) => [r, label("region", r)]))))}">
 <h2><span class="title">${esc(t("section.local"))}</span> <small class="n"></small></h2>
 ${Object.entries(COVERAGE).map(([r, c]) => `<p class="coverage" data-region="${r}" hidden>${esc(t(`coverage.${r}`))}
-  <a href="${esc(c.url[LANG] || c.fallback)}" rel="noopener">${esc(c.name)}</a>${c.url[LANG] ? "" : ` (${esc(t("coverage.inFrench"))})`}.</p>`).join("\n")}
+  <a href="${esc(c.url[LANG] || c.fallback)}" rel="noopener">${esc(c.name)}</a>${c.url[LANG] ? "" : ` (${esc(label("inLanguage", c.language))})`}.</p>`).join("\n")}
 <ul class="cards">
 ${tips.filter((x) => !isDiy(x.data)).map(card).join("\n")}
 </ul>
