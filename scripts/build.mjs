@@ -1,6 +1,6 @@
 // Builds the static site into dist/: an index with search and filters,
 // one page per tip, and tips.json for anyone who wants the raw data.
-import { mkdirSync, writeFileSync, copyFileSync, rmSync, readFileSync } from "node:fs";
+import { mkdirSync, writeFileSync, copyFileSync, rmSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
 import { marked } from "marked";
@@ -436,4 +436,22 @@ for (const f of ["style.css", "app.js"]) copyFileSync(join(ROOT, "src", f), join
 // The icons are inlined in every page, so their licence ships with the site.
 copyFileSync(join(ROOT, "src", "icons", "LICENSE-phosphor.txt"), join(DIST, "LICENSE-phosphor-icons.txt"));
 writeFileSync(join(DIST, ".nojekyll"), "");
+
+// Every language must look the same: one shared stylesheet, no page-level styles,
+// and no CSS rules aimed at a single language. The build fails otherwise.
+const css = readFileSync(join(ROOT, "src", "style.css"), "utf8");
+if (/:lang\(|\[lang|\[hreflang/.test(css)) throw new Error("style.css has a language-specific selector; all languages must share one look");
+const pages = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+  e.isDirectory() ? pages(join(dir, e.name)) : e.name.endsWith(".html") ? [join(dir, e.name)] : []);
+const counts = LANGUAGES.map((lang) => {
+  const files = pages(join(DIST, lang));
+  for (const f of files) {
+    const html = readFileSync(f, "utf8");
+    const sheets = html.match(/<link rel="stylesheet" href="[^"]*"/g) || [];
+    if (sheets.length !== 1 || !sheets[0].endsWith(`style.css?v=${ASSET_VERSION["style.css"]}"`) || /<style|\sstyle="/.test(html))
+      throw new Error(`${f}: must use only the shared stylesheet, like every other language`);
+  }
+  return files.length;
+});
+if (new Set(counts).size !== 1) throw new Error(`languages have different page counts: ${counts.join(", ")}`);
 console.log(`✓ built ${tips.length} tips in ${LANGUAGES.join(", ")} into dist/`);
