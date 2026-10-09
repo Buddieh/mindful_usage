@@ -2,6 +2,7 @@
 // one page per tip, and tips.json for anyone who wants the raw data.
 import { mkdirSync, writeFileSync, copyFileSync, rmSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { createHash } from "node:crypto";
 import { marked } from "marked";
 import { loadTips, localize, ROOT } from "./tips.mjs";
 import { t as tr, label as lb, LANGUAGES, DEFAULT_LANG } from "../src/i18n.mjs";
@@ -25,6 +26,11 @@ function savingsText(s) {
   return t(`savings.${s.kind}`).replace("{v}", s.value);
 }
 
+// A content hash in the URL makes browsers fetch a changed stylesheet or script at once,
+// instead of pairing new pages with a cached old copy.
+const version = (f) => createHash("sha256").update(readFileSync(join(ROOT, "src", f))).digest("hex").slice(0, 8);
+const ASSET_VERSION = { "style.css": version("style.css"), "app.js": version("app.js") };
+
 function page({ title, description, rel, path, body }) {
   // rel: from this page up to the language root; path: this page below the language root.
   const toggle = LANGUAGES.map((l) => l === LANG
@@ -38,7 +44,7 @@ function page({ title, description, rel, path, body }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<link rel="stylesheet" href="${rel}../style.css">
+<link rel="stylesheet" href="${rel}../style.css?v=${ASSET_VERSION["style.css"]}">
 ${alternates}
 </head>
 <body>
@@ -55,7 +61,7 @@ ${body}
   <p>${esc(t("footer.ai"))} <a href="${rel}impact/#ai">${esc(t("footer.aiHow"))}</a></p>
   <p>${esc(t("footer.disclaimer"))}</p>
 </div></footer>
-<script src="${rel}../app.js"></script>
+<script src="${rel}../app.js?v=${ASSET_VERSION["app.js"]}"></script>
 </body>
 </html>
 `;
