@@ -38,6 +38,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/groene-energie-installateurs-met-certificaat-van-bekwaamheid-rescert
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Installateurs voor zonnepanelen, zonneboiler of pelletketel', 'Installateurs warmtepomp' and 'Klachten'
   supports: what RESCert covers, recommended for solar and pellet, required for the heat pump premium, RESCert number

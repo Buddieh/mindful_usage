@@ -39,6 +39,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnepanelen/thuisbatterij
+  language: nl
   accessed: '2026-10-07'
   supports: self-consumption 28% to about 68%; can be financially interesting if costs and benefits are weighed; bigger
     is not automatically better; helps with capacity peaks and dynamic tariffs; mandatory inspection and registration
@@ -47,6 +48,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnepanelen/thuisbatterij/premie-voor-de-aankoop-of-leasing-van-een-thuisbatterij-voor-zelf-opgewekte-energie-stopgezet
+  language: nl
   accessed: '2026-10-07'
   supports: the premium can no longer be requested
 verification:

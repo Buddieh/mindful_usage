@@ -41,6 +41,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/verwarmingstips
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Temperatuurregeling per ruimte' and 'Kamerthermostaat'
   supports: valves are indispensable, settings per room, payback under two years, valve fully open in the thermostat

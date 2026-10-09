@@ -38,6 +38,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie
+  language: nl
   accessed: '2026-10-07'
   locator: introduction and sections 'Wijzigingen Mijn VerbouwPremie vanaf 2027' and 'Simulator Mijn VerbouwPremie'
   supports: what the premium is, apply via Mijn VerbouwLoket, simulator, proposed landlord changes for 2027
@@ -46,6 +47,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/werken-die-in-aanmerking-komen-voor-mijn-verbouwpremie
+  language: nl
   accessed: '2026-10-07'
   supports: eight categories of works, contractor required, solar water heater and interior renovation dropped
     from 1 July 2025, once per 5 or 10 years per category
@@ -53,6 +55,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wijzigingen-mijn-verbouwpremie-vanaf-2026
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Doelgroepen en inkomenscategorieën'
   supports: since 1 March 2026 owner-occupiers in income categories 1 and 2 and other investors in a home only
@@ -61,6 +64,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/vraag-mijn-verbouwpremie-aan
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Algemene info' and 'De premieaanvraag in verschillende stappen'
   supports: apply online after the works with itsme or eID, within 2 years of the last invoice, documents needed

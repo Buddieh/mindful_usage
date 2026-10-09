@@ -32,6 +32,7 @@ sources:
   publisher: VREG (Vlaamse Nutsregulator)
   type: official
   url: https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/energieprijzen-en-facturen/elektriciteits-en-aardgasfacturen
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Voorschotfactuur' and 'Maandafrekening'
   supports: adjusting advances, 15-day objection, monthly settlement

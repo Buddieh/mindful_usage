@@ -38,6 +38,7 @@ sources:
   publisher: Koning Boudewijnstichting and Fednot
   type: official
   url: https://www.notaris.be/sites/default/files/files/2025-07/Medeeigenaars_NL_2022.pdf
+  language: nl
   accessed: '2026-10-07'
   locator: pp. 16-19 and 22-25
   supports: absolute majority for ordinary decisions and legally required works; two-thirds for works on common parts
@@ -46,6 +47,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/beheer-en-onderhoud-van-appartementsgebouwen
+  language: nl
   accessed: '2026-10-07'
   supports: every building in forced co-ownership needs a syndic, who represents the VME; shares set voting weight
     and share of common costs
@@ -53,6 +55,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/kopen-en-verkopen/een-huis-of-appartement-kopen/renovatieverplichting-voor-residentiele-gebouwen
+  language: nl
   accessed: '2026-10-07'
   locator: FAQ on buying one apartment
   supports: legally required works can be decided by simple majority; a co-owner can go to the justice of the peace

@@ -36,6 +36,7 @@ sources:
   publisher: Vlaamse overheid, departement Leefmilieu, Natuur en Energie
   type: official
   url: https://publicaties.vlaanderen.be/view-file/16174
+  language: nl
   accessed: '2026-10-07'
   locator: p. 12
   supports: a CO2 meter shows ventilation, not harmful substances
@@ -43,6 +44,7 @@ sources:
   publisher: Agentschap Zorg en Gezondheid en VIPA
   type: official
   url: https://publicaties.vlaanderen.be/view-file/52230
+  language: nl
   accessed: '2026-10-07'
   locator: §2.2–2.3, §4.1.1 and Bijlage 2
   supports: Binnenmilieubesluit guideline below 500 ppm above outdoor air; 900 ppm in normal conditions, 1,200
@@ -51,6 +53,7 @@ sources:
   publisher: Vlaamse overheid, departement Zorg
   type: official
   url: https://publicaties.vlaanderen.be/view-file/79585
+  language: nl
   accessed: '2026-10-07'
   locator: pp. 11 and 14
   supports: what to do when CO2 is high; avoid airing longer than needed in cold weather
@@ -58,6 +61,7 @@ sources:
   publisher: Vlaamse overheid (Vlaamse Codex)
   type: official
   url: https://codex.vlaanderen.be/portals/codex/documenten/1013487.html
+  language: nl
   accessed: '2026-10-07'
   locator: art. 1
   supports: the decree covers homes as well as public buildings
@@ -65,6 +69,7 @@ sources:
   publisher: Vlaamse overheid, departement Zorg
   type: official
   url: https://www.departementzorg.be/nl/luchtkwaliteit-zorginfrastructuur
+  language: nl
   accessed: '2026-10-07'
   supports: the Binnenmilieubesluit guideline of below 500 ppm above outdoor air, about 900 ppm
 verification:

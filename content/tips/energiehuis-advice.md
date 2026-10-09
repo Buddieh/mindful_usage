@@ -32,6 +32,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-energiehuis
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Waarvoor kunt u terecht in een energiehuis?' and 'Neem contact op met het Energiehuis voor
     uw gemeente'
@@ -41,6 +42,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-verbouwbegeleiding/mijn-verbouwbegeleiding-voor-eigenaars
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Wat?'
   supports: home visits by a renovation coach are for owners
@@ -48,6 +50,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/mijn-energiescan
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Voor wie?' and 'Via het Energiehuis'
   supports: tenants can request an energy scan, via the Energiehuis if their income is low enough

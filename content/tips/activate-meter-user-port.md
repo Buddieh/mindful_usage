@@ -39,6 +39,7 @@ sources:
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/meters-en-meterstanden/maak-je-meter-slim
+  language: nl
   accessed: '2026-10-07'
   locator: sections on the user port, its functions, activating it and who has access
   supports: every digital meter has a P1 port; electricity data every second, gas and some water data every 5 minutes;
@@ -48,6 +49,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/elektriciteit-en-aardgas/digitale-meter
+  language: nl
   accessed: '2026-10-07'
   supports: connecting devices to the user ports makes the meter smarter; you remain owner of your consumption data
 verification:

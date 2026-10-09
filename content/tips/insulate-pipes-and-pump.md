@@ -41,6 +41,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/verwarmingssystemen/afgifte-elementen-verwarmingsleidingen-en-circulatiepomp
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Leidingen', 'Circulatiepomp verbruikt veel elektriciteit' and 'Kies voor een hoogrendementspomp'
   supports: insulate pipes in unheated rooms; old pumps up to about 450 kWh a year; lowest setting saves up
@@ -49,6 +50,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/verwarmingstips
+  language: nl
   accessed: '2026-10-07'
   supports: crawl spaces, attics and garages as examples of unheated rooms
 verification:

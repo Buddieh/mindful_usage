@@ -38,6 +38,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/verwarmingstips
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Zorg voor een goede temperatuurregeling'
   supports: digital thermostat with at least two programs; a smart thermostat estimates presence; 14 to 16 °C an hour
@@ -46,6 +47,7 @@ sources:
   publisher: Lomas et al., Renewable and Sustainable Energy Reviews 93 (2018)
   type: research
   url: https://strathprints.strath.ac.uk/78355
+  language: en
   accessed: '2026-10-07'
   supports: claims about heating controls are often unsubstantiated; moderate-quality evidence that smart thermostats
     do not save energy compared with standard thermostats; well-commissioned zonal control can save energy
@@ -53,6 +55,7 @@ sources:
   publisher: UK Department for Business, Energy and Industrial Strategy (2017)
   type: research
   url: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/650840/heating-controls-international-evidence.pdf
+  language: en
   accessed: '2026-10-07'
   supports: programmable thermostats showed little or no savings over manual ones in practice; most people rarely set
     a schedule
@@ -60,6 +63,7 @@ sources:
   publisher: Testaankoop
   type: consumer-organisation
   url: https://www.test-aankoop.be/woning-energie/slimme-radiatorknoppen/nieuws/hoe-bespaar-je-energie-met-een-slimme-thermostaat-of-radiatorknop
+  language: nl
   accessed: '2026-10-07'
   supports: manufacturer claims of 25 to 40% rest on unrealistic assumptions; you save less if you already use a schedule;
     comfort features can raise use; insulation gives more in a poorly insulated home

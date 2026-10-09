@@ -36,6 +36,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wie-in-aanmerking-komt-voor-mijn-verbouwpremie
+  language: nl
   accessed: '2026-10-07'
   locator: target group 'Investeerder in eengezinswoning/appartement' and the FAQ on a partner or housemate who
     is not the owner
@@ -45,6 +46,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wie-in-aanmerking-komt-voor-mijn-verbouwpremie/mijn-verbouwpremie-voor-investeerder-in-een-eengezinswoning-of-appartement
+  language: nl
   accessed: '2026-10-07'
   supports: the investor group includes someone who lives in the home but is not the owner, for example a tenant;
     no premium for windows, roof, walls or floor since 1 March 2026
@@ -52,6 +54,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/wijzigingen-mijn-verbouwpremie-vanaf-2026
+  language: nl
   accessed: '2026-10-07'
   locator: sections per target group
   supports: since 1 March 2026 investors in a house or apartment count as category 1 and only get a premium for

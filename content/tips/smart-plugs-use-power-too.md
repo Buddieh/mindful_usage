@@ -37,18 +37,21 @@ sources:
   publisher: IEA 4E EDNA, Lucerne University of Applied Sciences (2016)
   type: research
   url: https://www.iea-4e.org/wp-content/uploads/publications/2016/04/Energy_Efficiency_of_the_Internet_of_Things_-_Technical_Report_FINAL.pdf
+  language: en
   accessed: '2026-10-07'
   supports: measured standby of Wi-Fi or Ethernet smart plugs 2.6 to 4.1 W; saving potential of smart home uses less clear
 - title: Voorkom sluipgebruik
   publisher: Milieu Centraal (Netherlands)
   type: other
   url: https://www.milieucentraal.nl/energie-besparen/apparaten-in-huis/voorkom-sluipgebruik/
+  language: nl
   accessed: '2026-10-07'
   supports: a plain energy-saving plug draws 0.1 to 0.3 W; a switched power strip as simple alternative
 - title: Tips om je verbruik te spreiden met een digitale meter
   publisher: Vlaamse Nutsregulator
   type: official
   url: https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/nettarieven/capaciteitstarief/tips-om-je-verbruik-te-spreiden-met-een-digitale-meter
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Je hebt geen grote stroomverbruikers'
   supports: timers let appliances run at set hours and cut standby; smart plugs switch on remotely; run appliances only

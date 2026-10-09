@@ -40,6 +40,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/energiedelen-iets-voor-u/energiedelen-in-een-appartementsgebouw-of-ander-gemeenschappelijk-gebouw
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Interesse? Dit moet u eerst weten', 'Aandachtspunten op financieel vlak' and 'Stappenplan energiedelen
     in een gemeenschappelijk gebouw'
@@ -50,6 +51,7 @@ sources:
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/groene-energie/energiedelen/binnen-eenzelfde-gebouw
+  language: nl
   accessed: '2026-10-07'
   supports: quarter-hour metering, distribution key chosen by the manager, starts after all participants consent
 verification:

@@ -35,6 +35,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  language: nl
   accessed: '2026-10-07'
   locator: under 'Grootste besparingskansen' > 'Besparen op water verwarmen'
   supports: 35 L vs 60 L vs 125 L per 5-minute shower
@@ -42,6 +43,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/mijn-energiescan
+  language: nl
   accessed: '2026-10-07'
   supports: showerhead in the €25 kit
 verification:

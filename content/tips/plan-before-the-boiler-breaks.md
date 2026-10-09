@@ -40,6 +40,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/nieuwe-verwarmingsinstallatie-kiezen/verwarming-met-warmtepomp-of-warmtenet
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Welke verwarming kiezen op korte en lange termijn?' and 'Stappenplan naar duurzame verwarming
     van uw woning'
@@ -49,6 +50,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/nieuwe-verwarmingsinstallatie-kiezen/verwarming-met-warmtepomp-of-warmtenet/tijdelijke-oplossingen-voor-de-verwarming-van-bestaande-woningen
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Alternatieven voor onvoldoende geïsoleerde woningen'
   supports: hybrid heat pump as interim solution; condensing gas boiler if the home can connect to gas
@@ -56,6 +58,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/nieuwe-verwarmingsinstallatie-kiezen/verwarming-met-warmtepomp-of-warmtenet/stap-3-overweeg-een-warmtepomp-of-warmtenet
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Afwegingen bij keuze van duurzame warmtebron'
   supports: comparison of heat pump, hybrid and heat network on climate, cost and future-readiness; Warmtepompklaar

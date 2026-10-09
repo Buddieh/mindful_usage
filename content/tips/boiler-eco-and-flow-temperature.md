@@ -37,6 +37,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  language: nl
   accessed: '2026-10-07'
   locator: under 'Grootste besparingskansen' > 'Laat de ketel beter renderen'
   supports: 6% by lowering flow and return temperature, flow about 60 °C or 50 °C in a well-insulated home,

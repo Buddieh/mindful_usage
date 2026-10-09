@@ -35,6 +35,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  language: nl
   accessed: '2026-10-07'
   locator: under 'Grootste besparingskansen' > 'Besparen op verbruik van elektrische toestellen en verlichting'
   supports: 30 °C uses half of 60 °C; 200→100 washes ≈ 1%

@@ -36,6 +36,7 @@ sources:
   publisher: Woningpas (Vlaamse overheid)
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/aangenaam-binnenklimaat/aan-de-slag/vermijden-van-oververhitting
+  language: nl
   accessed: '2026-10-07'
   supports: overheating means over 25 °C for more than an hour; efficient airtight homes overheat faster; outside
     shading very efficient; air when it is cooler outside; airco raises the bill
@@ -43,6 +44,7 @@ sources:
   publisher: Buildwise
   type: research
   url: https://www.buildwise.be/nl/themas/duurzaam-bouwen/klimaatrobuust-bouwen/beperk-oververhitting-in-gebouwen/
+  language: nl
   accessed: '2026-10-07'
   supports: sun through windows is the main cause; outside screens and shutters most effective on south and west;
     intensive night ventilation; insulation helps in summer too
@@ -51,6 +53,7 @@ sources:
   publisher: Buildwise
   type: research
   url: https://www.buildwise.be/nl/help-center/faq/is-de-plaatsing-van-binnenzonneweringen-voor-de-beglazing-voldoende-om-het-risico-op-oververhitting-tegen-te-gaan/
+  language: nl
   accessed: '2026-10-07'
   supports: inside blinds have limited effect; outside shading is the best solution
 verification:

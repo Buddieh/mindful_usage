@@ -38,6 +38,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieprestatiecertificaten-epcs/epc-van-de-gemeenschappelijke-delen-van-een-appartementsgebouw
+  language: nl
   accessed: '2026-10-07'
   supports: obligation for buildings with at least 2 residential units, new builds later; syndic and VME appoint an
     energy expert type A; valid up to 10 years, earlier update after big works; feeds into unit EPCs and labels; renovations

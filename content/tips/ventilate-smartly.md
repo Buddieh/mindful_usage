@@ -34,6 +34,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/besparen-op-uw-energieverbruik
+  language: nl
   accessed: '2026-10-07'
   locator: under 'Grootste besparingskansen' > 'Minder verwarmen?'
   supports: mould risk below 10 °C
@@ -41,6 +42,7 @@ sources:
   publisher: Leefmilieu Brussel
   type: official
   url: https://document.environnement.brussels/opac_css/elecfile/100tipsEnergieNL
+  language: nl
   accessed: '2026-10-07'
   locator: p. 14, tips 16–17
   supports: airing twice a day; keep winter airing short

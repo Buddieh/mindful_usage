@@ -36,6 +36,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-verbouwbegeleiding/mijn-verbouwbegeleiding-voor-eigenaars
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Wat?' and 'Voor wie?'
   supports: free counter advice; who qualifies for a coach and what the coach does; solar coaching ends 1 January
@@ -44,6 +45,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-energiehuis
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Dienstverlening' and 'Neem contact op met het Energiehuis voor uw gemeente'
   supports: 22 Energiehuizen, postcode search, fees and services differ

@@ -37,6 +37,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieprestatiecertificaten-epcs/epc-van-een-residentiele-gebouweenheid
+  language: nl
   accessed: '2026-10-07'
   supports: label A+ to F and score since 2019; drawn up by an energy expert type A; valid up to 10 years; needed
     to sell or rent; older EPCs without label; copy in the Woningpas is unsigned
@@ -44,6 +45,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieprestatiecertificaten-epcs/epb-en-epc-berekend-en-werkelijk-energiegebruik
+  language: nl
   accessed: '2026-10-07'
   supports: the score is a theoretical calculation under standard assumptions; actual use is often lower
 verification:

@@ -34,6 +34,7 @@ sources:
   publisher: Woningpas (Vlaamse overheid)
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/aan-de-slag/vloerisolatie
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Waar gaat het over?' and 'Hoe verhelpen en door wie?'
   supports: insulating below versus on top, breaking out a floor on the ground, fixing damp first, recommended

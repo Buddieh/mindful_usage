@@ -39,6 +39,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/elektriciteitsgebruik-slim-sturen-met-een-energiemanagementsysteem-ems
+  language: nl
   accessed: '2026-10-07'
   supports: what an EMS is; connects to the user port; decides when appliances run and when to store energy; more self-use,
     lower capacity peaks, better use of a dynamic contract
@@ -46,6 +47,7 @@ sources:
   publisher: Vlaamse Nutsregulator
   type: official
   url: https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/nettarieven/capaciteitstarief/tips-om-je-verbruik-te-spreiden-met-een-digitale-meter
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Je hebt zonnepanelen' and 'Je hebt een warmtepomp of elektrische warmwaterboiler'
   supports: choose smart control; an EMS can run appliances when there is sun; boiler timer at midday; backup heater
@@ -54,6 +56,7 @@ sources:
   publisher: Vlaamse Nutsregulator
   type: official
   url: https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/nettarieven/capaciteitstarief
+  language: nl
   accessed: '2026-10-07'
   supports: capacity tariff based on the highest quarter-hour peak per month; spreading heavy users avoids peaks
 verification:

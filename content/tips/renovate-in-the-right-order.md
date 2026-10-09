@@ -37,6 +37,7 @@ sources:
   publisher: Woningpas (Vlaamse overheid)
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/algemeen
+  language: nl
   accessed: '2026-10-07'
   supports: three steps (insulate very well, efficient heating and hot water, then renewable energy); ventilation
     and airtightness matter too
@@ -44,6 +45,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/verwarming-koeling-en-ventilatie/nieuwe-verwarmingsinstallatie-kiezen/naar-woningverwarming-met-warmtepomp-of-warmtenet
+  language: nl
   accessed: '2026-10-07'
   locator: steps 1 to 3
   supports: insulate first, then heat at low temperature, then consider a heat pump or heat network
@@ -51,6 +53,7 @@ sources:
   publisher: Woningpas (Vlaamse overheid)
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/aangenaam-binnenklimaat/aan-de-slag/luchtdichtheid
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Hoe verhelpen en door wie?'
   supports: after insulating and sealing, controlled ventilation is a necessity

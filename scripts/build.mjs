@@ -87,8 +87,8 @@ const REGIONS = ["BE-VLG", "BE-BRU", "BE-WAL"];
 const isDiy = (d) => d.stability === "constant" && d.regions.includes("BE");
 // Regions the site doesn't cover yet point readers to an official advice service meanwhile.
 const COVERAGE = {
-  "BE-BRU": { name: "Homegrade", url: { nl: "https://homegrade.brussels/nl/" }, fallback: "https://homegrade.brussels/" },
-  "BE-WAL": { name: "energie.wallonie.be", url: {}, fallback: "https://energie.wallonie.be/" },
+  "BE-BRU": { name: "Homegrade", url: { nl: "https://homegrade.brussels/nl/", fr: "https://homegrade.brussels/" }, fallback: "https://homegrade.brussels/" },
+  "BE-WAL": { name: "energie.wallonie.be", url: { fr: "https://energie.wallonie.be/" }, fallback: "https://energie.wallonie.be/" },
 };
 // Impact bands from largest to smallest; "unrated" and "indirect" rank last.
 const IMPACT = { large: 3, medium: 2, small: 1, unrated: 0, indirect: 0 };
@@ -129,7 +129,7 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const isOverdue = (d) => d.stability === "variable" && d.review_by < TODAY;
 const levelText = (n) => t("chip.level").replace("{n}", n).replace("{name}", label("rung", n));
 // Dates read as "7 Oct 2026" / "7 okt 2026"; the ISO date stays in the markup.
-const LOCALES = { nl: "nl-BE", en: "en-GB" };
+const LOCALES = { nl: "nl-BE", fr: "fr-BE", en: "en-GB" };
 const date = (iso) => `<time datetime="${esc(iso)}">${esc(new Intl.DateTimeFormat(LOCALES[LANG] || LANG,
   { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(iso)))}</time>`;
 
@@ -327,7 +327,7 @@ function tipPage(tip) {
     ? `<aside class="notice"><strong>${esc(t("tip.regionNotes"))}</strong><p>${esc(l.region_notes)}</p></aside>` : "";
 
   const sources = d.sources.map((src, i) => `<li>
-    <a href="${esc(src.url)}" rel="noopener">${esc(src.title)}</a> <span class="muted">· ${esc(src.publisher)} (${esc(label("sourceType", src.type))}) · ${esc(t("tip.accessedShort"))} ${date(src.accessed)}</span>
+    <a href="${esc(src.url)}" rel="noopener" hreflang="${src.language}" lang="${src.language}">${esc(src.title)}</a>${src.language !== LANG ? ` <span class="muted">(${esc(label("inLanguage", src.language))})</span>` : ""} <span class="muted">· ${esc(src.publisher)} (${esc(label("sourceType", src.type))}) · ${esc(t("tip.accessedShort"))} ${date(src.accessed)}</span>
     ${l.supports[i] ? `<div class="src-meta">${esc(t("tip.supports"))}: ${esc(l.supports[i])}</div>` : ""}
     ${src.locator ? `<div class="src-meta">${esc(t("tip.locator"))}: ${esc(src.locator)}</div>` : ""}
   </li>`).join("");

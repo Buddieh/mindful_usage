@@ -36,6 +36,7 @@ sources:
   publisher: Vlaamse Milieumaatschappij (VMM)
   type: official
   url: https://vmm.vlaanderen.be/tips/lucht/verwarmen-met-hout
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Vermijd open haarden en open kachels' and 'Stook niet bij mistig/windstil weer'
   supports: health effects of wood smoke; open fireplaces have very low efficiency; automatic pellet stove better
@@ -44,6 +45,7 @@ sources:
   publisher: Vlaamse Milieumaatschappij (VMM)
   type: official
   url: https://vmm.vlaanderen.be/tips/lucht/verwarmen-met-hout/tips-stoken-met-stukhout
+  language: nl
   accessed: '2026-10-07'
   supports: dry wood at least 2 years; light from the top; never close the air supply; never burn waste or treated
     wood
@@ -51,6 +53,7 @@ sources:
   publisher: Vlaamse Milieumaatschappij (VMM)
   type: official
   url: https://vmm.vlaanderen.be/beleid/luchtbeleid/beleid-houtverbranding/meest-gestelde-vragen-over-binnen-stoken
+  language: nl
   accessed: '2026-10-07'
   supports: best to take open fireplaces out of use; they are open to the indoor air
 verification:

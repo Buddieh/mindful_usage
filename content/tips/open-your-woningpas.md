@@ -36,6 +36,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/info-over-de-woningpas
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Online tool' and 'Toegang tot uw woningpas'
   supports: contents of the Woningpas, login with eID or itsme, sharing, unsigned digital EPC

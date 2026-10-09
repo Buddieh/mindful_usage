@@ -41,6 +41,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/investeren-in-energiebesparing/isolatie-en-luchtdichtheid/dakisolatie
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Hellend dak isoleren' and 'Onverwarmde zolder? Isoleer de zoldervloer'
   supports: the three layers of a pitched roof; insulate the attic floor when the attic is unheated
@@ -48,6 +49,7 @@ sources:
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/blog/wat-doet-fluvius-voor-jou/energie-besparen-woning-isoleren-benoveren
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Je dak isoleren'
   supports: up to 30% of heat loss through the roof
@@ -55,6 +57,7 @@ sources:
   publisher: Kamp C, provinciaal centrum voor duurzaam bouwen (via Stad Mechelen)
   type: official
   url: https://klimaatneutraal.mechelen.be/tech-bib_isoleren_energieloket-mechelen_isoleren_dakisolatie
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Streef naar minimaal de BENOveer-norm' and 'Zoldervloer of plafond isoleren'
   supports: target R 4.2 m²K/W (about 10 to 16 cm); attic floor is easier to do yourself
@@ -62,6 +65,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/woningkwaliteitsnormen/dakisolatie-is-verplicht
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Minimumnorm voor dakisolatie'
   supports: a legal minimum for roof insulation exists, and an insulated attic floor counts as an insulated roof

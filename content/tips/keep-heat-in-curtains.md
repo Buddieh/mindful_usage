@@ -35,6 +35,7 @@ sources:
   publisher: Leefmilieu Brussel
   type: official
   url: https://document.environnement.brussels/opac_css/elecfile/100tipsEnergieNL
+  language: nl
   accessed: '2026-10-07'
   locator: p. 10 tip 5; p. 12 tip 11
   supports: 30–50% less window heat loss; curtains not over radiators

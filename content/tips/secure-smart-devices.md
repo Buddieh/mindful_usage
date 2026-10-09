@@ -36,6 +36,7 @@ sources:
   publisher: Safeonweb (Centre for Cybersecurity Belgium)
   type: official
   url: https://safeonweb.be/en/protect-your-connected-devices
+  language: en
   accessed: '2026-10-07'
   supports: research before buying and avoid very cheap unbranded products; change default passwords; install updates;
     secure your Wi-Fi with a guest network for visitors; disable unused features; check what is connected
@@ -43,6 +44,7 @@ sources:
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/veelgestelde-vragen/digitale-meter
+  language: nl
   accessed: '2026-10-07'
   supports: meter data is encrypted; the law sets who may use it; other uses need your explicit consent; beware of phishing
     in Fluvius' name
@@ -50,6 +52,7 @@ sources:
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/meters-en-meterstanden/maak-je-meter-slim
+  language: nl
   accessed: '2026-10-07'
   supports: you own your data and choose who gets access to the user port; every app on an active port can read the data
 verification:

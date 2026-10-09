@@ -37,6 +37,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/epb-eisen
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Wanneer zijn de EPB-regels van toepassing?'
   supports: EPB applies to applications since 1 January 2006; exemption when no architect is required
@@ -44,6 +45,7 @@ sources:
   publisher: Vlaams Energie- en Klimaatagentschap (EPB-pedia)
   type: official
   url: https://www.vlaanderen.be/epb-pedia/epb-plichtig-toepassing-en-eisen/epb-plicht-huidig
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Twee voorwaarden' and 'Totaliteit van de werken'
   supports: heated building plus permit or notification; all works in the project are covered
@@ -51,6 +53,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/energieprestatieregelgeving-voor-nieuwbouw-en-renovatie-epb
+  language: nl
   accessed: '2026-10-07'
   locator: steps 1 to 5
   supports: appoint an EPB assessor before the works; the architect may take this role
@@ -58,6 +61,7 @@ sources:
   publisher: Vlaams Energie- en Klimaatagentschap (EPB-pedia)
   type: official
   url: https://www.vlaanderen.be/epb-pedia/epb-plichtig-toepassing-en-eisen/aard-van-de-werken-huidig/ingrijpende-energetische-renovatie-ier-huidig
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Voorwaarde 1', 'Voorwaarde 2' and 'Financiële voordelen'
   supports: 75% of the envelope insulated plus a new heat generator; tax advantages
@@ -65,6 +69,7 @@ sources:
   publisher: Vlaams Energie- en Klimaatagentschap (EPB-pedia)
   type: official
   url: https://www.vlaanderen.be/epb-pedia/epb-plichtig-toepassing-en-eisen/epb-eisentabellen-per-aanvraagjaar/epb-eisen-bij-bouwaanvraag-melding-vanaf-2025
+  language: nl
   accessed: '2026-10-07'
   locator: column 'Wonen'
   supports: requirements for ordinary and major energy renovation
@@ -72,6 +77,7 @@ sources:
   publisher: Vlaams Energie- en Klimaatagentschap (EPB-pedia)
   type: official
   url: https://www.vlaanderen.be/epb-pedia/epb-plichtig-toepassing-en-eisen/uitzonderingen-op-epb-plicht-epb-eisen
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Uitzonderingen op de EPB-plicht'
   supports: no EPB duty when no architect is legally required and the protected volume is under 3,000 m³
@@ -79,6 +85,7 @@ sources:
   publisher: Vlaams Energie- en Klimaatagentschap (EPB-pedia)
   type: official
   url: https://www.vlaanderen.be/epb-pedia/epb-plichtig-toepassing-en-eisen/epb-eisen/ventilatie-eisen/overzicht-van-de-ventilatie-eisen
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Minimale ventilatievoorzieningen bij renovaties'
   supports: ventilation in new rooms and in dry rooms with new windows; a full system for a major energy renovation

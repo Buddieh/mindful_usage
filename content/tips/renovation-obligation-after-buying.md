@@ -37,6 +37,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/kopen-en-verkopen/een-huis-of-appartement-kopen/renovatieverplichting-voor-residentiele-gebouwen
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Voor wie?', 'Bijzondere situaties' and 'Aangekondigde wijzigingen van renovatieverplichting'
   supports: who it applies to, labels E/F to D, six-year term (approved 12/12/2025, also for running obligations),
@@ -45,6 +46,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-huis-verbouwen/mijn-verbouwbegeleiding/mijn-verbouwbegeleiding-voor-eigenaars
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Wat?'
   supports: free advice at the Energiehuis

@@ -37,6 +37,7 @@ sources:
   publisher: Departement Zorg (Vlaamse overheid)
   type: official
   url: https://www.departementzorg.be/nl/bij-het-koken
+  language: nl
   accessed: '2026-10-07'
   supports: gas cooking releases moisture and combustion gases, which is unhealthy; use a hood vented outside and keep
     it on after cooking; open a window if not; choose an electric stove when buying a new one
@@ -44,6 +45,7 @@ sources:
   publisher: Departement Zorg (Vlaamse overheid)
   type: research
   url: https://www.departementzorg.be/nl/binnenmilieumetingen-vlaamse-woningen
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Resultaten Surveillance'
   supports: a gas stove can raise NO2 in the living room; using a hood is important

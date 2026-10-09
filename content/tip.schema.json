@@ -320,11 +320,17 @@
           "publisher",
           "type",
           "url",
+          "language",
           "accessed"
         ],
         "properties": {
           "title": {
-            "type": "string"
+            "type": "string",
+            "description": "The page's own title, never translated."
+          },
+          "language": {
+            "enum": ["nl", "fr", "en", "de"],
+            "description": "Language of the linked page. Readers of another language see it marked, e.g. (in Dutch)."
           },
           "publisher": {
             "type": "string"

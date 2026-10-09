@@ -40,6 +40,7 @@ sources:
   publisher: Woningpas (Vlaamse overheid)
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/minimale-vereisten
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'De dakisolatienorm', 'De dubbelglasnorm' and 'De energienorm'
   supports: roof insulation norm, label steps from 2030 per home type, no conformity certificate and no renting
@@ -48,6 +49,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/woningkwaliteitsnormen/dubbele-beglazing-in-elke-woning
+  language: nl
   accessed: '2026-10-07'
   supports: double glazing per window in houses and flats, unfit with more than one single-glazed window since
     2023, exemption with a low EPC energy score, living room and bathroom for rented rooms

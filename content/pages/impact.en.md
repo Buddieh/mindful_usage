@@ -44,6 +44,6 @@ In Flanders, the EPC for your home lists recommended measures in order of priori
 
 <h2 id="ai">How this site is made</h2>
 
-This site is made with AI. Claude, an AI model by Anthropic, searched for and read the sources, wrote the texts in Dutch and English, rated the impact of each item, and built the website. A person, the maintainer of the project, decides what goes on the site and approves every change before it is published.
+This site is made with AI. Claude, an AI model by Anthropic, searched for and read the sources, wrote the texts in Dutch, French and English, rated the impact of each item, and built the website. A person, the maintainer of the project, decides what goes on the site and approves every change before it is published.
 
 AI can get things wrong. That is why every item links to the sources it is based on, so you can check what it says. If you find a mistake, please report it on [GitHub](https://github.com/Buddieh/mindful_usage/issues).

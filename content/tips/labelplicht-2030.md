@@ -34,6 +34,7 @@ sources:
   publisher: Woningpas, Vlaamse overheid
   type: official
   url: https://woningpas.vlaanderen.be/web/woningkwaliteit/energiezuinige-woning/minimale-vereisten
+  language: nl
   accessed: '2026-10-07'
   locator: section 'De energienorm'
   supports: label steps per home type in 2030, 2035 and 2040; a home that fails is unfit and may not be rented
@@ -42,12 +43,14 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/woningkwaliteitsnormen/minimaal-epc-label-vanaf-2030
+  language: nl
   accessed: '2026-10-07'
   supports: same label steps, in force from 1 January 2030, a home that fails can be declared unfit
 - title: Commissie voor Wonen, verslag van de vergadering van 11 februari 2026
   publisher: Vlaams Parlement
   type: official
   url: https://www.vlaamsparlement.be/nl/parlementair-werk/commissies/commissievergaderingen/1994640/verslag/1996603
+  language: nl
   accessed: '2026-10-07'
   supports: the minister announces a ban on rent indexation for the worst rental homes from 2028
 verification:

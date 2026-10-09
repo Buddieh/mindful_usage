@@ -38,6 +38,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie/mijn-verbouwpremie-voor-appartementen-en-appartementsgebouwen
+  language: nl
   accessed: '2026-10-07'
   supports: base premium for the whole building, not per apartment; syndic applies for a VME, otherwise one owner with
     written agreement of all; after the works with one invoice, not split per owner; owners apply for private parts;
@@ -46,6 +47,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/een-appartement-verbouwen
+  language: nl
   accessed: '2026-10-07'
   supports: Mijn VerbouwLening covers both private and common parts
 verification:

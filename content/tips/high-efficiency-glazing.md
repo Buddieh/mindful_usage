@@ -41,6 +41,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/investeren-in-energiebesparing/isolatie-en-luchtdichtheid/beglazing/hoogrendementsglas
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Hoogrendementsglas', 'Besparen met hoogrendementsglas', 'Check de U-waarde' and 'Vlamtest'
   supports: U-values, comparison with double and single glazing, saving per m², how to check your glass
@@ -48,6 +49,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/veilig-gezond-en-kwaliteitsvol-wonen/verluchting-en-ventilatie
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Waarom verluchten en ventileren' and 'Hoe ventileren'
   supports: new windows in dry rooms need air supply; poor ventilation causes condensation and mould

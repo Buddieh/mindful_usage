@@ -36,12 +36,14 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnekaart-is-uw-dak-geschikt-voor-zonneboiler-of-zonnepanelen
+  language: nl
   accessed: '2026-10-07'
   supports: roof scores, estimates of yield, cost and payback, limits of the map, ask a certified installer
 - title: Retroactieve investeringspremie na afschaffing van de terugdraaiende teller
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/retroactieve-investeringspremie-voor-eigenaars-van-zonnepanelen-na-afschaffing-van-terugdraaiende-teller
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Voorwaarden' and 'Veelgestelde vragen'
   supports: end of the turning-back meter in 2021, digital meter required since 2025, capacity tariff since 2023
@@ -49,6 +51,7 @@ sources:
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/meters-en-meterstanden/zonnepanelen/geplaatst-voor-2021
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Je digitale meter werd geplaatst vanaf 1 april 2026'
   supports: digital meter legally required; since 1 April 2026 a surplus on the old turning-back meter is no longer
@@ -57,12 +60,14 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnepanelen/haal-meer-uit-uw-zonnepanelen-met-zelfverbruik
+  language: nl
   accessed: '2026-10-07'
   supports: running big appliances around midday, one after another, raises self-consumption
 - title: Wat is de rol van de digitale meter bij zonnepanelen?
   publisher: Fluvius
   type: official
   url: https://www.fluvius.be/nl/groene-energie/zonnepanelen/voordelen/digitale-meter
+  language: nl
   accessed: '2026-10-07'
   supports: using big appliances when the sun shines lowers the capacity peak (its text on classic meters is out
     of date)

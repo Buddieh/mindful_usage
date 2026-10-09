@@ -38,6 +38,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/ventilatie-bij-renovatie
+  language: nl
   accessed: '2026-10-07'
   locator: sections 'Renoveren is isoleren én ventileren', 'Vijf ventilatiereflexen' and 'Veelgestelde vragen'
   supports: airtight homes lose accidental ventilation; supply in dry rooms, extraction in wet rooms, run continuously,
@@ -46,6 +47,7 @@ sources:
   publisher: Vlaams Energie- en Klimaatagentschap (EPB-pedia)
   type: official
   url: https://www.vlaanderen.be/epb-pedia/technieken/ventilatie/ventilatiesystemen
+  language: nl
   accessed: '2026-10-07'
   locator: section 'Verschillende systemen'
   supports: definitions of systems C and D
@@ -53,6 +55,7 @@ sources:
   publisher: Vlaamse overheid, departement Leefmilieu, Natuur en Energie
   type: official
   url: https://publicaties.vlaanderen.be/view-file/16174
+  language: nl
   accessed: '2026-10-07'
   locator: pp. 11–12
   supports: a household produces 10 to 20 litres of moisture a day

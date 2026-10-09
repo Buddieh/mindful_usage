@@ -33,6 +33,7 @@ sources:
   publisher: Vlaamse overheid (vlaanderen.be)
   type: official
   url: https://www.vlaanderen.be/bouwen-wonen-en-energie/energieverbruik-en-kosten-verminderen/mijn-energiescan
+  language: nl
   accessed: '2026-10-07'
   supports: eligibility, income limits, kit contents, how to apply
 verification:
