@@ -29,7 +29,7 @@ The fields are defined in [`tip.schema.json`](tip.schema.json) (JSON Schema). A 
 | `region_notes` | rules that only hold in the listed regions |
 | `sources` | at least one; each has title, publisher, exact page url, accessed date, and optionally `locator` (where on the page) and `supports` (which claim it backs) |
 | `verification` | `status` (verified, needs-check, needs-source) and `flags` with open questions |
-| `lang`, `last_reviewed` | language and date of last review |
+| `lang`, `last_reviewed` | language, and the day a person last checked the tip against its sources (shown at the top of the tip as "Sources checked on"; it can't be later than the newest source `accessed` date) |
 
 ## The effort ladder
 
@@ -87,7 +87,9 @@ The site is published in Dutch, French and English, with an NL | FR | EN switch 
 
 ## Review dates
 
-Variable tips are spread over the year so that a few come up each month, grouped by topic so related tips are checked together. Topics that change most often come first: premiums and loans, then tariffs and contracts (which often change on 1 January), rental rules, the renovation obligation and EPB, services, solar, heating and other building rules. When you review a tip, set `last_reviewed` to the day you checked and move `review_by` forward, usually by six to twelve months, or sooner when an announced change is coming.
+Only change `last_reviewed` when you actually re-checked the sources: the site shows it to readers as the date the tip was checked, and a translation fix or typo edit is not a check. The automatic monthly comparison never changes it.
+
+Variable tips are spread over the year so that a few come up each month, grouped by topic so related tips are checked together. Topics that change most often come first: premiums and loans, then tariffs and contracts (which often change on 1 January), rental rules, the renovation obligation and EPB, services, solar, heating and other building rules. When you review a tip, re-open its sources, set their `accessed` and the tip's `last_reviewed` to the day you checked, and move `review_by` forward, usually by six to twelve months, or sooner when an announced change is coming.
 
 ## Status of the first batch (Flanders, tenants, 2026-10-07)
 

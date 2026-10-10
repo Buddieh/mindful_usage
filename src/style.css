@@ -72,6 +72,10 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 .tag.diy { color: var(--diy); border-color: var(--diy); }
 .tag.local { color: var(--warn); border-color: var(--warn); }
 .tag-row { margin: 0 0 8px; }
+.fresh { margin: 0 0 12px; padding: 8px 12px; border-radius: var(--radius); font-size: .9rem; background: var(--accent-soft); color: var(--text); }
+.fresh.overdue { background: var(--warn-soft); color: var(--warn); }
+.freshness { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px 16px 8px; margin: 24px 0; }
+.freshness h2 { margin-top: 12px; }
 
 /* The effort ladder and "who are you": rows of radio buttons styled as steps. */
 .filters fieldset { grid-column: 1 / -1; border: 0; padding: 0; margin: 0; min-width: 0; }
@@ -148,7 +152,6 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 .prose p { margin: 0 0 1em; }
 .notice { border-radius: var(--radius); padding: 12px 16px; margin: 16px 0; background: var(--accent-soft); }
 .notice p { margin: 4px 0; }
-.notice.variable { background: var(--warn-soft); }
 .pairs h2 { font-size: 1.15rem; margin-top: 28px; }
 .notice ul { margin: 6px 0 0; padding-left: 20px; }
 .sources h2 { font-size: 1.15rem; margin-top: 28px; }
