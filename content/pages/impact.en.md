@@ -28,6 +28,18 @@ For electricity we use 0.381 kg of CO₂ per kWh. This is the fixed factor the F
 
 To make the number easier to picture, we compare it with trees. On the item cards, a number followed by a tree icon is that number of trees. An average tree in a Dutch forest takes up about 11 kg of CO₂ a year, based on the Dutch national forest inventory ([Klimaathelpdesk, Wageningen University & Research](https://www.klimaathelpdesk.org/answers/hoe-lang-slaat-een-boom-co2-op/)). We use this as the nearest published average for Flanders. A free-standing tree can take up between 10 and 40 kg a year depending on its age and size ([Staatsbosbeheer](https://www.staatsbosbeheer.nl/wat-we-doen/co2-opslaan/bos-en-co2)), so treat the tree count as a rough picture, not a measurement. Avoiding CO₂ is also not the same as planting trees: a tree stores carbon only for as long as it and its wood last ([Klimaathelpdesk](https://www.klimaathelpdesk.org/answers/hoe-lang-slaat-een-boom-co2-op/)).
 
+<h2 id="own-power">Making your own power</h2>
+
+Solar panels, home batteries and heat pumps get no energy band and no CO₂ figure. They change where your energy comes from rather than how much you use, and their effect on the climate depends too much on your home and on the time of day to fit in one number.
+
+Solar panels lower your CO₂ a lot over their lifetime, but not to zero. Most of their emissions come from making the panels: over its life, a rooftop system emits about 36 g of CO₂ for each kWh it produces, assuming European sunshine and a life of 30 years ([IEA PVPS](https://iea-pvps.org/wp-content/uploads/2024/05/Slides_IEA-PVPS-T12_Fact-Sheet-update-2023_v2.0.pdf), slides 7 to 10). That is about a tenth of the 0.381 kg per kWh of a gas-fired power plant given above. The panels pay this back in their first years and save CO₂ after that.
+
+You also keep using the grid. With solar panels alone, a household uses on average about 28% of the power it generates itself ([Vlaamse overheid](https://www.vlaanderen.be/bouwen-wonen-en-energie/groene-energie/zonnepanelen/thuisbatterij)). At night, in the evening and in winter your power comes from the grid, and in Belgium the grid emits the most CO₂ per kWh in the evening, most of all in winter ([Electricity Maps](https://www.electricitymaps.com/grid-in-review-2025/belgium)). On sunny days the grid already has plenty of solar power: in 2025 the wholesale price of electricity in Belgium was negative for 519 hours (same page). A kWh you send to the grid in such an hour avoids little CO₂.
+
+The time of day also matters if you have no panels. On a summer day in Belgium in 2025, power at noon caused about 104 g of CO₂ per kWh, against about 216 g at 8 pm ([Electricity Maps](https://www.electricitymaps.com/grid-in-review-2025/belgium)). So running the washing machine or dishwasher around midday is better for the climate too.
+
+In most homes, heating weighs more. The average house above uses about 17,000 kWh of gas a year for heating and hot water, which is about 3.4 tonnes of CO₂ with the factor above, against about 0.4 tonnes for 1,000 kWh of electricity per resident. That is why items that cut heating, such as insulation, tend to rate highest.
+
 ## Why energy and not euros
 
 Prices change too fast for euro amounts to stay correct. The Flemish energy regulator's estimate of a yearly bill for a new contract went from about €2,240 in September 2021 to about €9,210 a year later ([VRT NWS](https://www.vrt.be/vrtnws/nl/2022/09/15/gemiddelde-jaarfactuur-voor-energie/)). A kWh of electricity usually costs more than a kWh of gas, so an electricity item can weigh more on your bill than its band suggests.
