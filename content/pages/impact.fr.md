@@ -61,3 +61,5 @@ En Flandre, l'EPC de votre logement liste les mesures recommandées par ordre de
 Ce site est réalisé avec l'IA. Claude, un modèle d'IA d'Anthropic, a cherché et lu les sources, rédigé les textes en néerlandais, en français et en anglais, évalué l'impact de chaque conseil et construit le site web. Une personne, celle qui gère le projet, décide de ce qui figure sur le site et approuve chaque modification avant sa publication.
 
 L'IA peut se tromper. C'est pourquoi chaque conseil renvoie aux sources sur lesquelles il repose, pour que vous puissiez vérifier ce qu'il dit. Si vous trouvez une erreur, signalez-la sur [GitHub](https://github.com/Buddieh/mindful_usage/issues).
+
+<!-- freshness -->

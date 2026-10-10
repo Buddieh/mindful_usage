@@ -316,12 +316,10 @@ function tipPage(tip) {
        <ul class="points">${points.map((p) => `<li><span class="flag ${p.type}">${esc(label("flag", p.type))}</span> ${esc(p.note)}</li>`).join("")}</ul></aside>`
     : "";
 
-  // Variable tips depend on rules or prices that change: say so, with the next check date.
-  const variable = d.stability === "variable"
-    ? `<aside class="notice variable"><strong>${esc(t("tip.variableHeading"))}</strong>
-       <p>${esc(t("stability.variable"))}</p>
-       <p>${esc(t(isOverdue(d) ? "tip.overdue" : "tip.nextCheck")).replace("{d}", date(d.review_by))}</p></aside>`
-    : "";
+  // When a person last checked the tip against its sources; variable tips add the next check and a warning.
+  const due = isOverdue(d);
+  const fresh = `<p class="fresh${due ? " overdue" : ""}"><span class="dot" aria-hidden="true"></span><span>${esc(t("fresh.checked")).replace("{d}", date(d.last_reviewed))}${
+    d.stability === "variable" ? ` · ${esc(t(due ? "fresh.overdue" : "fresh.next")).replace("{d}", date(d.review_by))}` : "."}</span></p>`;
 
   const pairs = (d.pairs_with || []).length
     ? `<section class="pairs"><h2>${esc(t("tip.pairs"))}</h2><ul>${d.pairs_with.map((id) =>
@@ -351,8 +349,8 @@ function tipPage(tip) {
   <h1 lang="${l.lang}">${esc(l.title)}</h1>
   <p class="lead">${esc(l.summary)}</p>
   <p class="tag-row">${tag(d)}</p>
+  ${fresh}
   <div class="chips">${chips(d, true)}</div>
-  ${variable}
   <div class="prose">${renderBody(l.body)}</div>
   ${review}
   ${regionNotes}
@@ -365,15 +363,32 @@ function tipPage(tip) {
     <h2>${esc(t("tip.sources"))}</h2>
     <ol>${sources}</ol>
   </section>
-  <p class="muted">${esc(t("tip.lastReviewed"))} ${date(d.last_reviewed)}</p>
   ${edit}
 </article>`;
   return page({ title: `${l.title} · ${t("site.name")}`, description: l.summary, rel: "../../", path: `tips/${tip.id}/`, body });
 }
 
 // How the impact bands are set, from content/pages/impact.<lang>.md.
+// "How current is this?": counted from the tip files on every build, so the numbers can't drift from the tips.
+function freshnessPanel() {
+  const variable = tips.filter((x) => x.data.stability === "variable");
+  const overdue = variable.filter((x) => isOverdue(x.data)).length;
+  const oldest = tips.map((x) => x.data.last_reviewed).sort()[0];
+  const n = (key, count) => esc(t(key)).replace("{n}", `<strong>${count}</strong>`);
+  return `<section class="freshness" id="current"><h2>${esc(t("fresh.heading"))}</h2>
+<p>${esc(t("fresh.intro"))}</p>
+<ul>
+<li>${n("fresh.variable", variable.length)}</li>
+<li>${overdue ? n("fresh.overdueCount", overdue) : esc(t("fresh.noneOverdue"))}</li>
+<li>${n("fresh.constant", tips.length - variable.length)}</li>
+<li>${esc(t("fresh.oldest")).replace("{d}", date(oldest))}</li>
+</ul>
+<p class="muted">${esc(t("fresh.note"))}</p></section>`;
+}
+
 function impactPage() {
-  const html = marked.parse(readFileSync(join(ROOT, "content", "pages", `impact.${LANG}.md`), "utf8"));
+  const html = marked.parse(readFileSync(join(ROOT, "content", "pages", `impact.${LANG}.md`), "utf8"))
+    .replace("<!-- freshness -->", freshnessPanel());
   const body = `
 <p class="back"><a href="../">← ${esc(t("tip.back"))}</a></p>
 <article class="tip prose">${html}</article>`;

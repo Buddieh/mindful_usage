@@ -61,3 +61,5 @@ In Brussels, a PEB certificate issued since March 2023 sets out a recommended re
 This site is made with AI. Claude, an AI model by Anthropic, searched for and read the sources, wrote the texts in Dutch, French and English, rated the impact of each item, and built the website. A person, the maintainer of the project, decides what goes on the site and approves every change before it is published.
 
 AI can get things wrong. That is why every item links to the sources it is based on, so you can check what it says. If you find a mistake, please report it on [GitHub](https://github.com/Buddieh/mindful_usage/issues).
+
+<!-- freshness -->

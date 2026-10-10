@@ -61,3 +61,5 @@ In Brussel geeft een EPB-certificaat van na maart 2023 een aanbevolen renovaties
 Deze site is gemaakt met AI. Claude, een AI-model van Anthropic, zocht en las de bronnen, schreef de teksten in het Nederlands, het Frans en het Engels, schatte de impact van elke tip in en bouwde de website. Een mens, de beheerder van het project, beslist wat er op de site komt en keurt elke wijziging goed voor ze gepubliceerd wordt.
 
 AI kan zich vergissen. Daarom linkt elke tip naar de bronnen waarop hij gebaseerd is, zodat je zelf kunt nakijken wat er staat. Zie je een fout? Meld het dan op [GitHub](https://github.com/Buddieh/mindful_usage/issues).
+
+<!-- freshness -->

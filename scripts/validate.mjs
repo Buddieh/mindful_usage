@@ -40,6 +40,10 @@ for (const tip of tips) {
   // "BE" already covers every region, so it stands alone.
   if (d.regions.includes("BE") && d.regions.length > 1) errors.push(`${tip.file}: regions "BE" covers all of Belgium, so list no other region`);
 
+  // last_reviewed means a person re-opened the sources that day, so it can't be later than the newest "accessed" date.
+  const newestAccess = d.sources.map((s) => s.accessed).sort().at(-1);
+  if (d.last_reviewed > newestAccess) errors.push(`${tip.file}: last_reviewed ${d.last_reviewed} is later than every source's accessed date (${newestAccess}); re-open the sources and update their accessed dates too`);
+
   // Variable tips must be checked again by review_by; overdue ones are flagged on the site.
   if (d.stability === "variable" && d.review_by < today) warnings.push(`${tip.file}: review_by ${d.review_by} has passed; check the tip again`);
 
