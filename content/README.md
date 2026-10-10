@@ -128,3 +128,7 @@ Every tip and page was translated into French, following [`glossary-fr.md`](glos
 ## New builds (phase 2, Flanders, 2026-10-10)
 
 6 items for people building a new home: the EPB limits for a new home (E30, S28, U-values, overheating, low-temperature heating), appointing an EPB reporter and the EPC bouw, the ban on gas connections since 2025 (with the July 2026 draft decree on emission-free new builds, not yet law), the 15 kWh/m² solar requirement, compact design with shaded windows and efficient ventilation, and why Mijn VerbouwPremie and the property tax cut don't apply. The federal 6% VAT on demolition and rebuild was left out because its official page could not be opened. Every source page was opened on 2026-10-10.
+
+## New builds in Brussels and Wallonia (2026-10-10)
+
+4 items: the PEB limits for a new home in Brussels (45 and 15 kWh/m² a year, no gas or oil boilers for permits from 2025, zero emission and solar from 2030) and the Brussels PEB adviser procedure; the Walloon Q-ZEN limits with the 35% renewable rule and oil and coal ban from 2026, and the Walloon PEB manager procedure. Brussels sources are cited in French with the Dutch page as an alternate; the Walloon pages have no German version. Every source page was opened on 2026-10-10.
