@@ -318,8 +318,8 @@ function tipPage(tip) {
 
   // When a person last checked the tip against its sources; variable tips add the next check and a warning.
   const due = isOverdue(d);
-  const fresh = `<p class="fresh${due ? " overdue" : ""}"><span class="dot" aria-hidden="true"></span><span>${esc(t("fresh.checked")).replace("{d}", date(d.last_reviewed))}${
-    d.stability === "variable" ? ` · ${esc(t(due ? "fresh.overdue" : "fresh.next")).replace("{d}", date(d.review_by))}` : "."}</span></p>`;
+  const fresh = `<p class="fresh${due ? " overdue" : ""}">${esc(t("fresh.checked")).replace("{d}", date(d.last_reviewed))}${
+    d.stability === "variable" ? ` · ${esc(t(due ? "fresh.overdue" : "fresh.next")).replace("{d}", date(d.review_by))}` : "."}</p>`;
 
   const pairs = (d.pairs_with || []).length
     ? `<section class="pairs"><h2>${esc(t("tip.pairs"))}</h2><ul>${d.pairs_with.map((id) =>

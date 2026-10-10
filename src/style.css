@@ -72,10 +72,8 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
 .tag.diy { color: var(--diy); border-color: var(--diy); }
 .tag.local { color: var(--warn); border-color: var(--warn); }
 .tag-row { margin: 0 0 8px; }
-.fresh { display: flex; gap: 8px; align-items: baseline; margin: 0 0 10px; font-size: .9rem; color: var(--muted); }
-.fresh .dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); transform: translateY(-1px); }
-.fresh.overdue { color: var(--warn); }
-.fresh.overdue .dot { background: var(--warn); }
+.fresh { margin: 0 0 12px; padding: 8px 12px; border-radius: var(--radius); font-size: .9rem; background: var(--accent-soft); color: var(--text); }
+.fresh.overdue { background: var(--warn-soft); color: var(--warn); }
 .freshness { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px 16px 8px; margin: 24px 0; }
 .freshness h2 { margin-top: 12px; }
 
