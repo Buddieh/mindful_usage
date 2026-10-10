@@ -27,7 +27,9 @@ a { color: var(--accent); }
 .tagline { color: var(--muted); font-size: .9rem; }
 main { padding-top: 24px; padding-bottom: 48px; }
 h1 { font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.2; margin: 0 0 8px; }
-.intro p { color: var(--muted); max-width: 60ch; margin-top: 0; }
+/* The home page title and intro sit centred over the filter box. */
+.intro { text-align: center; }
+.intro p { color: var(--muted); max-width: 60ch; margin: 0 auto 1em; }
 
 .filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; margin: 20px 0 8px; }
