@@ -124,3 +124,7 @@ Every tip and page was translated into French, following [`glossary-fr.md`](glos
 ## Wallonia (2026-10-09)
 
 20 items for the Walloon Region: Guichets Énergie, the Rénopack and Rénoprêt loans that replaced the renovation grants on 1 October 2026, the audit logement, MEBAR, the PEB certificate and its new renovation path, the announced renovation obligations (not yet law), rent indexation, minimum quality rules for rented homes, CompaCWaPE, the 2026 day/night hours and tarif Impact, ORES smart meters, protected customers, prepayment meters, solar compensation before and after 2024, the solar map, boiler checks and the oil boiler phase-out. Most sources exist only in French; German versions are listed as alternates where they exist. In the nine German-speaking municipalities housing support is run by the German-speaking Community, which the site points to. Every source page was opened on 2026-10-09.
+
+## New builds (phase 2, Flanders, 2026-10-10)
+
+6 items for people building a new home: the EPB limits for a new home (E30, S28, U-values, overheating, low-temperature heating), appointing an EPB reporter and the EPC bouw, the ban on gas connections since 2025 (with the July 2026 draft decree on emission-free new builds, not yet law), the 15 kWh/m² solar requirement, compact design with shaded windows and efficient ventilation, and why Mijn VerbouwPremie and the property tax cut don't apply. The federal 6% VAT on demolition and rebuild was left out because its official page could not be opened. Every source page was opened on 2026-10-10.
