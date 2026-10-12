@@ -45,6 +45,12 @@ h1 { font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.2; margin: 0 0 8px; }
 .choice input:checked + span { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
 .choice input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
 .flag-icon { border-radius: 3px; box-shadow: 0 0 0 1px var(--line); }
+.go-row { margin: 4px auto 8px !important; }
+.go { font: inherit; font-weight: 700; color: var(--surface); background: var(--accent); border: 1px solid var(--accent);
+  border-radius: var(--radius); padding: 12px 28px; cursor: pointer; }
+.go:hover:not(:disabled) { filter: brightness(1.1); }
+.go:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.go:disabled { color: var(--muted); background: var(--bg); border-color: var(--line); cursor: not-allowed; }
 .skip { margin: 0 auto 1.5em !important; }
 /* After the welcome: one line saying who the tips are for, with a way to change it. */
 .you { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-weight: 600; }
