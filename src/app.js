@@ -34,17 +34,28 @@
   var regionNames = JSON.parse(local.dataset.names);
   var coverage = Array.prototype.slice.call(local.querySelectorAll(".coverage"));
   var rungCounts = Array.prototype.slice.call(form.querySelectorAll('input[name="rung"] + span small'));
-  // The reader's region is remembered on this device, unless a link sets one.
-  var savedRegion = "";
-  try { savedRegion = localStorage.getItem("region") || ""; } catch (e) {}
+  var welcome = document.getElementById("welcome");
+  var choose = document.getElementById("choose");
+  var results = document.getElementById("results");
+  var you = document.getElementById("you");
+  var youText = document.getElementById("you-text");
+  var youNames = JSON.parse(you.dataset.names);
+  // The reader's answers to the welcome are remembered on this device, unless a link sets them.
+  function load(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+  function save(key, value) { try { localStorage.setItem(key, value); } catch (e) {} }
+  var savedRegion = load("region") || "";
+  var savedWho = load("who") || "";
+  var welcomed = load("welcomed") === "1";
   var DEFAULT_RUNG = (form.querySelector('input[name="rung"][checked]') || {}).value || "5";
 
+  // "who" and "where" are answered on the welcome; the rest sit in the filter box.
   function radio(name) {
-    return form.querySelector('input[name="' + name + '"]:checked');
+    return document.querySelector('input[name="' + name + '"]:checked') || { value: "" };
   }
   function setRadio(name, value) {
-    var el = form.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    var el = document.querySelector('input[name="' + name + '"][value="' + value + '"]');
     if (el) el.checked = true;
+    else if (name !== "rung") Array.prototype.forEach.call(document.getElementsByName(name), function (r) { r.checked = false; });
   }
 
   // Filters live in the address bar, so a filtered view can be bookmarked or shared.
@@ -82,8 +93,8 @@
   }
 
   function clearAll() {
-    // The reader's region is where they live, not a filter, so it stays.
-    fields.forEach(function (f) { if (f[0] !== "where") f[2](f[3]); });
+    // Who the reader is and where they live are not filters, so they stay.
+    fields.forEach(function (f) { if (f[0] !== "where" && f[0] !== "who") f[2](f[3]); });
     apply();
   }
 
@@ -120,7 +131,7 @@
       g.querySelector(".n").textContent = n ? "(" + n + ")" : "";
       g.hidden = !n && !g.querySelector(".coverage:not([hidden])");
     });
-    try { localStorage.setItem("region", where); } catch (e) {}
+    youText.textContent = (youNames[who] || you.dataset.everyone) + " · " + (youNames[where] || you.dataset.allbe);
 
     count.textContent = count.dataset.template.replace("{n}", shown).replace("{total}", cards.length);
     empty.hidden = shown !== 0;
@@ -139,15 +150,50 @@
     var hiddenActive = fields.filter(function (f) { return !f[4] && f[1]() !== f[3]; }).length;
     active.hidden = hiddenActive === 0;
     active.textContent = hiddenActive;
-    clear.hidden = !fields.some(function (f) { return f[0] !== "where" && f[1]() !== f[3]; });
-    writeUrl();
+    clear.hidden = !fields.some(function (f) { return f[0] !== "where" && f[0] !== "who" && f[1]() !== f[3]; });
+    if (!results.hidden) writeUrl();
   }
 
-  // "More filters" starts open on wide screens, or when a link set one of its filters.
-  if (savedRegion && !new URLSearchParams(location.search).has("where")) setRadio("where", savedRegion);
-  var hiddenFromUrl = readUrl();
-  if (hiddenFromUrl || window.matchMedia("(min-width: 700px)").matches) moreFilters.open = true;
+  // First visit: only the title and two questions. Once both are answered (or skipped),
+  // the title and mission make way for a one-line summary, the filters and the tips.
+  function showTips() {
+    welcome.hidden = true;
+    you.hidden = false;
+    results.hidden = false;
+    save("who", radio("who").value);
+    save("region", radio("where").value);
+    save("welcomed", "1");
+    apply();
+  }
+  function showWelcome() {
+    welcome.hidden = false;
+    choose.hidden = false;
+    you.hidden = true;
+    results.hidden = true;
+  }
 
+  var fromLink = location.search.length > 1;
+  // A first visit starts with nothing picked, so both questions need an answer.
+  if (welcomed && !new URLSearchParams(location.search).has("where")) setRadio("where", savedRegion);
+  if (welcomed && !new URLSearchParams(location.search).has("who")) setRadio("who", savedWho);
+  // Readers from before the welcome existed keep the region they had chosen.
+  if (!welcomed && savedRegion) setRadio("where", savedRegion);
+  var hiddenFromUrl = readUrl();
+  // "More filters" stays folded, unless a link set one of its filters.
+  if (hiddenFromUrl) moreFilters.open = true;
+
+  choose.addEventListener("change", function () {
+    if (document.querySelector('input[name="who"]:checked') && document.querySelector('input[name="where"]:checked')) showTips();
+  });
+  document.getElementById("skip").addEventListener("click", function () {
+    setRadio("who", "");
+    setRadio("where", "");
+    showTips();
+  });
+  document.getElementById("change").addEventListener("click", function () {
+    showWelcome();
+    choose.querySelector("input").focus();
+  });
   nextLevel.addEventListener("click", function () {
     setRadio("rung", nextLevel.dataset.level);
     apply();
@@ -158,5 +204,6 @@
   });
   form.addEventListener("input", apply);
   form.addEventListener("change", apply);
-  apply();
+  if (welcomed || fromLink) showTips();
+  else { showWelcome(); apply(); }
 })();

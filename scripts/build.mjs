@@ -7,6 +7,7 @@ import { marked } from "marked";
 import { loadTips, localize, ROOT } from "./tips.mjs";
 import { t as tr, label as lb, LANGUAGES, DEFAULT_LANG } from "../src/i18n.mjs";
 import { icon } from "../src/icons.mjs";
+import { flag } from "../src/flags.mjs";
 
 const DIST = join(ROOT, "dist");
 // Set per language in the build loop at the bottom.
@@ -75,13 +76,12 @@ const hasNoCitation = (d) => d.verification.flags.some((f) => f.type === "no-cit
 const COSTS = ["none", "under-100", "100-2500", "2500-25000", "over-25000"];
 const RUNGS = [1, 2, 3, 4, 5];
 const DEFAULT_RUNG = 2;
-// "Who are you?" options and the tips each one shows.
+// "Do you rent or own?" options and the tips each one shows. Owners include landlords.
 const WHO = {
   rent: (d) => d.audience.includes("tenant"),
   own: (d) => d.audience.includes("homeowner") || d.audience.includes("landlord"),
-  build: (d) => d.stage.includes("renovating") || d.stage.includes("building-new"),
-  flat: (d) => d.tags.includes("apartment"),
 };
+const WHO_ICON = { rent: "key", own: "house" };
 // Where a reader can live. "BE" items apply in every region.
 const REGIONS = ["BE-VLG", "BE-BRU", "BE-WAL"];
 // "Do it yourself": stable good practice that holds in all of Belgium. Everything else
@@ -205,33 +205,42 @@ function options(group, values) {
 function indexPage(tips) {
   const cats = [...new Set(tips.map((x) => x.data.category))].sort((a, b) =>
     label("category", a).localeCompare(label("category", b)));
-  // Only offer "who are you" choices that have at least one tip yet.
-  const whoOptions = Object.keys(WHO).filter((w) => tips.some((x) => WHO[w](x.data)));
+  // The welcome asks two questions first; the filters and tips appear once they're answered.
+  // Without the script, the questions stay hidden and every tip shows.
   const body = `
-<section class="intro">
+<section class="welcome" id="welcome">
   <h1>${esc(t("index.heading"))}</h1>
-  <p>${esc(t("index.intro"))}</p>
+  <p class="mission">${esc(t("index.intro"))}</p>
+  <div class="choose" id="choose" hidden>
+  <fieldset>
+    <legend>${esc(t("welcome.who"))}</legend>
+    <div class="choices">${Object.keys(WHO).map((w) => `<label class="choice">
+      <input type="radio" name="who" value="${w}">
+      <span>${icon(WHO_ICON[w])} ${esc(t(`who.${w}`))}</span></label>`).join("")}</div>
+  </fieldset>
+  <fieldset>
+    <legend>${esc(t("filter.where"))}</legend>
+    <div class="choices regions">${[...REGIONS, ""].map((r) => `<label class="choice">
+      <input type="radio" name="where" value="${r}">
+      <span>${flag(r, "")} ${esc(r ? label("region", r) : t("where.all"))}</span></label>`).join("")}</div>
+  </fieldset>
+  <p class="skip"><button type="button" class="link-button" id="skip">${esc(t("welcome.skip"))}</button></p>
+  </div>
   <p class="impact-intro">${esc(t("index.impactIntro"))} <a href="impact/">${esc(t("impact.how"))}</a></p>
 </section>
-<form class="filters" role="search" onsubmit="return false">
-  <fieldset class="where" id="where">
-    <legend>${esc(t("filter.where"))}</legend>
-    <div class="steps">${["", ...REGIONS].map((r) => `<label class="step">
-      <input type="radio" name="where" value="${r}"${r ? "" : " checked"}>
-      <span>${esc(r ? label("region", r) : t("where.all"))}</span></label>`).join("")}</div>
-  </fieldset>
+<div class="you" id="you" hidden data-everyone="${esc(t("who.all"))}" data-allbe="${esc(label("region", "BE"))}"
+  data-names="${esc(JSON.stringify(Object.fromEntries([...Object.keys(WHO).map((w) => [w, t(`who.${w}`)]), ...REGIONS.map((r) => [r, label("region", r)])])))}">
+  <span id="you-text"></span>
+  <button type="button" class="link-button" id="change">${esc(t("welcome.change"))}</button>
+</div>
+<div class="results" id="results">
+<form class="filters" role="search" onsubmit="return false" id="filters">
   <fieldset class="ladder" id="ladder">
     <legend>${esc(t("filter.level"))} <span class="hint">${esc(t("filter.levelHint"))}</span></legend>
     <div class="steps">${RUNGS.map((n) => `<label class="step">
       <input type="radio" name="rung" value="${n}"${n === DEFAULT_RUNG ? " checked" : ""}>
       <span><b>${n}</b> ${esc(label("rung", n))} <small>(${tips.filter((x) => x.data.rung === n).length})</small></span></label>`).join("")}</div>
   </fieldset>
-  ${whoOptions.length > 1 ? `<fieldset class="who" id="who">
-    <legend>${esc(t("filter.who"))}</legend>
-    <div class="steps">${["all", ...whoOptions].map((w) => `<label class="step">
-      <input type="radio" name="who" value="${w === "all" ? "" : w}"${w === "all" ? " checked" : ""}>
-      <span>${esc(t(`who.${w}`))}</span></label>`).join("")}</div>
-  </fieldset>` : ""}
   <label class="search"><span>${esc(t("filter.search"))}</span>
     <input type="search" id="q" placeholder="${esc(t("filter.searchPlaceholder"))}"></label>
   <details class="more-filters" id="more-filters">
@@ -276,6 +285,7 @@ ${tips.filter((x) => !isDiy(x.data)).map(card).join("\n")}
   <button type="button" class="more-button" id="next-level" data-template="${esc(t("index.showLevel"))}"
     data-names="${esc(JSON.stringify(Object.fromEntries(RUNGS.map((n) => [n, label("rung", n)]))))}"></button>
   <p id="more-text"></p>
+</div>
 </div>`;
   return page({ title: t("site.name"), description: t("index.intro"), rel: "", path: "", body });
 }
@@ -448,6 +458,8 @@ writeFileSync(join(DIST, "tips.json"), JSON.stringify(tips.map((x) => ({
   translations: Object.fromEntries(Object.entries(x.translations).map(([l, v]) => [l, { ...v.data, body: v.body }])),
 })), null, 2));
 for (const f of ["style.css", "app.js"]) copyFileSync(join(ROOT, "src", f), join(DIST, f));
+mkdirSync(join(DIST, "flags"));
+for (const f of readdirSync(join(ROOT, "src", "flags")).filter((f) => f.endsWith(".svg"))) copyFileSync(join(ROOT, "src", "flags", f), join(DIST, "flags", f));
 // The icons are inlined in every page, so their licence ships with the site.
 copyFileSync(join(ROOT, "src", "icons", "LICENSE-phosphor.txt"), join(DIST, "LICENSE-phosphor-icons.txt"));
 writeFileSync(join(DIST, ".nojekyll"), "");
