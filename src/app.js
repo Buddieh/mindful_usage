@@ -168,6 +168,7 @@
   function showWelcome() {
     welcome.hidden = false;
     choose.hidden = false;
+    ready();
     you.hidden = true;
     results.hidden = true;
   }
@@ -182,9 +183,13 @@
   // "More filters" stays folded, unless a link set one of its filters.
   if (hiddenFromUrl) moreFilters.open = true;
 
-  choose.addEventListener("change", function () {
-    if (document.querySelector('input[name="who"]:checked') && document.querySelector('input[name="where"]:checked')) showTips();
-  });
+  // The tips open only when the reader presses the button, once both questions are answered.
+  var go = document.getElementById("go");
+  function ready() {
+    go.disabled = !(document.querySelector('input[name="who"]:checked') && document.querySelector('input[name="where"]:checked'));
+  }
+  choose.addEventListener("change", ready);
+  go.addEventListener("click", showTips);
   document.getElementById("skip").addEventListener("click", function () {
     setRadio("who", "");
     setRadio("where", "");

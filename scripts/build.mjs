@@ -224,6 +224,7 @@ function indexPage(tips) {
       <input type="radio" name="where" value="${r}">
       <span>${flag(r, "")} ${esc(r ? label("region", r) : t("where.all"))}</span></label>`).join("")}</div>
   </fieldset>
+  <p class="go-row"><button type="button" class="go" id="go" disabled>${esc(t("welcome.go"))}</button></p>
   <p class="skip"><button type="button" class="link-button" id="skip">${esc(t("welcome.skip"))}</button></p>
   </div>
   <p class="impact-intro">${esc(t("index.impactIntro"))} <a href="impact/">${esc(t("impact.how"))}</a></p>
