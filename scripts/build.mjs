@@ -222,7 +222,7 @@ function indexPage(tips) {
     <legend>${esc(t("filter.where"))}</legend>
     <div class="choices regions">${[...REGIONS, ""].map((r) => `<label class="choice">
       <input type="radio" name="where" value="${r}">
-      <span>${flag(r)} ${esc(r ? label("region", r) : t("where.all"))}</span></label>`).join("")}</div>
+      <span>${flag(r, "")} ${esc(r ? label("region", r) : t("where.all"))}</span></label>`).join("")}</div>
   </fieldset>
   <p class="skip"><button type="button" class="link-button" id="skip">${esc(t("welcome.skip"))}</button></p>
   </div>
@@ -458,6 +458,8 @@ writeFileSync(join(DIST, "tips.json"), JSON.stringify(tips.map((x) => ({
   translations: Object.fromEntries(Object.entries(x.translations).map(([l, v]) => [l, { ...v.data, body: v.body }])),
 })), null, 2));
 for (const f of ["style.css", "app.js"]) copyFileSync(join(ROOT, "src", f), join(DIST, f));
+mkdirSync(join(DIST, "flags"));
+for (const f of readdirSync(join(ROOT, "src", "flags")).filter((f) => f.endsWith(".svg"))) copyFileSync(join(ROOT, "src", "flags", f), join(DIST, "flags", f));
 // The icons are inlined in every page, so their licence ships with the site.
 copyFileSync(join(ROOT, "src", "icons", "LICENSE-phosphor.txt"), join(DIST, "LICENSE-phosphor-icons.txt"));
 writeFileSync(join(DIST, ".nojekyll"), "");
