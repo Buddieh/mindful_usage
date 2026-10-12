@@ -39,7 +39,8 @@
   var results = document.getElementById("results");
   var you = document.getElementById("you");
   var youText = document.getElementById("you-text");
-  var youNames = JSON.parse(you.dataset.names);
+  var youWho = JSON.parse(you.dataset.who);
+  var youIn = JSON.parse(you.dataset.in);
   // The reader's answers to the welcome are remembered on this device, unless a link sets them.
   function load(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
   function save(key, value) { try { localStorage.setItem(key, value); } catch (e) {} }
@@ -131,7 +132,8 @@
       g.querySelector(".n").textContent = n ? "(" + n + ")" : "";
       g.hidden = !n && !g.querySelector(".coverage:not([hidden])");
     });
-    youText.textContent = (youNames[who] || you.dataset.everyone) + " · " + (youNames[where] || you.dataset.allbe);
+    // A sentence such as "I rent in Flanders"; "Not sure" reads as "in Belgium".
+    youText.textContent = (youWho[who] || you.dataset.everyone) + " " + youIn[where || "BE"];
 
     count.textContent = count.dataset.template.replace("{n}", shown).replace("{total}", cards.length);
     empty.hidden = shown !== 0;

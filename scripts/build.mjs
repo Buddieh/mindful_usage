@@ -229,8 +229,9 @@ function indexPage(tips) {
   </div>
   <p class="impact-intro">${esc(t("index.impactIntro"))} <a href="impact/">${esc(t("impact.how"))}</a></p>
 </section>
-<div class="you" id="you" hidden data-everyone="${esc(t("who.all"))}" data-allbe="${esc(label("region", "BE"))}"
-  data-names="${esc(JSON.stringify(Object.fromEntries([...Object.keys(WHO).map((w) => [w, t(`who.${w}`)]), ...REGIONS.map((r) => [r, label("region", r)])])))}">
+<div class="you" id="you" hidden data-everyone="${esc(t("who.all"))}"
+  data-who="${esc(JSON.stringify(Object.fromEntries(Object.keys(WHO).map((w) => [w, t(`who.${w}`)]))))}"
+  data-in="${esc(JSON.stringify(Object.fromEntries(["BE", ...REGIONS].map((r) => [r, label("inRegion", r)]))))}">
   <span id="you-text"></span>
   <button type="button" class="link-button" id="change">${esc(t("welcome.change"))}</button>
 </div>
