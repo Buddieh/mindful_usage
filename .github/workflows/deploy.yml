@@ -4,9 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Weekly rebuild, so variable tips past their review_by date show as overdue.
+  # Daily rebuild: fresh headlines for the news panel, and variable tips past
+  # their review_by date show as overdue.
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "0 6 * * *"
 
 permissions:
   contents: read
@@ -27,6 +28,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Headlines for the news panel; a source that cannot be read is skipped.
+      - run: node scripts/news.mjs
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

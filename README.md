@@ -6,6 +6,7 @@ An open, searchable collection of practical energy-saving tips, each linked to t
 
 - Every tip is a Markdown file in [`content/tips/`](content/tips/) with structured fields (topic, effort, cost, estimated saving, who acts, sources). Dutch and French translations are in [`content/tips/nl/`](content/tips/nl/) and [`content/tips/fr/`](content/tips/fr/).
 - [`content/README.md`](content/README.md) explains the fields and the rules for tips: every tip cites at least one source, and every number must be traceable to it.
+- The home page has a small news panel: the latest headlines from official energy and environment sources for the reader's region (CREG, VEKA, VMM, Homegrade, Brugel, SPW Énergie, wallonie.be). [`scripts/news.mjs`](scripts/news.mjs) collects them once a day when the site is rebuilt; headlines are linked, not checked or rewritten.
 - A small Node script turns the files into a static website (no framework), published with GitHub Pages. The raw data is also published as `tips.json`.
 
 ## Made with AI

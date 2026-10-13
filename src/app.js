@@ -38,6 +38,7 @@
   var choose = document.getElementById("choose");
   var results = document.getElementById("results");
   var you = document.getElementById("you");
+  var news = document.getElementById("news");
   var youText = document.getElementById("you-text");
   var youWho = JSON.parse(you.dataset.who);
   var youIn = JSON.parse(you.dataset.in);
@@ -134,6 +135,7 @@
     });
     // A sentence such as "I rent in Flanders"; "Not sure" reads as "in Belgium".
     youText.textContent = (youWho[who] || you.dataset.everyone) + " " + youIn[where || "BE"];
+    showNews(where);
 
     count.textContent = count.dataset.template.replace("{n}", shown).replace("{total}", cards.length);
     empty.hidden = shown !== 0;
@@ -154,6 +156,35 @@
     active.textContent = hiddenActive;
     clear.hidden = !fields.some(function (f) { return f[0] !== "where" && f[0] !== "who" && f[1]() !== f[3]; });
     if (!results.hidden) writeUrl();
+  }
+
+
+  // News: the latest headlines for the reader's region plus Belgium-wide ones, newest first.
+  // A source written in both Dutch and French shows once, in the page's language or else the region's.
+  function showNews(where) {
+    if (!news) return;
+    var titles = JSON.parse(news.dataset.titles);
+    var lang = JSON.parse(news.dataset.fallback)[where || ""];
+    var max = Number(news.dataset.max);
+    var shown = [];
+    Array.prototype.forEach.call(news.querySelectorAll("li"), function (li) {
+      var ok = (li.dataset.region === "BE" || li.dataset.region === where) &&
+        (!li.hasAttribute("data-pick") || li.dataset.lang === lang) && shown.length < max;
+      li.hidden = !ok;
+      if (ok) shown.push(li);
+    });
+    news.hidden = shown.length === 0;
+    document.getElementById("news-title").textContent = titles[where || ""];
+    document.getElementById("news-count").textContent = shown.length;
+    document.getElementById("news-latest").textContent = shown.length ? shown[0].querySelector("a").textContent : "";
+  }
+  // On wide screens the news sits open beside the tips; on narrow ones it starts folded above them.
+  if (news && window.matchMedia) {
+    var wide = window.matchMedia("(min-width: 1100px)");
+    var fold = document.getElementById("news-fold");
+    fold.open = wide.matches;
+    var onWide = function () { fold.open = wide.matches; };
+    if (wide.addEventListener) wide.addEventListener("change", onWide);
   }
 
   // First visit: only the title and two questions. Once both are answered (or skipped),

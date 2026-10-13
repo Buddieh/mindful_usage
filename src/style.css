@@ -219,3 +219,33 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
   .more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .step span { padding: 7px 8px; }
 }
+
+/* News: headlines from official sources. Beside the tips on wide screens, folded above them otherwise. */
+.wrap.wide { max-width: 1260px; }
+.news { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; margin: 12px 0 0; }
+.news[hidden] { display: none; }
+.news summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; color: var(--accent); }
+.news summary::before { content: "▸"; font-size: .9rem; }
+.news details[open] > summary::before { content: "▾"; }
+.news summary h2 { font-size: 1rem; margin: 0; color: inherit; display: inline; }
+.news-count { font-size: .75rem; font-weight: 600; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 0 7px; }
+.news-latest { flex-basis: 100%; color: var(--muted); font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.news details[open] .news-latest { display: none; }
+.news ul { list-style: none; margin: 10px 0 0; padding: 0; }
+.news li { padding: 8px 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; }
+.news li:first-child { border-top: 0; padding-top: 0; }
+.news li[hidden] { display: none; }
+.news li a { font-weight: 600; text-decoration: none; line-height: 1.35; }
+.news li a:hover { text-decoration: underline; }
+.news-meta { font-size: .8rem; color: var(--muted); }
+.news-lang { font-size: .7rem; font-weight: 700; border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; margin-left: 2px; text-decoration: none; }
+.news-note { font-size: .78rem; color: var(--muted); margin: 8px 0 0; }
+@media (min-width: 1100px) {
+  .results.has-news:not([hidden]) { display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 24px; align-items: start; }
+  .results.has-news > * { grid-column: 1; }
+  .results.has-news > .news { grid-column: 2; grid-row: 1 / span 12; position: sticky; top: 16px; margin-top: 20px; }
+  .news summary { cursor: default; pointer-events: none; }
+  .news summary::-webkit-details-marker { display: none; }
+  .news summary { list-style: none; }
+  .news summary::before { display: none; }
+}

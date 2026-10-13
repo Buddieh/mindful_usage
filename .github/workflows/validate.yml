@@ -16,4 +16,6 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Headlines for the news panel; a source that cannot be read is skipped.
+      - run: node scripts/news.mjs
       - run: npm run build
