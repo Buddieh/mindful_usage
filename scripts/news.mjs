@@ -117,6 +117,7 @@ for (const s of SOURCES) {
     items.push(...got);
     report.push({ source: s.id, lang: s.lang, ok: true, items: got.length });
     console.log(`✓ ${s.name} (${s.lang}): ${got.length}`);
+    for (const x of got) console.log(`    ${x.date}  ${x.title}`);
   } catch (e) {
     report.push({ source: s.id, lang: s.lang, ok: false, error: String(e.cause?.code || e.message) });
     console.log(`✗ ${s.name} (${s.lang}): ${e.cause?.code || e.message}`);
