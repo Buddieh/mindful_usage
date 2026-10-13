@@ -1,6 +1,6 @@
 // Builds the static site into dist/: an index with search and filters,
 // one page per tip, and tips.json for anyone who wants the raw data.
-import { mkdirSync, writeFileSync, copyFileSync, rmSync, readFileSync, readdirSync } from "node:fs";
+import { mkdirSync, writeFileSync, copyFileSync, rmSync, readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
 import { marked } from "marked";
@@ -34,7 +34,7 @@ function savingsText(s) {
 const version = (f) => createHash("sha256").update(readFileSync(join(ROOT, "src", f))).digest("hex").slice(0, 8);
 const ASSET_VERSION = { "style.css": version("style.css"), "app.js": version("app.js") };
 
-function page({ title, description, rel, path, body }) {
+function page({ title, description, rel, path, body, wide = false }) {
   // rel: from this page up to the language root; path: this page below the language root.
   const toggle = LANGUAGES.map((l) => l === LANG
     ? `<span aria-current="true">${l.toUpperCase()}</span>`
@@ -51,15 +51,15 @@ function page({ title, description, rel, path, body }) {
 ${alternates}
 </head>
 <body>
-<header class="site-header"><div class="wrap">
+<header class="site-header"><div class="wrap${wide ? " wide" : ""}">
   <a class="brand" href="${rel}">${esc(t("site.name"))}</a>
   <span class="tagline">${esc(t("site.tagline"))}</span>
   <nav class="lang" aria-label="${esc(t("lang.switch"))}">${toggle}</nav>
 </div></header>
-<main class="wrap">
+<main class="wrap${wide ? " wide" : ""}">
 ${body}
 </main>
-<footer class="site-footer"><div class="wrap">
+<footer class="site-footer"><div class="wrap${wide ? " wide" : ""}">
   <p>${t("footer.license")}${REPO_URL ? ` · <a href="${REPO_URL}">${esc(t("footer.source"))}</a>` : ""}</p>
   <p>${esc(t("footer.ai"))} <a href="${rel}impact/#ai">${esc(t("footer.aiHow"))}</a></p>
   <p>${esc(t("footer.disclaimer"))}</p>
@@ -202,6 +202,44 @@ function options(group, values) {
   return values.map((v) => `<option value="${v}">${esc(label(group, v))}</option>`).join("");
 }
 
+// Headlines collected by scripts/news.mjs (news/news.json). Without that file, there is no panel.
+const NEWS_FILE = join(ROOT, "news", "news.json");
+const NEWS = existsSync(NEWS_FILE) ? JSON.parse(readFileSync(NEWS_FILE, "utf8")).items : [];
+const NEWS_SHOWN = 5;
+// On the English page, a source written in both Dutch and French shows in the region's own language.
+const NEWS_FALLBACK = { "BE-VLG": "nl", "BE-BRU": "fr", "BE-WAL": "fr", "": "nl" };
+const LOCALE = { nl: "nl-BE", fr: "fr-BE", en: "en-GB" };
+
+function newsPanel() {
+  if (!NEWS.length) return "";
+  // A source in the page's language shows only in that language; otherwise every version stays
+  // and the script picks one by region (data-pick).
+  const langsOf = (id) => new Set(NEWS.filter((x) => x.source === id).map((x) => x.lang));
+  const items = NEWS.filter((x) => !langsOf(x.source).has(LANG) || x.lang === LANG);
+  const date = new Intl.DateTimeFormat(LOCALE[LANG], { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+  // Without the script, the latest Belgium-wide headlines show.
+  let shown = 0;
+  const li = items.map((x) => {
+    const pick = langsOf(x.source).size > 1 && !langsOf(x.source).has(LANG);
+    const visible = x.region === "BE" && (!pick || x.lang === NEWS_FALLBACK[""]) && shown < NEWS_SHOWN;
+    if (visible) shown++;
+    return `<li data-region="${x.region}" data-lang="${x.lang}"${pick ? " data-pick" : ""}${visible ? "" : " hidden"}>
+    <a href="${esc(x.url)}" lang="${x.lang}" rel="noopener">${esc(x.title)}</a>
+    <span class="news-meta">${esc(x.name)} · <time datetime="${x.date}">${esc(date.format(new Date(x.date)))}</time>${x.lang === LANG ? "" : ` <abbr class="news-lang" title="${esc(label("inLanguage", x.lang))}">${x.lang.toUpperCase()}</abbr>`}</span></li>`;
+  }).join("\n  ");
+  const titles = Object.fromEntries([["", t("news.title")], ...REGIONS.map((r) => [r, t("news.titleIn").replace("{region}", label("region", r)).replace("{in}", label("inRegion", r))])]);
+  return `<aside class="news" id="news" aria-labelledby="news-title" data-titles="${esc(JSON.stringify(titles))}"
+  data-fallback="${esc(JSON.stringify(NEWS_FALLBACK))}" data-max="${NEWS_SHOWN}">
+<details id="news-fold" open>
+<summary><h2 id="news-title">${esc(titles[""])}</h2> <span class="news-count" id="news-count"></span><span class="news-latest" id="news-latest" aria-hidden="true"></span></summary>
+<ul>
+  ${li}
+</ul>
+<p class="news-note">${esc(t("news.note"))}</p>
+</details>
+</aside>`;
+}
+
 function indexPage(tips) {
   const cats = [...new Set(tips.map((x) => x.data.category))].sort((a, b) =>
     label("category", a).localeCompare(label("category", b)));
@@ -235,7 +273,8 @@ function indexPage(tips) {
   <span id="you-text"></span>
   <button type="button" class="link-button" id="change">${esc(t("welcome.change"))}</button>
 </div>
-<div class="results" id="results">
+<div class="results${NEWS.length ? " has-news" : ""}" id="results">
+${newsPanel()}
 <form class="filters" role="search" onsubmit="return false" id="filters">
   <fieldset class="ladder" id="ladder">
     <legend>${esc(t("filter.level"))} <span class="hint">${esc(t("filter.levelHint"))}</span></legend>
@@ -289,7 +328,7 @@ ${tips.filter((x) => !isDiy(x.data)).map(card).join("\n")}
   <p id="more-text"></p>
 </div>
 </div>`;
-  return page({ title: t("site.name"), description: t("index.intro"), rel: "", path: "", body });
+  return page({ title: t("site.name"), description: t("index.intro"), rel: "", path: "", body, wide: NEWS.length > 0 });
 }
 
 function tipPage(tip) {
