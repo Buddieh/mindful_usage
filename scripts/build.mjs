@@ -47,6 +47,7 @@ function page({ title, description, rel, path, body, wide = false }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
+<link rel="icon" href="${rel}../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="${rel}../style.css?v=${ASSET_VERSION["style.css"]}">
 ${alternates}
 </head>
@@ -65,6 +66,7 @@ ${body}
   <p>${esc(t("footer.disclaimer"))}</p>
 </div></footer>
 <script src="${rel}../app.js?v=${ASSET_VERSION["app.js"]}"></script>
+<script src="https://buddieh.github.io/hub.js" defer></script>
 </body>
 </html>
 `;
@@ -498,7 +500,7 @@ writeFileSync(join(DIST, "tips.json"), JSON.stringify(tips.map((x) => ({
   ...x.data, body: x.body,
   translations: Object.fromEntries(Object.entries(x.translations).map(([l, v]) => [l, { ...v.data, body: v.body }])),
 })), null, 2));
-for (const f of ["style.css", "app.js"]) copyFileSync(join(ROOT, "src", f), join(DIST, f));
+for (const f of ["style.css", "app.js", "favicon.svg"]) copyFileSync(join(ROOT, "src", f), join(DIST, f));
 mkdirSync(join(DIST, "flags"));
 for (const f of readdirSync(join(ROOT, "src", "flags")).filter((f) => f.endsWith(".svg"))) copyFileSync(join(ROOT, "src", "flags", f), join(DIST, "flags", f));
 // The icons are inlined in every page, so their licence ships with the site.
