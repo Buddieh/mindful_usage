@@ -4,7 +4,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import Ajv from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
-import { loadTips, translationLangs, ROOT, TIPS_DIR } from "./tips.mjs";
+import { loadTips, translationLangs, safeHref, ROOT, TIPS_DIR } from "./tips.mjs";
 import { LANGUAGES } from "../src/i18n.mjs";
 
 const ajv = new Ajv({ allErrors: true });
@@ -17,6 +17,14 @@ const errors = [];
 const warnings = [];
 const today = new Date().toISOString().slice(0, 10);
 const countNocite = (text) => text.split("{nocite}").length - 1;
+// Tip bodies are plain markdown: no raw HTML, and links only to http(s) or mailto addresses.
+const RAW_HTML = /<\/?[a-z!][^>]*>/i;
+const checkBody = (file, body) => {
+  if (RAW_HTML.test(body)) errors.push(`${file}: body contains raw HTML; use plain markdown`);
+  for (const [, href] of body.matchAll(/\]\(\s*<?([^)\s>]*)/g)) {
+    if (!safeHref(href)) errors.push(`${file}: link "${href}" is not a relative, http(s) or mailto address`);
+  }
+};
 const report = (file, v) => v.errors.forEach((e) => errors.push(`${file}: ${e.instancePath || "(root)"} ${e.message}`));
 const tips = loadTips();
 const ids = new Set(tips.map((t) => t.id));
@@ -27,6 +35,7 @@ for (const tip of tips) {
   if (!validateTip(d)) report(tip.file, validateTip);
   if (d.id !== tip.id) errors.push(`${tip.file}: id "${d.id}" must match the file name`);
   if (!tip.body) errors.push(`${tip.file}: body is empty`);
+  checkBody(tip.file, tip.body);
   for (const id of d.pairs_with || []) {
     if (!ids.has(id) || id === tip.id) { errors.push(`${tip.file}: pairs_with "${id}" is not another tip's id`); continue; }
     // A regional tip only points to tips its readers can use; Belgium-wide tips may point anywhere (the link names the region).
@@ -78,6 +87,7 @@ for (const tip of tips) {
     if (t.id !== tip.id) errors.push(`${tr.file}: id must be "${tip.id}"`);
     if (t.lang !== lang) errors.push(`${tr.file}: lang must be "${lang}"`);
     if (!tr.body) errors.push(`${tr.file}: body is empty`);
+    checkBody(tr.file, tr.body);
     if (countNocite(tr.body) !== markers) errors.push(`${tr.file}: needs the same number of {nocite} markers as the main file (${markers})`);
     if (Boolean(d.impact.basis) !== Boolean(t.impact_basis)) errors.push(`${tr.file}: impact_basis ${d.impact.basis ? "missing" : "is set but the main file has no impact.basis"}`);
     if (d.region_notes && !t.region_notes) errors.push(`${tr.file}: region_notes missing`);

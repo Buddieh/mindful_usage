@@ -189,13 +189,17 @@
 
   // First visit: only the title and two questions. Once both are answered (or skipped),
   // the title and mission make way for a one-line summary, the filters and the tips.
-  function showTips() {
+  // Answers are saved only when the reader gives them on the welcome, so opening someone
+  // else's link never replaces the reader's own region or "who".
+  function showTips(remember) {
     welcome.hidden = true;
     you.hidden = false;
     results.hidden = false;
-    save("who", radio("who").value);
-    save("region", radio("where").value);
-    save("welcomed", "1");
+    if (remember) {
+      save("who", radio("who").value);
+      save("region", radio("where").value);
+      save("welcomed", "1");
+    }
     apply();
   }
   function showWelcome() {
@@ -206,7 +210,8 @@
     results.hidden = true;
   }
 
-  var fromLink = location.search.length > 1;
+  // Only a link that sets one of the filters counts; tracking tags such as ?fbclid don't.
+  var fromLink = fields.some(function (f) { return new URLSearchParams(location.search).has(f[0]); });
   // A first visit starts with nothing picked, so both questions need an answer.
   if (welcomed && !new URLSearchParams(location.search).has("where")) setRadio("where", savedRegion);
   if (welcomed && !new URLSearchParams(location.search).has("who")) setRadio("who", savedWho);
@@ -222,11 +227,11 @@
     go.disabled = !(document.querySelector('input[name="who"]:checked') && document.querySelector('input[name="where"]:checked'));
   }
   choose.addEventListener("change", ready);
-  go.addEventListener("click", showTips);
+  go.addEventListener("click", function () { showTips(true); });
   document.getElementById("skip").addEventListener("click", function () {
     setRadio("who", "");
     setRadio("where", "");
-    showTips();
+    showTips(true);
   });
   document.getElementById("change").addEventListener("click", function () {
     showWelcome();
@@ -242,6 +247,6 @@
   });
   form.addEventListener("input", apply);
   form.addEventListener("change", apply);
-  if (welcomed || fromLink) showTips();
+  if (welcomed || fromLink) showTips(false);
   else { showWelcome(); apply(); }
 })();

@@ -47,3 +47,13 @@ export function localize(tip, lang) {
   return { lang, title: t.title, summary: t.summary, basis: t.savings_basis, impact_basis: t.impact_basis, region_notes: t.region_notes,
     flags: t.flags || [], supports: t.supports || d.sources.map(() => ""), body: tr.body };
 }
+
+// Tips arrive through public pull requests, so a link in a tip body may only point to a relative
+// path or an http(s)/mailto address. Anything before the first / ? # that could hide a scheme
+// (entities, %-escapes, whitespace) makes the link unsafe.
+export function safeHref(href) {
+  const head = String(href || "").split(/[/?#]/)[0];
+  if (/[&%\s\x00-\x1f\\]/.test(head)) return false;
+  const i = head.indexOf(":");
+  return i < 0 || /^(https?|mailto)$/i.test(head.slice(0, i));
+}
