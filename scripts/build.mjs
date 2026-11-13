@@ -3,8 +3,8 @@
 import { mkdirSync, writeFileSync, copyFileSync, rmSync, readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
-import { marked } from "marked";
-import { loadTips, localize, ROOT } from "./tips.mjs";
+import { marked, Marked } from "marked";
+import { loadTips, localize, safeHref, ROOT } from "./tips.mjs";
 import { t as tr, label as lb, LANGUAGES, DEFAULT_LANG } from "../src/i18n.mjs";
 import { icon } from "../src/icons.mjs";
 import { flag } from "../src/flags.mjs";
@@ -138,9 +138,20 @@ const date = (iso) => `<time datetime="${esc(iso)}">${esc(new Intl.DateTimeForma
 
 // "{nocite}" after a sentence in a tip body marks it as not backed by any cited source.
 const NOCITE = "{nocite}";
+// Tips come in through public pull requests, so their markdown may not carry raw HTML or
+// script links: raw HTML is shown as text, and only http(s) and mailto links stay links.
+// (validate.mjs rejects both, so this is a second line of defence.) The impact pages are
+// written in this repo and keep the default renderer.
+const tipMarked = new Marked({
+  renderer: {
+    html(html) { return esc(html); },
+    link(href, title, text) { return safeHref(href) ? false : text; },
+    image(href, title, text) { return safeHref(href) ? false : esc(text); },
+  },
+});
 function renderBody(md) {
   const badge = `<span class="nocite-tag" title="${esc(t("nocite.title"))}">${esc(t("nocite.inline"))}</span>`;
-  return marked.parse(md).split(NOCITE).join(badge);
+  return tipMarked.parse(md).split(NOCITE).join(badge);
 }
 
 // A paired tip that only holds in some regions says which, unless the reader's tip is from the same regions.
